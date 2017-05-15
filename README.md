@@ -26,7 +26,7 @@ $ sudo apt-get install build-essential curl git python-setuptools ruby
 ```sh
 $ git clone https://github.com/Linuxbrew/brew.git ${HOME}/Linuxbrew
 ```
-  *Note:* Here the ``HOME`` directory can be changed to any location of your filesystem for which you have write access.
+   *Note:* Here the ``HOME`` directory can be changed to any location of your filesystem for which you have write access.
 3. Edit your ``~/.bashrc`` file and create a Bash setup function
    for Linuxbrew:
 ```sh
@@ -37,7 +37,7 @@ function do_linuxbrew_setup()
      echo >&2 "[warning] do_linuxbrew_setup: Linuxbrew is already setup!"
      return 1
   fi
-  export LINUXBREW_INSTALL_DIR="${HOME}/Linuxbrew"
+  export LINUXBREW_INSTALL_DIR="${HOME}/Linuxbrew" # Change this to suit your Linuxbrew installation path
   export PATH="${LINUXBREW_INSTALL_DIR}/bin:${PATH}"
   export MANPATH="${LINUXBREW_INSTALL_DIR}/share/man:${MANPATH}"
   export INFOPATH="${LINUXBREW_INSTALL_DIR}/share/info:${INFOPATH}"
