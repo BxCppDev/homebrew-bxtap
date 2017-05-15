@@ -14,20 +14,19 @@ class Bxjsontools < Formula
       :using => :git
   end
 
-  option :cxx11
   option 'without-test', 'Disable test programs'
 
   depends_on "cmake" => :build
   # depends_on "boost"
 
   def install
-    ENV.cxx11 if build.cxx11?
+    ENV.cxx11
     mkdir "brew-bxjsontools-build" do
       args = std_cmake_args
       args << "-DBXJSONTOOLS_ENABLE_TESTING=OFF" if build.with? "without-test"
       system "cmake", "../", *args
       system "make"
-      system "make", "test" if build.with? OS.linux?
+      ### system "make", "test" if not build.with? "without-test"
       system "install"
     end
   end
