@@ -88,10 +88,12 @@ Once installed Linuxbrew on your system, you can install the ``homebrew-bxtap`` 
 $ mkdir -p ${HOME}/BxCppDev/
 $ git clone https://github.com/BxCppDev/homebrew-bxtap.git ${HOME}/BxCppDev/homebrew-bxtap/
 ```
+
 2. Setup Linuxbrew:
 ```sh
 $ linuxbrew_setup
 ```
+
 3. Register the ``homebrew-bxtap`` tap in your Linuxbrew package manager:
 ```sh
 $ brew tap bxcppdev/homebrew-bxtap
