@@ -10,6 +10,11 @@ not to *activate* Linuxbrew per default but only when it is needed on your
 system. Recommended Linuxbrew installation and setup procedure is given below.
 
 
+Useful link:
+
+* Brew tap [documentation](https://github.com/Homebrew/brew/blob/master/docs/brew-tap.md)
+
+
 ## Installing Linuxbrew on your system
 
 Please have a look on  the [Linuxbrew](http://linuxbrew.sh/) site.
@@ -27,7 +32,7 @@ $ sudo apt-get install build-essential curl git python-setuptools ruby
 2. Clone the Linuxbrew GitHub repository:
 
 ```sh
-$ git clone https://github.com/Linuxbrew/brew.git ${HOME}/Linuxbrew
+$ git clone https://github.com/Linuxbrew/brew.git ${HOME}/linuxbrew
 ```
 
    *Note:* Here the ``HOME`` directory can be changed to any location of your filesystem
@@ -59,7 +64,7 @@ alias linuxbrew_setup='do_linuxbrew_setup'
 From a bare shell, activate your Linuxbrew system:
 
 ```sh
-$ export PATH="${HOME}/Linuxbrew/bin:${PATH}
+$ export PATH="${HOME}/linuxbrew/bin:${PATH}
 ```
 
 Then try install a package:
@@ -116,6 +121,14 @@ $ linuxbrew_setup
 $ brew tap bxcppdev/homebrew-bxtap
 ```
 
+The new tap is now installed in ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap``.
+
+4. Unregister the ``homebrew-bxtap`` tap from your Linuxbrew package manager:
+
+```sh
+$ brew untap bxcppdev/homebrew-bxtap
+```
+
 ## List of available formulae
 
 * ``bxjsontools``: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/) C++ library for JSON serialization.
@@ -123,4 +136,11 @@ $ brew tap bxcppdev/homebrew-bxtap
 
 ```sh
 $ brew install bxcppdev/bxtap/bxjsontools
+```
+
+* ``bxrabbitmq``: The [BxRabbitMQ](https://github.com/BxCppDev/bxrabbitmq/) C++ library for RabbitQ client and server management.
+  Installation of the stable version:
+
+```sh
+$ brew install bxcppdev/bxtap/bxrabbitmq
 ```
