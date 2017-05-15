@@ -22,11 +22,13 @@ Example for Ubuntu Linux 16.04:
 ```sh
 $ sudo apt-get install build-essential curl git python-setuptools ruby
 ```
+
 2. Clone the Linuxbrew GitHub repository:
 ```sh
 $ git clone https://github.com/Linuxbrew/brew.git ${HOME}/Linuxbrew
 ```
    *Note:* Here the ``HOME`` directory can be changed to any location of your filesystem for which you have write access.
+
 3. Edit your ``~/.bashrc`` file and create a Bash setup function
    for Linuxbrew:
 ```sh
