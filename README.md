@@ -1,6 +1,6 @@
-# homebrew-bxtap : Linuxbrew tap for the BxCppDev software suite
+= homebrew-bxtap : Linuxbrew tap for the BxCppDev software suite
 
-## Linuxbrew tap
+== Linuxbrew tap
 
 This tap provides a set of Linuxbrew formulae to ease the installation
 of the software packages released by the BxCppDev group.
@@ -10,11 +10,11 @@ not to *activate* Linuxbrew per default but only when it is needed on your
 system. Recommended Linuxbrew installation and setup procedure is given below.
 
 
-## Installing Linuxbrew on your system
+== Installing Linuxbrew on your system
 
 Please have a look on  the [Linuxbrew](http://linuxbrew.sh/) site.
 
-### Installation steps
+=== Installation steps
 
 Example for Ubuntu Linux 16.04:
 
@@ -22,13 +22,11 @@ Example for Ubuntu Linux 16.04:
 ```sh
 $ sudo apt-get install build-essential curl git python-setuptools ruby
 ```
-
 2. Clone the Linuxbrew GitHub repository:
 ```sh
 $ git clone https://github.com/Linuxbrew/brew.git ${HOME}/Linuxbrew
 ```
-   *Note:* Here the ``HOME`` directory can be changed to any location of your filesystem for which you have write access.
-
+  *Note:* Here the ``HOME`` directory can be changed to any location of your filesystem for which you have write access.
 3. Edit your ``~/.bashrc`` file and create a Bash setup function
    for Linuxbrew:
 ```sh
@@ -49,11 +47,11 @@ function do_linuxbrew_setup()
 alias linuxbrew_setup='do_linuxbrew_setup'
 ```
 
-### Test Linuxbrew
+=== Test Linuxbrew after installation
 
-From a bare shell, setup/activate Linuxbrew:
+From a bare shell, activate your Linuxbrew system:
 ```sh
-$ linuxbrew_setup
+$ export PATH="${HOME}/Linuxbrew/bin:${PATH}
 ```
 
 Then try install a package:
@@ -61,7 +59,7 @@ Then try install a package:
 $ brew install hello
 ```
 
-### Setup Linuxbrew
+=== Setup Linuxbrew
 
 Each time you need to use Linuxbrew and software packages managed by Linuxbrew, you
 should use:
@@ -79,29 +77,27 @@ $ which brew
 /path/to/Linuxbrew/installation/directory/bin/brew.
 ```
 
-## Installation of ``homebrew-bxtap``
+== Installation of ``homebrew-bxtap``
 
 Once installed Linuxbrew on your system, you can install the ``homebrew-bxtap`` tap.
 
-### Installation steps
+=== Installation steps
 
 1. Clone the ``homebrew-bxtap`` GitHub repository:
 ```sh
 $ mkdir -p ${HOME}/BxCppDev/
 $ git clone https://github.com/BxCppDev/homebrew-bxtap.git ${HOME}/BxCppDev/homebrew-bxtap/
 ```
-
 2. Setup Linuxbrew:
 ```sh
 $ linuxbrew_setup
 ```
-
 3. Register the ``homebrew-bxtap`` tap in your Linuxbrew package manager:
 ```sh
 $ brew tap bxcppdev/homebrew-bxtap
 ```
 
-## List of available formulae
+== List of available formulae
 
 * ``bxjsontools``: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/) C++ library for JSON serialization.
 ```sh
