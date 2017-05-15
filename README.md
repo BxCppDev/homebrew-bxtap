@@ -1,6 +1,6 @@
-= homebrew-bxtap : Linuxbrew tap for the BxCppDev software suite
+# homebrew-bxtap : Linuxbrew tap for the BxCppDev software suite
 
-== Linuxbrew tap
+## Linuxbrew tap
 
 This tap provides a set of Linuxbrew formulae to ease the installation
 of the software packages released by the BxCppDev group.
@@ -10,11 +10,11 @@ not to *activate* Linuxbrew per default but only when it is needed on your
 system. Recommended Linuxbrew installation and setup procedure is given below.
 
 
-== Installing Linuxbrew on your system
+## Installing Linuxbrew on your system
 
 Please have a look on  the [Linuxbrew](http://linuxbrew.sh/) site.
 
-=== Installation steps
+### Installation steps
 
 Example for Ubuntu Linux 16.04:
 
@@ -47,7 +47,7 @@ function do_linuxbrew_setup()
 alias linuxbrew_setup='do_linuxbrew_setup'
 ```
 
-=== Test Linuxbrew after installation
+### Test Linuxbrew after installation
 
 From a bare shell, activate your Linuxbrew system:
 ```sh
@@ -59,7 +59,7 @@ Then try install a package:
 $ brew install hello
 ```
 
-=== Setup Linuxbrew
+### Setup Linuxbrew
 
 Each time you need to use Linuxbrew and software packages managed by Linuxbrew, you
 should use:
@@ -77,11 +77,11 @@ $ which brew
 /path/to/Linuxbrew/installation/directory/bin/brew.
 ```
 
-== Installation of ``homebrew-bxtap``
+## Installation of ``homebrew-bxtap``
 
 Once installed Linuxbrew on your system, you can install the ``homebrew-bxtap`` tap.
 
-=== Installation steps
+### Installation steps
 
 1. Clone the ``homebrew-bxtap`` GitHub repository:
 ```sh
@@ -97,7 +97,7 @@ $ linuxbrew_setup
 $ brew tap bxcppdev/homebrew-bxtap
 ```
 
-== List of available formulae
+## List of available formulae
 
 * ``bxjsontools``: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/) C++ library for JSON serialization.
 ```sh
