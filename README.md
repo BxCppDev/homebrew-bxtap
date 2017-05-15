@@ -19,16 +19,21 @@ Please have a look on  the [Linuxbrew](http://linuxbrew.sh/) site.
 Example for Ubuntu Linux 16.04:
 
 1. Install dependencies:
+
 ```sh
 $ sudo apt-get install build-essential curl git python-setuptools ruby
 ```
+
 2. Clone the Linuxbrew GitHub repository:
+
 ```sh
 $ git clone https://github.com/Linuxbrew/brew.git ${HOME}/Linuxbrew
 ```
-   *Note:* Here the ``HOME`` directory can be changed to any location of your filesystem for which you have write access.
+	*Note:* Here the ``HOME`` directory can be changed to any location of your filesystem for which you have write access.
+
 3. Edit your ``~/.bashrc`` file and create a Bash setup function
    for Linuxbrew:
+
 ```sh
 function do_linuxbrew_setup()
 {
@@ -50,11 +55,13 @@ alias linuxbrew_setup='do_linuxbrew_setup'
 ### Test Linuxbrew after installation
 
 From a bare shell, activate your Linuxbrew system:
+
 ```sh
 $ export PATH="${HOME}/Linuxbrew/bin:${PATH}
 ```
 
 Then try install a package:
+
 ```sh
 $ brew install hello
 ```
@@ -63,15 +70,20 @@ $ brew install hello
 
 Each time you need to use Linuxbrew and software packages managed by Linuxbrew, you
 should use:
+
 ```sh
 $ linuxbrew_setup
 ```
+
 Your ``PATH`` should then be updated to something like:
+
 ```sh
 $ echo $PATH
 /path/to/Linuxbrew/installation/directory/bin:..
 ```
+
 The ``brew`` executable will be immediately available from:
+
 ```sh
 $ which brew
 /path/to/Linuxbrew/installation/directory/bin/brew.
@@ -84,15 +96,20 @@ Once installed Linuxbrew on your system, you can install the ``homebrew-bxtap`` 
 ### Installation steps
 
 1. Clone the ``homebrew-bxtap`` GitHub repository:
+
 ```sh
 $ mkdir -p ${HOME}/BxCppDev/
 $ git clone https://github.com/BxCppDev/homebrew-bxtap.git ${HOME}/BxCppDev/homebrew-bxtap/
 ```
+
 2. Setup Linuxbrew:
+
 ```sh
 $ linuxbrew_setup
 ```
+
 3. Register the ``homebrew-bxtap`` tap in your Linuxbrew package manager:
+
 ```sh
 $ brew tap bxcppdev/homebrew-bxtap
 ```
@@ -100,6 +117,8 @@ $ brew tap bxcppdev/homebrew-bxtap
 ## List of available formulae
 
 * ``bxjsontools``: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/) C++ library for JSON serialization.
+  Installation of the stable version:
+
 ```sh
 $ brew install bxcppdev/bxtap/bxjsontools
 ```
