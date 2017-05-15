@@ -1,4 +1,4 @@
-class bxjsontools < Formula
+class Bxjsontools < Formula
   desc "C++ Class Library for JSON serialization"
   homepage "https://github.com/BxCppDev/bxjsontools"
 
