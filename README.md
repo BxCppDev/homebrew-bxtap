@@ -29,7 +29,9 @@ $ sudo apt-get install build-essential curl git python-setuptools ruby
 ```sh
 $ git clone https://github.com/Linuxbrew/brew.git ${HOME}/Linuxbrew
 ```
-	*Note:* Here the ``HOME`` directory can be changed to any location of your filesystem for which you have write access.
+
+   *Note:* Here the ``HOME`` directory can be changed to any location of your filesystem
+   for which you have write access.
 
 3. Edit your ``~/.bashrc`` file and create a Bash setup function
    for Linuxbrew:
