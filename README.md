@@ -99,4 +99,7 @@ $ brew tap bxcppdev/homebrew-bxtap
 
 == List of available formulae
 
-WIP
+* ``bxjsontools``: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/) C++ library for JSON serialization.
+```sh
+$ brew install bxcppdev/bxtap/bxjsontools
+```
