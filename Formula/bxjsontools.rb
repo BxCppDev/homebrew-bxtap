@@ -2,17 +2,9 @@ class Bxjsontools < Formula
   desc "C++ Class Library for JSON serialization"
   homepage "https://github.com/BxCppDev/bxjsontools"
 
-  stable do
-    url "https://github.com/BxCppDev/bxjsontools",
-      :using => :git,
+  head "https://github.com/BxCppDev/bxjsontools",
+      :branch => "master",
       :tag => "0.1.0"
-    version "0.1.0"
-  end
-
-  devel do
-    url "https://github.com/BxCppDev/bxjsontools",
-      :using => :git
-  end
 
   option 'without-test', 'Disable test programs'
 
