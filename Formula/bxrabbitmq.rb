@@ -13,8 +13,8 @@ class Bxrabbitmq < Formula
   option "without-test", "Inhibit test programs"
   option "with-manager", "Built the RabbitMQ server management API"
   if build.with? "manager"
-    depends_on "bxjsontools" => [:optional, "with-manager"]
-    depends_on "curlpp" => [:optional, "with-manager"]
+    depends_on "bxjsontools"
+    depends_on "curlpp"
   end
 
   def install
