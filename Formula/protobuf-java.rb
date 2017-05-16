@@ -21,9 +21,9 @@ lass ProtobufJava < Formula
     system "mvn" , "test"
     system "mvn" , "install"
     system "mvn" , "package"
-    system "mkdir" , "#{prefix}"/lib/java/
-    system "cp" , "./core/target/protobuf-java-3.0.0.jar",            "#{prefix}"/lib/java/
-    system "cp" , "./core/target/protobuf-java-3.0.0.util-3.0.0.jar", "#{prefix}"/lib/java/
+    system "mkdir" , "#{prefix}/lib/java/"
+    system "cp" , "./core/target/protobuf-java-3.0.0.jar",            "#{prefix}/lib/java/"
+    system "cp" , "./core/target/protobuf-java-3.0.0.util-3.0.0.jar", "#{prefix}/lib/java/"
   end
 
 
