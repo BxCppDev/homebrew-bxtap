@@ -1,4 +1,4 @@
-lass ProtobufJava < Formula
+class ProtobufJava < Formula
   desc "Protocol Buffers Java API"
   homepage "https://developers.google.com/protocol-buffers/"
   url "https://github.com/google/protobuf/releases/download/v3.0.0/protobuf-java-3.0.0.tar.gz"
