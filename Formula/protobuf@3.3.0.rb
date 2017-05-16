@@ -40,8 +40,9 @@ class ProtobufAT330 < Formula
       system "mvn", "test"
       system "mvn", "install"
       system "mvn", "package"
-      system "cp" , "#{buildpath}/java/core/target/protobuf-java-3.3.0.jar",      "#{prefix}/lib/"
-      system "cp" , "#{buildpath}/java/util/target/protobuf-java-util-3.3.0.jar", "#{prefix}/lib/"
+      system "mkdir", "#{prefix}/lib/java/"
+      system "cp" , "#{buildpath}/java/core/target/protobuf-java-3.3.0.jar",      "#{prefix}/lib/java/"
+      system "cp" , "#{buildpath}/java/util/target/protobuf-java-util-3.3.0.jar", "#{prefix}/lib/java/"
     end
 
   end
