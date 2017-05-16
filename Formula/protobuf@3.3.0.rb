@@ -5,11 +5,11 @@ class ProtobufAT330 < Formula
   version "3.3.0"
   sha256 "94c414775f275d876e5e0e4a276527d155ab2d0da45eed6b7734301c330be36e"
 
-  option "with-test", "Run build-time check"
-
   needs :cxx11
-  option "with-brew-build", "Use Linuxbrew build tools"
   option "with-java", "Build the Java Protocol Buffers runtime library"
+  option "with-test", "Run build-time check"
+  option "with-brew-build", "Use Linuxbrew build tools"
+
   if  build.with? "brew-build"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -33,14 +33,15 @@ class ProtobufAT330 < Formula
     system "make"
     system "make", "check" if build.with?("test") || build.bottle?
     system "make", "install"
-    system "cd", "./java/"
-    system "mvn", "test"
-    system "mvn", "install"
-    system "mvn", "package"
-    system "mkdir" , "#{prefix}/lib/java/"
-    #lib.install Dir["java/*"]
-    system "cp" , "./core/target/protobuf-java-3.0.0.jar",            "#{prefix}/lib/java/"
-    system "cp" , "./core/target/protobuf-java-3.0.0.util-3.0.0.jar", "#{prefix}/lib/java/"
+    if build.with? "java"
+      Dir.chdir("./java/")
+      system "mvn", "test"
+      system "mvn", "install"
+      system "mvn", "package"
+      system "mkdir" , "#{prefix}/lib/java/"
+      system "cp" , "./core/target/protobuf-java-3.0.0.jar",            "#{prefix}/lib/java/"
+      system "cp" , "./core/target/protobuf-java-3.0.0.util-3.0.0.jar", "#{prefix}/lib/java/"
+    end
 
   end
 
