@@ -1,9 +1,9 @@
 class Bxrabbitmq < Formula
   desc "C++ RabbitMQ client and server management API"
   homepage "https://github.com/BxCppDev/bxrabbitmq"
-  url "https://github.com/BxCppDev/bxrabbitmq/archive/0.2.0.tar.gz"
-  version "0.2.0"
-  sha256 "f975d86359c6550ca68b73c8954543aeafa147f3c3dbc6f396784bd8bcccd5dd"
+  url "https://github.com/BxCppDev/bxrabbitmq/archive/0.3.0.tar.gz"
+  version "0.3.0"
+  sha256 "4630e430b36780c253c7a16fd5ae8b88aa57f9617c3e0ca35016f6647757eeed"
 
   needs :cxx11
   depends_on "cmake" => :build
