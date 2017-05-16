@@ -8,10 +8,10 @@ lass ProtobufJava < Formula
   option "with-brew-java",  "Use Linuxbrew Java"
   option "with-brew-maven", "Use Linuxbrew Maven"
 
-  if build.with?" brew-java
+  if build.with? "brew-java"
     depends_on "jdk" => :build
   end
-  if build.with?" brew-maven
+  if build.with? "brew-maven"
     depends_on "maven" => :build
   end
   depends_on "protobuf-cpp"
