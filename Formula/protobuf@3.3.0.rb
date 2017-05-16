@@ -36,11 +36,12 @@ class ProtobufAT330 < Formula
       Dir.chdir("./java/")
       system "echo", "================ TEST JAVA ==============="
       system "pwd"
+      system "echo", "#{buildpath}"
       system "mvn", "test"
       system "mvn", "install"
       system "mvn", "package"
-      system "cp" , "#{buildpath}/core/target/protobuf-java-3.3.0.jar",      "#{prefix}/lib/"
-      system "cp" , "#{buildpath}/util/target/protobuf-java-util-3.3.0.jar", "#{prefix}/lib/"
+      system "cp" , "#{buildpath}/java/core/target/protobuf-java-3.3.0.jar",      "#{prefix}/lib/"
+      system "cp" , "#{buildpath}/java/util/target/protobuf-java-util-3.3.0.jar", "#{prefix}/lib/"
     end
 
   end
