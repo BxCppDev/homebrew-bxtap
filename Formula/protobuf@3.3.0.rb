@@ -22,7 +22,6 @@ class ProtobufAT330 < Formula
 
   if  build.with? "java"
     option "with-brew-java", "Use Linuxbrew Java jdk"
-
   end
 
   def install
