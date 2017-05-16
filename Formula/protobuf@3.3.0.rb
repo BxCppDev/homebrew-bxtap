@@ -34,11 +34,13 @@ class ProtobufAT330 < Formula
     system "make", "install"
     if build.with? "java"
       Dir.chdir("./java/")
+      system "echo", "================ TEST JAVA ==============="
+      system "pwd"
       system "mvn", "test"
       system "mvn", "install"
       system "mvn", "package"
-      system "cp" , "./core/target/protobuf-java-3.0.0.jar",            "#{prefix}/lib/"
-      system "cp" , "./core/target/protobuf-java-3.0.0.util-3.0.0.jar", "#{prefix}/lib/"
+      system "cp" , "#{buildpath}/core/target/protobuf-java-3.3.0.jar",      "#{prefix}/lib/"
+      system "cp" , "#{buildpath}/util/target/protobuf-java-util-3.3.0.jar", "#{prefix}/lib/"
     end
 
   end
