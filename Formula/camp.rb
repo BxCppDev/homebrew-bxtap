@@ -16,9 +16,9 @@ class Camp < Formula
   depends_on "doxygen" => [:optional, :build]
 
   if build.cxx11?
-    depends_on "bxcppdev/bxcppdev/boost" => "c++11"
+    depends_on "bxcppdev/bxtap/boost" => "c++11"
   else
-    depends_on "bxcppdev/bxcppdev/boost"
+    depends_on "bxcppdev/bxtap/boost"
   end
 
   def install
