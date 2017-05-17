@@ -51,7 +51,7 @@ class Geant4 < Formula
 
   def install
     ENV.cxx11 if build.cxx11?
-    mkdir "geant4-build" do
+    mkdir "brew-geant4-build" do
       args = std_cmake_args
       args << "-DCMAKE_INSTALL_LIBDIR=lib"
       args << "-DCMAKE_BUILD_WITH_INSTALL_RPATH=ON"
@@ -59,6 +59,7 @@ class Geant4 < Formula
       args << "-DGEANT4_INSTALL_DATA=ON"
       args << "-DGEANT4_INSTALL_DATA_TIMEOUT=86400" if build.with? "notimeout"
       args << "-DGEANT4_USE_SYSTEM_CLHEP=ON"
+      args << "-DCLHEP_ROOT_DIR=#{HOMEBREW_PREFIX}/lib"
       args << "-DGEANT4_USE_SYSTEM_EXPAT=ON"
       # args << "-DGEANT4_USE_SYSTEM_ZLIB=ON"
 
