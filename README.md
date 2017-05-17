@@ -123,14 +123,13 @@ $ brew tap bxcppdev/homebrew-bxtap
 The tap is downloaded from ``https://github.com/BxCppDev/homebrew-bxtap.git`` and
 installed in the ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap`` directory.
 
-If you want to install a local copy of tap, before to push it on GitHub, run:
+If you want to install a local copy of tap, before to push it on the origin GitHub repository, run:
 
 ```sh
 $ brew tap bxcppdev/homebrew-bxtap file:///path/to/your/homebrew-bxtap/local/git/repo
 ```
 
-you'll be able to locally test a new formula before to push it on the origin GitHub repository.
-
+you'll be able to locally test a new local formula.
 
 4. Unregister the ``homebrew-bxtap`` tap from your Linuxbrew package manager:
 
@@ -144,7 +143,7 @@ $ brew untap bxcppdev/homebrew-bxtap
   C++ library for JSON serialization.
   Installation of the 0.1.0 version (C++11):
 
-```sh
+  ```sh
 $ brew install bxcppdev/bxtap/bxjsontools
 ```
 
@@ -152,8 +151,8 @@ $ brew install bxcppdev/bxtap/bxjsontools
   C++ library for RabbitQ client and server management.
   Installation of the 0.3.0 version:
 
-```sh
-$ brew install bxcppdev/bxtap/bxrabbitmq
+  ```sh
+$ brew install bxcppdev/bxtap/bxrabbitmq [--with-manager]
 ```
 
 * ``Protobuf``: The [Protocol Buffers](https://developers.google.com/protocol-buffers/)
@@ -206,7 +205,7 @@ $ brew install bxcppdev/bxtap/xerces-c --cxx11
 $ brew install bxcppdev/bxtap/geant4 --cxx11
 ```
 
-* ``ROOT6``: The [Root](http://root.cern.ch/) C++ library.
+* ``Root`` (version 6): The [Root](http://root.cern.ch/) C++ library.
   Installation of 6.08.06 version:
 
 ```sh
