@@ -142,16 +142,14 @@ $ brew untap bxcppdev/homebrew-bxtap
 * ``BxJsontools``: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/)
   C++ library for JSON serialization.
   Installation of the 0.1.0 version (C++11):
-
-  ```sh
+```sh
 $ brew install bxcppdev/bxtap/bxjsontools
 ```
 
 * ``BxRabbitMQ``: The [BxRabbitMQ](https://github.com/BxCppDev/bxrabbitmq/)
   C++ library for RabbitQ client and server management.
   Installation of the 0.3.0 version:
-
-  ```sh
+```sh
 $ brew install bxcppdev/bxtap/bxrabbitmq [--with-manager]
 ```
 
