@@ -1,6 +1,6 @@
 # homebrew-bxtap : Linuxbrew tap for the BxCppDev software suite
 
-## Linuxbrew tap
+## Linuxbrew tap for the Bayeux software suite
 
 This tap provides a set of Linuxbrew formulae to ease the installation
 of the software packages released by the BxCppDev group.
@@ -9,15 +9,14 @@ We assume you have installed Linuxbrew on your system. Our philosophy is
 not to *activate* Linuxbrew per default but only when it is needed on your
 system. Recommended Linuxbrew installation and setup procedure is given below.
 
+## Useful links:
 
-Useful link:
-
+* [Linuxbrew](http://linuxbrew.sh/)
 * Brew tap [documentation](https://github.com/Homebrew/brew/blob/master/docs/brew-tap.md)
-
+* Brew formulae [documentation](https://github.com/Homebrew/brew/raw/master/docs/Formula-Cookbook.md)
+* [SuperNEMO-DBD](https://github.com/SuperNEMO-DBD)
 
 ## Installing Linuxbrew on your system
-
-Please have a look on  the [Linuxbrew](http://linuxbrew.sh/) site.
 
 ### Installation steps
 
@@ -121,7 +120,17 @@ $ linuxbrew_setup
 $ brew tap bxcppdev/homebrew-bxtap
 ```
 
-The new tap is now installed in ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap``.
+The tap is downloaded from ``https://github.com/BxCppDev/homebrew-bxtap.git`` and
+installed in the ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap`` directory.
+
+If you want to install a local copy of tap, before to push it on GitHub, run:
+
+```sh
+$ brew tap bxcppdev/homebrew-bxtap file:///path/to/your/homebrew-bxtap/local/git/repo
+```
+
+you'll be able to locally test a new formula before to push it on the origin GitHub repository.
+
 
 4. Unregister the ``homebrew-bxtap`` tap from your Linuxbrew package manager:
 
@@ -143,4 +152,19 @@ $ brew install bxcppdev/bxtap/bxjsontools
 
 ```sh
 $ brew install bxcppdev/bxtap/bxrabbitmq
+```
+
+* ``protobuf@3.3.0.rb``: The [Protocol Buffers](https://developers.google.com/protocol-buffers/)
+  C++ library.
+  Installation of the stable version:
+
+```sh
+$ brew install bxcppdev/bxtap/protobuf@3.3.0
+```
+
+* ``bxprotobuftools``: The [BxProtobuftools](https://github.com/BxCppDev/bxprotobuftools/) C++ library for Protocol Buffer based serialization.
+  Installation of the stable version:
+
+```sh
+$ brew install bxcppdev/bxtap/bxprotobuftools
 ```
