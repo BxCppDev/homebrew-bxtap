@@ -4,7 +4,7 @@ class Bxprotobuftools < Formula
   url "https://github.com/BxCppDev/bxprotobuftools/archive/0.2.0.tar.gz"
   version "0.2.0"
   sha256 "47f4b4010a96876bae8673531ce85469848fc1dc0d9c05c8dc0d5bcced2ffd16"
-  head "https://github.com/BxCppDev/bxprotobuftools.git" :branch => "develop"
+  head "https://github.com/BxCppDev/bxprotobuftools.git", :branch => "develop"
 
   needs :cxx11
   depends_on "cmake" => :build
