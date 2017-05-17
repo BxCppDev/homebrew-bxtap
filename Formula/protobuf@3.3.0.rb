@@ -34,9 +34,9 @@ class ProtobufAT330 < Formula
     system "make", "install"
     if build.with? "java"
       Dir.chdir("./java/")
-      system "echo", "================ TEST JAVA ==============="
-      system "pwd"
-      system "echo", "#{buildpath}"
+      # system "echo", "================ TEST JAVA ==============="
+      # system "pwd"
+      # system "echo", "#{buildpath}"
       system "mvn", "test"
       system "mvn", "install"
       system "mvn", "package"
