@@ -140,31 +140,82 @@ $ brew untap bxcppdev/homebrew-bxtap
 
 ## List of available formulae
 
-* ``bxjsontools``: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/) C++ library for JSON serialization.
-  Installation of the stable version:
+* ``BxJsontools``: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/)
+  C++ library for JSON serialization.
+  Installation of the 0.1.0 version (C++11):
 
 ```sh
 $ brew install bxcppdev/bxtap/bxjsontools
 ```
 
-* ``bxrabbitmq``: The [BxRabbitMQ](https://github.com/BxCppDev/bxrabbitmq/) C++ library for RabbitQ client and server management.
-  Installation of the stable version:
+* ``BxRabbitMQ``: The [BxRabbitMQ](https://github.com/BxCppDev/bxrabbitmq/)
+  C++ library for RabbitQ client and server management.
+  Installation of the 0.3.0 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/bxrabbitmq
 ```
 
-* ``protobuf@3.3.0.rb``: The [Protocol Buffers](https://developers.google.com/protocol-buffers/)
+* ``Protobuf``: The [Protocol Buffers](https://developers.google.com/protocol-buffers/)
   C++ library.
-  Installation of the stable version:
+  Installation of the 3.3.0 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/protobuf@3.3.0
 ```
 
-* ``bxprotobuftools``: The [BxProtobuftools](https://github.com/BxCppDev/bxprotobuftools/) C++ library for Protocol Buffer based serialization.
-  Installation of the stable version:
+* ``BxProtobuftools``: The [BxProtobuftools](https://github.com/BxCppDev/bxprotobuftools/) C++ library for Protocol Buffer based serialization.
+  Installation of the 0.2.0 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/bxprotobuftools
+```
+
+* ``Boost``: The [Boost](https://www.boost.org/) C++ library.
+  Installation of 1.63 version:
+
+```sh
+$ brew install bxcppdev/bxtap/boost --cxx11
+```
+
+* ``bxcppdev/bxtap/camp``: The [Camp](https://github.com/tegesoft/camp) C++ library.
+  Installation of 0.8.0 version:
+
+```sh
+$ brew install bxcppdev/bxtap/camp --cxx11
+```
+
+* ``CLHEP``: The [CLHEP](http://proj-clhep.web.cern.ch/proj-clhep/) C++ library.
+  Installation of 2.1.3.1 version:
+
+```sh
+$ brew install bxcppdev/bxtap/clhep --cxx11
+```
+
+* ``Xerces-C``: The [Xerces-C](https://xerces.apache.org/xerces-c/) C++ library.
+  Installation of 3.1.4 version:
+
+```sh
+$ brew install bxcppdev/bxtap/xerces-c --cxx11
+```
+
+* ``Geant4``: The [Geant4](http://geant4.cern.ch/) C++ library.
+  Installation of 9.6.4 version:
+
+```sh
+$ brew install bxcppdev/bxtap/geant4 --cxx11
+```
+
+* ``ROOT6``: The [Root](http://root.cern.ch/) C++ library.
+  Installation of 6.08.06 version:
+
+```sh
+$ brew install bxcppdev/bxtap/root6 --cxx11
+```
+
+* ``Qt5`` : The [Qt5](http://qt-project.org/) C++ core libraries.
+  Installation of 5.8.0 version:
+
+```sh
+$ brew install bxcppdev/bxtap/qt5-base --cxx11
 ```
