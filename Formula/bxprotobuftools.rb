@@ -16,7 +16,7 @@ class Bxprotobuftools < Formula
     ENV.cxx11
     mkdir "brew-bxprotobuftools-build" do
       args = std_cmake_args
-      args << "-DPROTOBUF_ROOT=#{HOMEBREW_PREFIX}/protobuf@3.3.0/3.3.0/"
+      args << "-DPROTOBUF_ROOT=#{HOMEBREW_PREFIX}/Cellar/protobuf@3.3.0/3.3.0"
       args << "-DBXPROTOBUFTOOLS_ENABLE_TESTING=OFF" if build.without? "test"
       system "cmake", "..", *args
       system "make"
