@@ -36,7 +36,8 @@ $ git clone https://github.com/Linuxbrew/brew.git ${HOME}/linuxbrew
 ```
 
    *Note:* Here the ``HOME`` directory can be changed to any location of your filesystem
-   for which you have write access.
+   for which you have write access and also enough available storage capacity, depending on which software you
+   will need to manage through Linuxbrew (several Gb sounds reasonnable).
 
 3. Edit your ``~/.bashrc`` file and create a bash setup function
    for Linuxbrew:
@@ -73,6 +74,21 @@ Then try install a package:
 $ brew install hello
 ```
 
+### Optional setup of temporary and cache directories
+
+Linuxbrew uses  default locations to store  downloaded files (default:
+``~/.cache/Homebrew/`̀  on  Linux)   and  temporary  build  directories
+(default:  ``/tmp``).  It  may  occurs these  default  paths  are  not
+suitable on your system or have  not enough storage capacity.  You can
+explicitely define dedicated  directories to be used  during the build
+process. For that, define the two following environment variables:
+
+```sh
+$ export HOMEBREW_TEMP=/some/temporary/base/directory/for/brew/driven/software/installation
+$ export HOMEBREW_CACHE=/some/cache/directory/for/brew/downloads
+```
+Such lines can be added in the setup script shown above (in function ``do_linuxbrew_setup``).
+
 ### Setup Linuxbrew
 
 Each time you need to use Linuxbrew and software packages managed by Linuxbrew, you
@@ -89,12 +105,18 @@ $ echo $PATH
 /path/to/Linuxbrew/installation/directory/bin:/other/directories/in/your/path...
 ```
 
-The ``brew`` executable will be immediately available from:
+The ``brew`` executable will be available from:
 
 ```sh
 $ which brew
 /path/to/Linuxbrew/installation/directory/bin/brew.
 ```
+and you will be able to  immediately enter a brew shell when needed:
+```sh
+$ brew sh
+```
+
+This is it! You are ready to enjoy Linuxbrew.
 
 ## Installation of ``homebrew-bxtap``
 
@@ -125,8 +147,9 @@ $ brew tap bxcppdev/homebrew-bxtap
 The tap is downloaded from ``https://github.com/BxCppDev/homebrew-bxtap.git`` and
 installed in the ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap`` directory.
 
-If you want to install a local copy of tap (for example before to push it on the origin GitHub repository),
-please run:
+If you want to install a local copy of tap (for example before to push
+it, as a BxCppDev developper, on the origin GitHub repository), please
+run:
 
 ```sh
 $ brew tap bxcppdev/homebrew-bxtap file:///path/to/your/homebrew-bxtap/local/git/repo
@@ -146,7 +169,7 @@ $ brew untap bxcppdev/homebrew-bxtap
 You can print a list of supported formulae published by ``bxcppdev/bxtap`` :
 
 ```sh
-$ brew search bxcppdev/bxtap
+$ brew search bxcppdev/bxtap/
 ```
 
 Details on supported formulae:
