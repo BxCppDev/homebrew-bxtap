@@ -3,7 +3,7 @@
 # Table of Contents
 1. [Introduction](#introduction)
 2. [Installing Linuxbrew on your system](#installing-linuxbrew-on-your-system)
-3. [Installation of ``homebrew-bxtap``](#installation-of-homebrew-bxtap)
+3. [Installation of the tap](#installation-of-the-tap)
 4. [List of available formulae](#list-of-available-formulae)
 
 
@@ -118,7 +118,7 @@ $ brew sh
 
 This is it! You are ready to enjoy Linuxbrew.
 
-## Installation of ``homebrew-bxtap``
+## Installation of the tap
 
 Once installed and setup Linuxbrew on your system, you can install the ``homebrew-bxtap`` tap.
 
