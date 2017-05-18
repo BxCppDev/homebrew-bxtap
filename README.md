@@ -181,42 +181,42 @@ $ brew install bxcppdev/bxtap/bxprotobuftools
 ```
 
 * ``Boost``: The [Boost](https://www.boost.org/) C++ library.
-  Installation of 1.63 version:
+  Installation of the 1.63 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/boost --cxx11
 ```
 
 * ``bxcppdev/bxtap/camp``: The [Camp](https://github.com/tegesoft/camp) C++ library.
-  Installation of 0.8.0 version:
+  Installation of the 0.8.0 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/camp --cxx11
 ```
 
 * ``CLHEP``: The [CLHEP](http://proj-clhep.web.cern.ch/proj-clhep/) C++ library.
-  Installation of 2.1.3.1 version:
+  Installation of the 2.1.3.1 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/clhep --cxx11
 ```
 
 * ``Xerces-C``: The [Xerces-C](https://xerces.apache.org/xerces-c/) C++ library.
-  Installation of 3.1.4 version:
+  Installation of the 3.1.4 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/xerces-c --cxx11
 ```
 
 * ``Geant4``: The [Geant4](http://geant4.cern.ch/) C++ library.
-  Installation of 9.6.4 version:
+  Installation of the 9.6.4 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/geant4 --cxx11
 ```
 
 * ``Root`` (version 6): The [Root](http://root.cern.ch/) C++ library.
-  Installation of 6.08.06 version:
+  Installation of the 6.08.06 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/root6 --cxx11
