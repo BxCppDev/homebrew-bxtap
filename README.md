@@ -1,5 +1,12 @@
 # homebrew-bxtap : Linuxbrew tap for the BxCppDev software suite
 
+# Table of Contents
+1. [Introduction](#introduction)
+2. [Installing Linuxbrew on your system](#installing-linuxbrew-on-your-system)
+3. [Installation of ``homebrew-bxtap``](#installation-of-homebrew-bxtap)
+4. [List of available formulae](#list-of-available-formulae)
+
+
 ## Introduction
 
 This tap provides a set of Linuxbrew formulae to ease the installation
@@ -9,13 +16,6 @@ We assume you have installed  Linuxbrew on your system. Our philosophy
 is not to *activate* Linuxbrew per  default but only when it is needed
 on your system. Recommended Linuxbrew installation and setup procedure
 is given below.
-
-## Useful links:
-
-* [Linuxbrew](http://linuxbrew.sh/)
-  * Brew tap [documentation](https://github.com/Homebrew/brew/blob/master/docs/brew-tap.md)
-  * Brew formulae [documentation](https://github.com/Homebrew/brew/raw/master/docs/Formula-Cookbook.md)
-* [SuperNEMO-DBD](https://github.com/SuperNEMO-DBD) : original work on Linuxbrew support for [Bayeux](https://github.com/BxCppDev/Bayeux)
 
 ## Installing Linuxbrew on your system
 
@@ -251,3 +251,10 @@ $ brew install bxcppdev/bxtap/root6 --cxx11
 ```sh
 $ brew install bxcppdev/bxtap/qt5-base --cxx11
 ```
+
+## Useful links:
+
+* [Linuxbrew](http://linuxbrew.sh/)
+  * Brew tap [documentation](https://github.com/Homebrew/brew/blob/master/docs/brew-tap.md)
+  * Brew formulae [documentation](https://github.com/Homebrew/brew/raw/master/docs/Formula-Cookbook.md)
+* [SuperNEMO-DBD](https://github.com/SuperNEMO-DBD) : original work on Linuxbrew support for [Bayeux](https://github.com/BxCppDev/Bayeux)
