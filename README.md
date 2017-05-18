@@ -5,6 +5,7 @@
 2. [Installing Linuxbrew on your system](#installing-linuxbrew-on-your-system)
 3. [Installation of the tap](#installation-of-the-tap)
 4. [List of available formulae](#list-of-available-formulae)
+5. [Useful links](#useful-links)
 
 
 ## Introduction
@@ -252,7 +253,7 @@ $ brew install bxcppdev/bxtap/root6 --cxx11
 $ brew install bxcppdev/bxtap/qt5-base --cxx11
 ```
 
-## Useful links:
+## Useful links
 
 * [Linuxbrew](http://linuxbrew.sh/)
   * Brew tap [documentation](https://github.com/Homebrew/brew/blob/master/docs/brew-tap.md)
