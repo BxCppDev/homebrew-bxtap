@@ -1,26 +1,27 @@
 # homebrew-bxtap : Linuxbrew tap for the BxCppDev software suite
 
-## Linuxbrew tap for the Bayeux software suite
+## Introduction
 
 This tap provides a set of Linuxbrew formulae to ease the installation
 of the software packages released by the BxCppDev group.
 
-We assume you have installed Linuxbrew on your system. Our philosophy is
-not to *activate* Linuxbrew per default but only when it is needed on your
-system. Recommended Linuxbrew installation and setup procedure is given below.
+We assume you have installed  Linuxbrew on your system. Our philosophy
+is not to *activate* Linuxbrew per  default but only when it is needed
+on your system. Recommended Linuxbrew installation and setup procedure
+is given below.
 
 ## Useful links:
 
 * [Linuxbrew](http://linuxbrew.sh/)
-* Brew tap [documentation](https://github.com/Homebrew/brew/blob/master/docs/brew-tap.md)
-* Brew formulae [documentation](https://github.com/Homebrew/brew/raw/master/docs/Formula-Cookbook.md)
-* [SuperNEMO-DBD](https://github.com/SuperNEMO-DBD)
+  * Brew tap [documentation](https://github.com/Homebrew/brew/blob/master/docs/brew-tap.md)
+  * Brew formulae [documentation](https://github.com/Homebrew/brew/raw/master/docs/Formula-Cookbook.md)
+* [SuperNEMO-DBD](https://github.com/SuperNEMO-DBD) : original work on Linuxbrew support for [Bayeux](https://github.com/BxCppDev/Bayeux)
 
 ## Installing Linuxbrew on your system
 
-### Installation steps
+### Installation steps for Ubuntu Linux 16.04:
 
-Example for Ubuntu Linux 16.04:
+Here we assume you use a bash shell:
 
 1. Install dependencies:
 
@@ -37,7 +38,7 @@ $ git clone https://github.com/Linuxbrew/brew.git ${HOME}/linuxbrew
    *Note:* Here the ``HOME`` directory can be changed to any location of your filesystem
    for which you have write access.
 
-3. Edit your ``~/.bashrc`` file and create a Bash setup function
+3. Edit your ``~/.bashrc`` file and create a bash setup function
    for Linuxbrew:
 
 ```sh
@@ -60,7 +61,7 @@ alias linuxbrew_setup='do_linuxbrew_setup'
 
 ### Test Linuxbrew after installation
 
-From a bare shell, activate your Linuxbrew system:
+From a bare shell, *activate* your Linuxbrew system:
 
 ```sh
 $ export PATH="${HOME}/linuxbrew/bin:${PATH}
@@ -85,7 +86,7 @@ Your ``PATH`` should then be updated to something like:
 
 ```sh
 $ echo $PATH
-/path/to/Linuxbrew/installation/directory/bin:..
+/path/to/Linuxbrew/installation/directory/bin:/other/directories/in/your/path...
 ```
 
 The ``brew`` executable will be immediately available from:
@@ -97,11 +98,12 @@ $ which brew
 
 ## Installation of ``homebrew-bxtap``
 
-Once installed Linuxbrew on your system, you can install the ``homebrew-bxtap`` tap.
+Once installed and setup Linuxbrew on your system, you can install the ``homebrew-bxtap`` tap.
 
 ### Installation steps
 
-1. Clone the ``homebrew-bxtap`` GitHub repository:
+1. Clone the ``homebrew-bxtap`` GitHub repository into some local repository of your choice. Here we use
+   ``${HOME}/BxCppDev/`` as the base directory for hosting Git repos from the ``BxCppDev`` organization:
 
 ```sh
 $ mkdir -p ${HOME}/BxCppDev/
@@ -123,21 +125,31 @@ $ brew tap bxcppdev/homebrew-bxtap
 The tap is downloaded from ``https://github.com/BxCppDev/homebrew-bxtap.git`` and
 installed in the ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap`` directory.
 
-If you want to install a local copy of tap, before to push it on the origin GitHub repository, run:
+If you want to install a local copy of tap (for example before to push it on the origin GitHub repository),
+please run:
 
 ```sh
 $ brew tap bxcppdev/homebrew-bxtap file:///path/to/your/homebrew-bxtap/local/git/repo
 ```
 
-you'll be able to locally test a new local formula.
+you'll be able to locally debug and test a new formula from your local repository.
 
-4. Unregister the ``homebrew-bxtap`` tap from your Linuxbrew package manager:
+4. You can deregister the ``homebrew-bxtap`` tap from your Linuxbrew package manager:
 
 ```sh
 $ brew untap bxcppdev/homebrew-bxtap
 ```
 
 ## List of available formulae
+
+
+You can print a list of supported formulae published by ``bxcppdev/bxtap`` :
+
+```sh
+$ brew search bxcppdev/bxtap
+```
+
+Details on supported formulae:
 
 * ``BxJsontools``: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/)
   C++ library for JSON serialization.
