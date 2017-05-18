@@ -167,10 +167,11 @@ $ brew untap bxcppdev/homebrew-bxtap
 ## List of available formulae
 
 
-You can print a list of supported formulae published by ``bxcppdev/bxtap`` :
+You can print the list of supported formulae published by ``bxcppdev/bxtap`` :
 
 ```sh
 $ brew search bxcppdev/bxtap/
+...
 ```
 
 Details on supported formulae:
@@ -211,35 +212,36 @@ $ brew install bxcppdev/bxtap/bxprotobuftools
 $ brew install bxcppdev/bxtap/boost --cxx11
 ```
 
-* ``bxcppdev/bxtap/camp``: The [Camp](https://github.com/tegesoft/camp) C++ library.
+* ``Camp``: The [Camp](https://github.com/tegesoft/camp) C++ reflection library.
   Installation of the 0.8.0 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/camp --cxx11
 ```
 
-* ``CLHEP``: The [CLHEP](http://proj-clhep.web.cern.ch/proj-clhep/) C++ library.
+* ``CLHEP``: The [CLHEP](http://proj-clhep.web.cern.ch/proj-clhep/) C++ library for High Energy Physics.
   Installation of the 2.1.3.1 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/clhep --cxx11
 ```
 
-* ``Xerces-C``: The [Xerces-C](https://xerces.apache.org/xerces-c/) C++ library.
+* ``Xerces-C``: The [Xerces-C](https://xerces.apache.org/xerces-c/) XML Parser.
   Installation of the 3.1.4 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/xerces-c --cxx11
 ```
 
-* ``Geant4``: The [Geant4](http://geant4.cern.ch/) C++ library.
+* ``Geant4``: The [Geant4](http://geant4.cern.ch/) C++ toolkit for the simulation of the
+  passage of particles through matter.
   Installation of the 9.6.4 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/geant4 --cxx11
 ```
 
-* ``Root`` (version 6): The [Root](http://root.cern.ch/) C++ library.
+* ``Root`` (version 6): The [Root](http://root.cern.ch/) Data Analysis Framework.
   Installation of the 6.08.06 version:
 
 ```sh
