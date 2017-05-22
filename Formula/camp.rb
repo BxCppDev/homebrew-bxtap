@@ -3,7 +3,7 @@ class Camp < Formula
   homepage "https://github.com/tegesoft/camp"
   url "https://github.com/tegesoft/camp.git",
       :using => :git,
-      :tag => "0.8.0"
+      :revision => "a07257adfde4fb8503bbb9675f83d727e3d65e22"
   version "0.8.0"
 
   option :cxx11
