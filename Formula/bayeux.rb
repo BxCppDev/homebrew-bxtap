@@ -15,26 +15,26 @@ class Bayeux < Formula
     url "https://github.com/BxCppDev/Bayeux.git"
   end
 
-  depends_on "cmake" => :build
-
   option "with-devtools", "Build debug tools for Bayeux developers"
 
-  option "with-brew-doxygen", "Use Linuxbrew Doxygen"
-  option "with-brew-gsl", "Use Linuxbrew GNU Scientific Library (GSL)"
-  option "with-brew-readline", "Use Linuxbrew readline Library"
-  option "with-brew-qt5", "Use Linuxbrew QT5 Core Libraries"
+  depends_on "cmake" => :build
 
-  if  build.with? "brew-doxygen"
+  # option "with-brew-doxygen", "Use Linuxbrew Doxygen"
+  # option "with-brew-gsl", "Use Linuxbrew GNU Scientific Library (GSL)"
+  # option "with-brew-readline", "Use Linuxbrew readline Library"
+  # option "with-brew-qt5", "Use Linuxbrew QT5 Core Libraries"
+
+  # if  build.with? "brew-doxygen"
     depends_on "bxcppdev/bxtap/doxygen" => :build
-  end
+  # end
 
-  if  build.with? "brew-gsl"
+  # if  build.with? "brew-gsl"
     depends_on "gsl"
-  end
+  # end
 
-  if  build.with? "brew-readline"
+  # if  build.with? "brew-readline"
     depends_on "readline"
-  end
+  # end
 
   needs :cxx11
   depends_on "icu4c" => "c++11"
