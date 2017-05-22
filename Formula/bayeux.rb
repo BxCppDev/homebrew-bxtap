@@ -16,25 +16,12 @@ class Bayeux < Formula
   end
 
   option "with-devtools", "Build debug tools for Bayeux developers"
+  option "without-test", "Inhibit test programs"
 
   depends_on "cmake" => :build
-
-  # option "with-brew-doxygen", "Use Linuxbrew Doxygen"
-  # option "with-brew-gsl", "Use Linuxbrew GNU Scientific Library (GSL)"
-  # option "with-brew-readline", "Use Linuxbrew readline Library"
-  # option "with-brew-qt5", "Use Linuxbrew QT5 Core Libraries"
-
-  # if  build.with? "brew-doxygen"
-    depends_on "bxcppdev/bxtap/doxygen" => :build
-  # end
-
-  # if  build.with? "brew-gsl"
-    depends_on "gsl"
-  # end
-
-  # if  build.with? "brew-readline"
-    depends_on "readline"
-  # end
+  depends_on "doxygen" => :build
+  depends_on "gsl"
+  depends_on "readline"
 
   needs :cxx11
   depends_on "icu4c" => "c++11"
@@ -45,10 +32,6 @@ class Bayeux < Formula
   depends_on "bxcppdev/bxtap/root6"
   depends_on "bxcppdev/bxtap/qt5-base"
 
-  # if  build.with? "brew-qt5"
-  #   depends_on "bxcppdev/bxtap/qt5-base"
-  # end
-
   def install
     ENV.cxx11
     mkdir "bayeux.build" do
@@ -58,7 +41,11 @@ class Bayeux < Formula
       bx_cmake_args << "-DBAYEUX_COMPILER_ERROR_ON_WARNING=OFF"
       bx_cmake_args << "-DBAYEUX_WITH_QT_GUI=ON"
       bx_cmake_args << "-DBAYEUX_WITH_DEVELOPER_TOOLS=OFF" unless build.with? "devtools"
+      bx_cmake_args << "-DBAYEUX_ENABLE_TESTING=OFF" if build.without? "test"
       system "cmake", "..", *bx_cmake_args
+      if build.with? "test"
+        system "make", "test"
+      end
       system "make", "install"
     end
   end
