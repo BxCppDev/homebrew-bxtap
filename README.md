@@ -51,7 +51,7 @@ function do_linuxbrew_setup()
      echo >&2 "[warning] do_linuxbrew_setup: Linuxbrew is already setup!"
      return 1
   fi
-  export LINUXBREW_INSTALL_DIR="${HOME}/Linuxbrew" # Change this to suit your Linuxbrew installation path
+  export LINUXBREW_INSTALL_DIR="${HOME}/linuxbrew" # Change this to suit your Linuxbrew installation path
   export PATH="${LINUXBREW_INSTALL_DIR}/bin:${PATH}"
   export MANPATH="${LINUXBREW_INSTALL_DIR}/share/man:${MANPATH}"
   export INFOPATH="${LINUXBREW_INSTALL_DIR}/share/info:${INFOPATH}"
@@ -121,36 +121,32 @@ This is it! You are ready to enjoy Linuxbrew.
 
 ## Installation of the tap
 
-Once installed and setup Linuxbrew on your system, you can install the ``homebrew-bxtap`` tap.
+Once  installed   and  setup  Linuxbrew   on  your  system,   you  can
+install/register   the  ``homebrew-bxtap``   tap  in   your  Linuxbrew
+repository.
 
 ### Installation steps
 
-1. Clone the ``homebrew-bxtap`` GitHub repository into some local repository of your choice. Here we use
-   ``${HOME}/BxCppDev/`` as the base directory for hosting Git repos from the ``BxCppDev`` organization:
-
-```sh
-$ mkdir -p ${HOME}/BxCppDev/
-$ git clone https://github.com/BxCppDev/homebrew-bxtap.git ${HOME}/BxCppDev/homebrew-bxtap/
-```
-
-2. Setup Linuxbrew:
+1. Setup Linuxbrew:
 
 ```sh
 $ linuxbrew_setup
 ```
 
-3. Register the ``homebrew-bxtap`` tap in your Linuxbrew package manager:
+2. Register the ``homebrew-bxtap`` tap in your Linuxbrew package manager:
 
 ```sh
 $ brew tap bxcppdev/homebrew-bxtap
 ```
 
-The tap is downloaded from ``https://github.com/BxCppDev/homebrew-bxtap.git`` and
-installed in the ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap`` directory.
+The            tap            is            downloaded            from
+``https://github.com/BxCppDev/homebrew-bxtap.git``  and  installed  in
+the         ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap``
+directory.
 
-If you want to install a local copy of tap (for example before to push
-it, as a BxCppDev developper, on the origin GitHub repository), please
-run:
+3. If you want  to install a local  copy of the tap,  for example because
+you want, as a BxCppDev developper or contributor, to test a brand new
+formula, please run:
 
 ```sh
 $ brew tap bxcppdev/homebrew-bxtap file:///path/to/your/homebrew-bxtap/local/git/repo
@@ -254,6 +250,10 @@ $ brew install bxcppdev/bxtap/root6 --cxx11
 ```sh
 $ brew install bxcppdev/bxtap/qt5-base --cxx11
 ```
+
+* **Bayeux** : not available yet.
+
+* **Vire** : not available yet.
 
 ## Useful links
 
