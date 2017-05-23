@@ -111,7 +111,7 @@ The ``brew`` executable will be available from:
 
 ```sh
 $ which brew
-/path/to/Linuxbrew/installation/directory/bin/brew.
+/path/to/Linuxbrew/installation/directory/bin/brew
 ```
 and you will be able to  immediately enter a brew shell when needed:
 ```sh
@@ -123,7 +123,7 @@ This is it! You are ready to enjoy Linuxbrew.
 ## Installation of the tap
 
 Once  installed   and  setup  Linuxbrew   on  your  system,   you  can
-install/register   the  ``homebrew-bxtap``   tap  in   your  Linuxbrew
+install/register   the  ``bxcppdev/homebrew-bxtap``   tap  in   your  Linuxbrew
 repository.
 
 ### Installation steps
@@ -140,20 +140,20 @@ $ linuxbrew_setup
 $ brew tap bxcppdev/homebrew-bxtap
 ```
 
-The            tap            is            downloaded            from
-``https://github.com/BxCppDev/homebrew-bxtap.git``  and  installed  in
-the         ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap``
-directory.
+   The            tap            is            downloaded            from
+	``https://github.com/BxCppDev/homebrew-bxtap.git``  and  installed  in
+	the         ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap``
+	directory.
 
 3. If you want  to install a local  copy of the tap,  for example because
-you want, as a BxCppDev developper or contributor, to test a brand new
-formula, please run:
+   you want, as a BxCppDev developper or contributor, to test a brand new
+   formula, please run:
 
 ```sh
 $ brew tap bxcppdev/homebrew-bxtap file:///path/to/your/homebrew-bxtap/local/git/repo
 ```
 
-you'll be able to locally debug and test a new formula from your local repository.
+   You'll be able to locally debug and test a new formula from your local repository.
 
 4. You can deregister the ``homebrew-bxtap`` tap from your Linuxbrew package manager:
 
