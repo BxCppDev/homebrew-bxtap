@@ -187,7 +187,7 @@ $ brew install bxcppdev/bxtap/bxrabbitmq [--with-manager]
 ```
 
 * **Protobuf**: The [Protocol Buffers](https://developers.google.com/protocol-buffers/)
-  C++ library.
+  C++ and Java libraries.
   Installation of the 3.3.0 version:
 
 ```sh
@@ -205,28 +205,28 @@ $ brew install bxcppdev/bxtap/bxprotobuftools
   Installation of the 1.63 version:
 
 ```sh
-$ brew install bxcppdev/bxtap/boost --cxx11
+$ brew install bxcppdev/bxtap/boost --c++11
 ```
 
 * **Camp**: The [Camp](https://github.com/tegesoft/camp) C++ reflection library.
   Installation of the 0.8.0 version:
 
 ```sh
-$ brew install bxcppdev/bxtap/camp --cxx11
+$ brew install bxcppdev/bxtap/camp --c++11
 ```
 
 * **CLHEP**: The [CLHEP](http://proj-clhep.web.cern.ch/proj-clhep/) C++ library for High Energy Physics.
   Installation of the 2.1.3.1 version:
 
 ```sh
-$ brew install bxcppdev/bxtap/clhep --cxx11
+$ brew install bxcppdev/bxtap/clhep --c++11
 ```
 
 * **Xerces-C**: The [Xerces-C](https://xerces.apache.org/xerces-c/) XML Parser.
   Installation of the 3.1.4 version:
 
 ```sh
-$ brew install bxcppdev/bxtap/xerces-c --cxx11
+$ brew install bxcppdev/bxtap/xerces-c --c++11
 ```
 
 * **Geant4**: The [Geant4](http://geant4.cern.ch/) C++ toolkit for the simulation of the
@@ -234,26 +234,56 @@ $ brew install bxcppdev/bxtap/xerces-c --cxx11
   Installation of the 9.6.4 version:
 
 ```sh
-$ brew install bxcppdev/bxtap/geant4 --cxx11
+$ brew install bxcppdev/bxtap/geant4 --c++11
 ```
 
 * **Root** (version 6): The [Root](http://root.cern.ch/) Data Analysis Framework.
   Installation of the 6.08.06 version:
 
 ```sh
-$ brew install bxcppdev/bxtap/root6 --cxx11
+$ brew install bxcppdev/bxtap/root6 --c++11
 ```
 
 * **Qt5** : The [Qt5](http://qt-project.org/) C++ core libraries.
-  Installation of 5.8.0 version:
+  Installation of the 5.8.0 version:
 
 ```sh
-$ brew install bxcppdev/bxtap/qt5-base --cxx11
+$ brew install bxcppdev/bxtap/qt5-base --c++11
 ```
 
-* **Bayeux** : not available yet.
+* **Bayeux** (version 3.0) : The [Bayeux](http://github.com/BxCppDev) C++ library.
+  Installation of the 3.0.0 version:
+
+```sh
+$ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
+```
 
 * **Vire** : not available yet.
+
+## Examples
+
+
+### Install Bayeux
+
+Bayeux 3.0.0:
+-------------
+
+```sh
+$ brew install cmake
+$ brew install doxygen --build-from-source
+$ brew install bxcppdev/bxtap/icu4c --c++11
+$ brew install bxcppdev/bxtap/boost --c++11 --with-icu4c
+$ brew install bxcppdev/bxtap/camp --c++11
+$ brew install bxcppdev/bxtap/clhep --c++11
+$ brew install bxcppdev/bxtap/geant4 --c++11
+$ brew install bxcppdev/bxtap/root6
+$ brew install bxcppdev/bxtap/qt5-base
+$ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
+```
+
+### Install Vire
+
+WIP
 
 ## Useful links
 
