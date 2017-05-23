@@ -5,7 +5,8 @@
 2. [Installing Linuxbrew on your system](#installing-linuxbrew-on-your-system)
 3. [Installation of the tap](#installation-of-the-tap)
 4. [List of available formulae](#list-of-available-formulae)
-5. [Useful links](#useful-links)
+5. [Examples](#examples)
+6. [Useful links](#useful-links)
 
 
 ## Introduction
@@ -259,6 +260,7 @@ $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
 ```
 
 * **Vire** : not available yet.
+
 
 ## Examples
 
