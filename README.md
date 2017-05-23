@@ -129,31 +129,28 @@ repository.
 ### Installation steps
 
 1. Setup Linuxbrew:
-
 ```sh
 $ linuxbrew_setup
 ```
 
 2. Register the ``homebrew-bxtap`` tap in your Linuxbrew package manager:
-
-   ```sh
+```sh
 $ brew tap bxcppdev/homebrew-bxtap
 ```
    The            tap            is            downloaded            from
-	``https://github.com/BxCppDev/homebrew-bxtap.git``  and  installed  in
-	the         ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap``
-	directory.
+   ``https://github.com/BxCppDev/homebrew-bxtap.git``  and  installed  in
+   the         ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap``
+   directory.
 
 3. If you want  to install a local  copy of the tap,  for example because
    you want, as a BxCppDev developper or contributor, to test a brand new
    formula, please run:
-   ```sh
+```sh
 $ brew tap bxcppdev/homebrew-bxtap file:///path/to/your/homebrew-bxtap/local/git/repo
 ```
    You'll be able to locally debug and test a new formula from your local repository.
 
 4. You can deregister the ``homebrew-bxtap`` tap from your Linuxbrew package manager:
-
 ```sh
 $ brew untap bxcppdev/homebrew-bxtap
 ```
