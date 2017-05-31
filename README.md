@@ -229,7 +229,7 @@ $ brew install bxcppdev/bxtap/xerces-c --c++11
   Installation of the 9.6.4 version:
 
 ```sh
-$ brew install bxcppdev/bxtap/geant4 --c++11
+$ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c
 ```
 
 * **Root** (version 6): The [Root](http://root.cern.ch/) Data Analysis Framework.
@@ -270,7 +270,7 @@ $ brew install bxcppdev/bxtap/icu4c --c++11
 $ brew install bxcppdev/bxtap/boost --c++11 --with-icu4c
 $ brew install bxcppdev/bxtap/camp --c++11
 $ brew install bxcppdev/bxtap/clhep --c++11
-$ brew install bxcppdev/bxtap/geant4 --c++11
+$ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c --keep-tmp
 $ brew install bxcppdev/bxtap/root6
 $ brew install bxcppdev/bxtap/qt5-base
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
