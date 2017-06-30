@@ -201,11 +201,11 @@ $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c
 ```sh
 $ brew install bxcppdev/bxtap/root6 --c++11
 ```
-	Specific command to be used in order to properly setup ROOT6 (can be added in the ``do_linuxbrew_setup`` function):
+    Specific command to be used in order to properly setup ROOT6 (can be added
+    in the ``do_linuxbrew_setup`` function):
 ```sh
 $ . $(brew --prefix root6)/libexec/thisroot.sh
 ```
-
 
 *   **Qt5** : The [Qt5](http://qt-project.org/) C++ core libraries.
     Installation of the 5.8.0 version:
@@ -272,13 +272,20 @@ $ brew install bxcppdev/bxtap/boost --c++11 --with-icu4c
 $ brew install bxcppdev/bxtap/camp --c++11
 $ brew install bxcppdev/bxtap/clhep --c++11
 $ brew install bxcppdev/bxtap/qt5-base
-$ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c [--keep-tmp]
+$ brew install bxcppdev/bxtap/geant4 --c++11 \
+	--with-opengl-x11 \
+	--with-xerces-c
 $ brew install bxcppdev/bxtap/root6
-$ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test --ignore-dependencies
+$ brew install bxcppdev/bxtap/bayeux \
+	--with-devtools \
+	--with-test \
+    --ignore-dependencies
 ```
     +   One shot:
 ```sh
-$ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
+$ brew install bxcppdev/bxtap/bayeux \
+	--with-devtools \
+	--with-test
 ```
 
 ### Install Vire
