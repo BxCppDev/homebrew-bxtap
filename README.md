@@ -246,22 +246,20 @@ $ brew install bxcppdev/bxtap/root6 --c++11
 $ brew install bxcppdev/bxtap/qt5-base --c++11
 ```
 
-* **Bayeux** (last release): The [Bayeux](http://github.com/BxCppDev) C++ library.
-  Installation of the last released version:
+* **Bayeux** (last release): The [Bayeux](http://github.com/BxCppDev) C++ library:
 
 ```sh
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
 ```
 
-* **Bayeux** (version 3.0.0) : The [Bayeux](http://github.com/BxCppDev) C++ library.
-  Installation of the 3.0.0 version:
+  * **Bayeux** (version 3.0.0) : The [Bayeux](http://github.com/BxCppDev) C++ library:
 
 ```sh
 $ brew install bxcppdev/bxtap/bayeux@3.100 --with-devtools --with-test
 ```
 
-* **Bayeux** (version 3.1.0) : The [Bayeux](http://github.com/BxCppDev) C++ library.
-  Installation of the 3.1.0 version:
+  * **Bayeux** (version 3.1.0) : The [Bayeux](http://github.com/BxCppDev) C++ library.
+    Installation of the 3.1.0 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
@@ -277,6 +275,7 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 
 * Install the Bayeux last release:
 
+  * Step by step:
 ```sh
 $ brew install cmake
 $ brew install doxygen --build-from-source
@@ -288,6 +287,10 @@ $ brew install bxcppdev/bxtap/qt5-base
 $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c [--keep-tmp]
 $ brew install bxcppdev/bxtap/root6
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test --ignore-dependencies
+
+  * One shot:
+```sh
+$ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
 ```
 
 ### Install Vire
