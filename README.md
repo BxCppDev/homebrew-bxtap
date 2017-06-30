@@ -264,9 +264,7 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 
 ### Install Bayeux
 
-* Install the Bayeux last release:
-
-  Installation step by step:
+* Install the Bayeux last release step by step:
 ```
 $ brew install cmake
 $ brew install doxygen --build-from-source
@@ -285,7 +283,7 @@ $ brew install bxcppdev/bxtap/bayeux \
     --ignore-dependencies
 ```
 
-  One shot installation:
+* One shot installation:
 ```sh
 $ brew install bxcppdev/bxtap/bayeux \
     --with-devtools \
