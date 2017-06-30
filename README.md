@@ -246,7 +246,7 @@ $ brew install bxcppdev/bxtap/root6 --c++11
 $ brew install bxcppdev/bxtap/qt5-base --c++11
 ```
 
-* **Bayeux** : The [Bayeux](http://github.com/BxCppDev) C++ library.
+* **Bayeux** (last release): The [Bayeux](http://github.com/BxCppDev) C++ library.
   Installation of the last released version:
 
 ```sh
