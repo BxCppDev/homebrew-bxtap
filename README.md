@@ -25,26 +25,25 @@ is given below.
 
 Here we assume you use a bash shell:
 
-1. Install dependencies:
+1.   Install dependencies:
 
-```sh
+     ```sh
 $ sudo apt-get install build-essential curl git python-setuptools ruby
 ```
 
-2. Clone the Linuxbrew GitHub repository:
+2.   Clone the Linuxbrew GitHub repository:
 
-```sh
+     ```sh
 $ git clone https://github.com/Linuxbrew/brew.git ${HOME}/linuxbrew
 ```
 
-   *Note:* Here the ``HOME`` directory can be changed to any location of your filesystem
-   for which you have write access and also enough available storage capacity, depending on which software you
-   will need to manage through Linuxbrew (several Gb sounds reasonnable).
+	 *Note:* Here the ``HOME`` directory can be changed to any location of your filesystem
+	 for which you have write access and also enough available storage capacity, depending on which software you
+	 will need to manage through Linuxbrew (several Gb sounds reasonnable).
 
-3. Edit your ``~/.bashrc`` file and create a bash setup function
-   for Linuxbrew:
+3.   Edit your ``~/.bashrc`` file and create a bash setup function for Linuxbrew:
 
-```sh
+	```sh
 function do_linuxbrew_setup()
 {
   echo >&2 "[info] do_linuxbrew_setup: Setup Linuxbrew..."
@@ -128,30 +127,30 @@ repository.
 
 ### Installation steps
 
-1. Setup Linuxbrew:
-```sh
+1.   Setup Linuxbrew:
+     ```sh
 $ linuxbrew_setup
 ```
 
-2. Register the ``homebrew-bxtap`` tap in your Linuxbrew package manager:
-```sh
+2.   Register the ``homebrew-bxtap`` tap in your Linuxbrew package manager:
+	 ```sh
 $ brew tap bxcppdev/homebrew-bxtap
 ```
-   The            tap            is            downloaded            from
-   ``https://github.com/BxCppDev/homebrew-bxtap.git``  and  installed  in
-   the         ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap``
-   directory.
+	 The            tap            is            downloaded            from
+	 ``https://github.com/BxCppDev/homebrew-bxtap.git``  and  installed  in
+	 the         ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap``
+	 directory.
 
-3. If you want  to install a local  copy of the tap,  for example because
-   you want, as a BxCppDev developper or contributor, to test a brand new
-   formula, please run:
-```sh
+3.   If you want  to install a local  copy of the tap,  for example because
+	 you want, as a BxCppDev developper or contributor, to test a brand new
+	 formula, please run:
+	 ```sh
 $ brew tap bxcppdev/homebrew-bxtap file:///path/to/your/homebrew-bxtap/local/git/repo
 ```
-   You'll be able to locally debug and test a new formula from your local repository.
+	 You'll be able to locally debug and test a new formula from your local repository.
 
-4. You can deregister the ``homebrew-bxtap`` tap from your Linuxbrew package manager:
-```sh
+4.   You can deregister the ``homebrew-bxtap`` tap from your Linuxbrew package manager:
+	 ```sh
 $ brew untap bxcppdev/homebrew-bxtap
 ```
 
@@ -184,42 +183,36 @@ $ brew install bxcppdev/bxtap/bxrabbitmq [--with-manager]
 *   **Protobuf**: The [Protocol Buffers](https://developers.google.com/protocol-buffers/)
     C++ and Java libraries.
     Installation of the 3.3.0 version:
-
 ```sh
 $ brew install bxcppdev/bxtap/protobuf@3.3.0
 ```
 
 *   **BxProtobuftools**: The [BxProtobuftools](https://github.com/BxCppDev/bxprotobuftools/) C++ library for Protocol Buffer based serialization.
     Installation of the 0.2.0 version:
-
 ```sh
 $ brew install bxcppdev/bxtap/bxprotobuftools
 ```
 
 *   **Boost**: The [Boost](https://www.boost.org/) C++ library.
     Installation of the 1.63 version:
-
 ```sh
 $ brew install bxcppdev/bxtap/boost --c++11
 ```
 
 *   **Camp**: The [Camp](https://github.com/tegesoft/camp) C++ reflection library.
     Installation of the 0.8.0 version:
-
 ```sh
 $ brew install bxcppdev/bxtap/camp --c++11
 ```
 
 *   **CLHEP**: The [CLHEP](http://proj-clhep.web.cern.ch/proj-clhep/) C++ library for High Energy Physics.
     Installation of the 2.1.3.1 version:
-
 ```sh
 $ brew install bxcppdev/bxtap/clhep --c++11
 ```
 
 *   **Xerces-C**: The [Xerces-C](https://xerces.apache.org/xerces-c/) XML Parser.
     Installation of the 3.1.4 version:
-
 ```sh
 $ brew install bxcppdev/bxtap/xerces-c --c++11
 ```
@@ -227,39 +220,31 @@ $ brew install bxcppdev/bxtap/xerces-c --c++11
 *   **Geant4**: The [Geant4](http://geant4.cern.ch/) C++ toolkit for the simulation of the
     passage of particles through matter.
     Installation of the 9.6.4 version:
-
 ```sh
 $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c
 ```
 
 *   **Root** (version 6): The [Root](http://root.cern.ch/) Data Analysis Framework.
     Installation of the 6.08.06 version:
-
 ```sh
 $ brew install bxcppdev/bxtap/root6 --c++11
 ```
 
 *   **Qt5** : The [Qt5](http://qt-project.org/) C++ core libraries.
     Installation of the 5.8.0 version:
-
 ```sh
 $ brew install bxcppdev/bxtap/qt5-base --c++11
 ```
 
 *   **Bayeux** (last release): The [Bayeux](http://github.com/BxCppDev) C++ library:
-
 ```sh
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
 ```
-
-  +   **Bayeux** (version 3.0.0) : The [Bayeux](http://github.com/BxCppDev) C++ library:
-
+	+   **Bayeux** (version 3.0.0) : The [Bayeux](http://github.com/BxCppDev) C++ library:
 ```sh
 $ brew install bxcppdev/bxtap/bayeux@3.100 --with-devtools --with-test
 ```
-
-  +   **Bayeux** (version 3.1.0) : The [Bayeux](http://github.com/BxCppDev) C++ library.
-
+	+   **Bayeux** (version 3.1.0) : The [Bayeux](http://github.com/BxCppDev) C++ library.
 ```sh
 $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 ```
