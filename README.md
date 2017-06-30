@@ -244,13 +244,14 @@ $ brew install bxcppdev/bxtap/bxprotobuftools
 ```sh
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
 ```
+
     *   Bayeux-3.0.0 :
-		```sh
+```sh
 $ brew install bxcppdev/bxtap/bayeux@3.0.0 --with-devtools --with-test
 ```
 
     *   Bayeux-3.1.0 :
-		```sh
+```sh
 $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 ```
 
