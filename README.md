@@ -246,11 +246,25 @@ $ brew install bxcppdev/bxtap/root6 --c++11
 $ brew install bxcppdev/bxtap/qt5-base --c++11
 ```
 
-* **Bayeux** (version 3.0) : The [Bayeux](http://github.com/BxCppDev) C++ library.
-  Installation of the 3.0.0 version:
+* **Bayeux** : The [Bayeux](http://github.com/BxCppDev) C++ library.
+  Installation of the last released version:
 
 ```sh
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
+```
+
+* **Bayeux** (version 3.0.0) : The [Bayeux](http://github.com/BxCppDev) C++ library.
+  Installation of the 3.0.0 version:
+
+```sh
+$ brew install bxcppdev/bxtap/bayeux@3.100 --with-devtools --with-test
+```
+
+* **Bayeux** (version 3.1.0) : The [Bayeux](http://github.com/BxCppDev) C++ library.
+  Installation of the 3.1.0 version:
+
+```sh
+$ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 ```
 
 * **Vire** : not available yet.
