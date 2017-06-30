@@ -275,7 +275,7 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 
 ### Install Bayeux
 
-* Install the Bayeux 3.0.0 release:
+* Install the Bayeux last release:
 
 ```sh
 $ brew install cmake
