@@ -26,14 +26,12 @@ is given below.
 Here we assume you use a bash shell:
 
 1.   Install dependencies:
-
-     ```sh
+```sh
 $ sudo apt-get install build-essential curl git python-setuptools ruby
 ```
 
 2.   Clone the Linuxbrew GitHub repository:
-
-     ```sh
+```sh
 $ git clone https://github.com/Linuxbrew/brew.git ${HOME}/linuxbrew
 ```
 
@@ -42,8 +40,7 @@ $ git clone https://github.com/Linuxbrew/brew.git ${HOME}/linuxbrew
 	 will need to manage through Linuxbrew (several Gb sounds reasonnable).
 
 3.   Edit your ``~/.bashrc`` file and create a bash setup function for Linuxbrew:
-
-	```sh
+```sh
 function do_linuxbrew_setup()
 {
   echo >&2 "[info] do_linuxbrew_setup: Setup Linuxbrew..."
@@ -51,7 +48,8 @@ function do_linuxbrew_setup()
      echo >&2 "[warning] do_linuxbrew_setup: Linuxbrew is already setup!"
      return 1
   fi
-  export LINUXBREW_INSTALL_DIR="${HOME}/linuxbrew" # Change this to suit your Linuxbrew installation path
+  export LINUXBREW_INSTALL_DIR="${HOME}/linuxbrew" # Change this to your
+                                                   # Linuxbrew installation path
   export PATH="${LINUXBREW_INSTALL_DIR}/bin:${PATH}"
   export MANPATH="${LINUXBREW_INSTALL_DIR}/share/man:${MANPATH}"
   export INFOPATH="${LINUXBREW_INSTALL_DIR}/share/info:${INFOPATH}"
@@ -64,13 +62,11 @@ alias linuxbrew_setup='do_linuxbrew_setup'
 ### Test Linuxbrew after installation
 
 From a bare shell, *activate* your Linuxbrew system:
-
 ```sh
 $ export PATH="${HOME}/linuxbrew/bin:${PATH}
 ```
 
 Then try install a package:
-
 ```sh
 $ brew install hello
 ```
@@ -78,36 +74,39 @@ $ brew install hello
 ### Optional setup of temporary and cache directories
 
 Linuxbrew uses  default locations to store  downloaded files (default:
-``~/.cache/Homebrew/`̀  on  Linux)   and  temporary  build  directories
-(default:  ``/tmp``).  It  may  occurs these  default  paths  are  not
+``~/.cache/Homebrew/``  on  Linux)   and  temporary  build  directories
+(default:  ``/tmp``).  It  may  occur these  default  paths  are  not
 suitable on your system or have  not enough storage capacity.  You can
 explicitely define dedicated  directories to be used  during the build
 process. For that, define the two following environment variables:
-
 ```sh
-$ export HOMEBREW_TEMP=/some/temporary/base/directory/for/brew/driven/software/installation
-$ export HOMEBREW_CACHE=/some/cache/directory/for/brew/downloads
+$ export HOMEBREW_TEMP=/some/directory/for/brew/driven/software/build
+$ export HOMEBREW_CACHE=/some/directory/for/caching/brew/downloads
 ```
 Such lines can be added in the setup script shown above (in function ``do_linuxbrew_setup``).
+
+You may also want to force the installation of brew formulae from source only,
+including dependencies. In that case, it is possible to set the following environment variable:
+```sh
+$ export HOMEBREW_BUILD_FROM_SOURCE=1
+```
+
 
 ### Setup Linuxbrew
 
 Each time you need to use Linuxbrew and software packages managed by Linuxbrew, you
 should use:
-
 ```sh
 $ linuxbrew_setup
 ```
 
 Your ``PATH`` should then be updated to something like:
-
 ```sh
 $ echo $PATH
 /path/to/Linuxbrew/installation/directory/bin:/other/directories/in/your/path...
 ```
 
 The ``brew`` executable will be available from:
-
 ```sh
 $ which brew
 /path/to/Linuxbrew/installation/directory/bin/brew
@@ -166,33 +165,6 @@ $ brew search bxcppdev/bxtap/
 
 Details on supported formulae:
 
-*   **BxJsontools**: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/)
-    C++ library for JSON serialization.
-    Installation of the 0.1.0 version (C++11):
-```sh
-$ brew install bxcppdev/bxtap/bxjsontools
-```
-
-*   **BxRabbitMQ**: The [BxRabbitMQ](https://github.com/BxCppDev/bxrabbitmq/)
-    C++ library for RabbitQ client and server management.
-    Installation of the 0.3.0 version:
-```sh
-$ brew install bxcppdev/bxtap/bxrabbitmq [--with-manager]
-```
-
-*   **Protobuf**: The [Protocol Buffers](https://developers.google.com/protocol-buffers/)
-    C++ and Java libraries.
-    Installation of the 3.3.0 version:
-```sh
-$ brew install bxcppdev/bxtap/protobuf@3.3.0
-```
-
-*   **BxProtobuftools**: The [BxProtobuftools](https://github.com/BxCppDev/bxprotobuftools/) C++ library for Protocol Buffer based serialization.
-    Installation of the 0.2.0 version:
-```sh
-$ brew install bxcppdev/bxtap/bxprotobuftools
-```
-
 *   **Boost**: The [Boost](https://www.boost.org/) C++ library.
     Installation of the 1.63 version:
 ```sh
@@ -229,6 +201,11 @@ $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c
 ```sh
 $ brew install bxcppdev/bxtap/root6 --c++11
 ```
+	Specific command to be used in order to properly setup ROOT6 (can be added in the ``do_linuxbrew_setup`` function):
+```sh
+$ . $(brew --prefix root6)/libexec/thisroot.sh
+```
+
 
 *   **Qt5** : The [Qt5](http://qt-project.org/) C++ core libraries.
     Installation of the 5.8.0 version:
@@ -236,15 +213,43 @@ $ brew install bxcppdev/bxtap/root6 --c++11
 $ brew install bxcppdev/bxtap/qt5-base --c++11
 ```
 
+*   **Protobuf**: The [Protocol Buffers](https://developers.google.com/protocol-buffers/)
+    C++ and Java libraries.
+    Installation of the 3.3.0 version:
+```sh
+$ brew install bxcppdev/bxtap/protobuf@3.3.0
+```
+
+*   **BxJsontools**: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/)
+    C++ library for JSON serialization.
+    Installation of the 0.1.0 version (C++11):
+```sh
+$ brew install bxcppdev/bxtap/bxjsontools
+```
+
+*   **BxRabbitMQ**: The [BxRabbitMQ](https://github.com/BxCppDev/bxrabbitmq/)
+    C++ library for RabbitQ client and server management.
+    Installation of the 0.3.0 version:
+```sh
+$ brew install bxcppdev/bxtap/bxrabbitmq [--with-manager]
+```
+
+*   **BxProtobuftools**: The [BxProtobuftools](https://github.com/BxCppDev/bxprotobuftools/) C++ library for Protocol Buffer based serialization.
+    Installation of the 0.2.0 version:
+```sh
+$ brew install bxcppdev/bxtap/bxprotobuftools
+```
+
 *   **Bayeux** (last release): The [Bayeux](http://github.com/BxCppDev) C++ library:
 ```sh
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
 ```
-	+   **Bayeux** (version 3.0.0) : The [Bayeux](http://github.com/BxCppDev) C++ library:
+    +   Bayeux-3.0.0 :
 ```sh
-$ brew install bxcppdev/bxtap/bayeux@3.100 --with-devtools --with-test
+$ brew install bxcppdev/bxtap/bayeux@3.0.0 --with-devtools --with-test
 ```
-	+   **Bayeux** (version 3.1.0) : The [Bayeux](http://github.com/BxCppDev) C++ library.
+
+    +   Bayeux-3.1.0 :
 ```sh
 $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 ```
@@ -258,7 +263,7 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 ### Install Bayeux
 
 *   Install the Bayeux last release:
-	+   Step by step:
+    +   Step by step:
 ```sh
 $ brew install cmake
 $ brew install doxygen --build-from-source
@@ -271,7 +276,7 @@ $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c [
 $ brew install bxcppdev/bxtap/root6
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test --ignore-dependencies
 ```
-	+   One shot:
+    +   One shot:
 ```sh
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
 ```
@@ -283,6 +288,6 @@ WIP
 ## Useful links
 
 *   [Linuxbrew](http://linuxbrew.sh/)
-    +   Brew tap [documentation](https://github.com/Homebrew/brew/blob/master/docs/brew-tap.md)
-	+   Brew formulae [documentation](https://github.com/Homebrew/brew/raw/master/docs/Formula-Cookbook.md)
+    -   Brew tap [documentation](https://github.com/Homebrew/brew/blob/master/docs/brew-tap.md)
+	-   Brew formulae [documentation](https://github.com/Homebrew/brew/raw/master/docs/Formula-Cookbook.md)
 *   [SuperNEMO-DBD](https://github.com/SuperNEMO-DBD) : original work on Linuxbrew support for [Bayeux](https://github.com/BxCppDev/Bayeux)
