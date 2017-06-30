@@ -284,10 +284,10 @@ $ brew install bxcppdev/bxtap/icu4c --c++11
 $ brew install bxcppdev/bxtap/boost --c++11 --with-icu4c
 $ brew install bxcppdev/bxtap/camp --c++11
 $ brew install bxcppdev/bxtap/clhep --c++11
+$ brew install bxcppdev/bxtap/qt5-base
 $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c [--keep-tmp]
 $ brew install bxcppdev/bxtap/root6
-$ brew install bxcppdev/bxtap/qt5-base
-$ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
+$ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test --ignore-dependencies
 ```
 
 ### Install Vire
