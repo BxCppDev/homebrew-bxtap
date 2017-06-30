@@ -279,8 +279,8 @@ $ brew install bxcppdev/bxtap/geant4 --c++11 \
 	--with-xerces-c
 $ brew install bxcppdev/bxtap/root6
 $ brew install bxcppdev/bxtap/bayeux \
-	--with-devtools \
-	--with-test \
+    --with-devtools \
+    --with-test \
     --ignore-dependencies
 ```
 
