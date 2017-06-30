@@ -183,6 +183,12 @@ $ brew install bxcppdev/bxtap/camp --c++11
 $ brew install bxcppdev/bxtap/clhep --c++11
 ```
 
+*   **Qt5** : The [Qt5](http://qt-project.org/) C++ core libraries.
+    Installation of the 5.8.0 version:
+```sh
+$ brew install bxcppdev/bxtap/qt5-base --c++11
+```
+
 *   **Xerces-C**: The [Xerces-C](https://xerces.apache.org/xerces-c/) XML Parser.
     Installation of the 3.1.4 version:
 ```sh
@@ -201,16 +207,10 @@ $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c
 ```sh
 $ brew install bxcppdev/bxtap/root6 --c++11
 ```
-    Specific command to be used in order to properly setup ROOT6 (can be added
+    Specific command to be used in order to properly setup Root6 (can be added
     in the ``do_linuxbrew_setup`` function):
 ```sh
 $ . $(brew --prefix root6)/libexec/thisroot.sh
-```
-
-*   **Qt5** : The [Qt5](http://qt-project.org/) C++ core libraries.
-    Installation of the 5.8.0 version:
-```sh
-$ brew install bxcppdev/bxtap/qt5-base --c++11
 ```
 
 *   **Protobuf**: The [Protocol Buffers](https://developers.google.com/protocol-buffers/)
@@ -244,13 +244,13 @@ $ brew install bxcppdev/bxtap/bxprotobuftools
 ```sh
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
 ```
-    +   Bayeux-3.0.0 :
-```sh
+    *   Bayeux-3.0.0 :
+		```sh
 $ brew install bxcppdev/bxtap/bayeux@3.0.0 --with-devtools --with-test
 ```
 
-    +   Bayeux-3.1.0 :
-```sh
+    *   Bayeux-3.1.0 :
+		```sh
 $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 ```
 
