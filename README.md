@@ -289,7 +289,7 @@ $ brew install bxcppdev/bxtap/root6
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test --ignore-dependencies
 ```
 
-* One shot:
+  * One shot:
 ```sh
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
 ```
