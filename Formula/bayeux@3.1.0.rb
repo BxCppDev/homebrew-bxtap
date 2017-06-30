@@ -1,7 +1,7 @@
 # Imported from SuperNEMO-DBD/homebrew-cadfael/Formula/bayeux.rb
 
-class Bayeux < Formula
-  desc "Bayeux Library"
+class BayeuxAT310 < Formula
+  desc "Bayeux 3.1.0 Library"
   homepage "https://github.com/BxCppDev/Bayeux"
 
   stable do
