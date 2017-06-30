@@ -203,12 +203,13 @@ $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c
 ```
 
 * **Root** (version 6): The [Root](http://root.cern.ch/) Data Analysis Framework.
-    Installation of the 6.08.06 version:
+  Installation of the 6.08.06 version:
 ```sh
 $ brew install bxcppdev/bxtap/root6 --c++11
 ```
-    Specific command to be used in order to properly setup Root6 (can be added
-    in the ``do_linuxbrew_setup`` function):
+
+  Specific command to be used in order to properly setup Root6 (can be added
+in the ``do_linuxbrew_setup`` function):
 ```sh
 $ . $(brew --prefix root6)/libexec/thisroot.sh
 ```
@@ -245,12 +246,12 @@ $ brew install bxcppdev/bxtap/bxprotobuftools
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
 ```
 
-    Installation of Bayeux-3.0.0 :
+  Installation of Bayeux-3.0.0 :
 ```sh
 $ brew install bxcppdev/bxtap/bayeux@3.0.0 --with-devtools --with-test
 ```
 
-    Installation of Bayeux-3.1.0 :
+  Installation of Bayeux-3.1.0 :
 ```sh
 $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 ```
