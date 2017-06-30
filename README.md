@@ -167,105 +167,104 @@ $ brew search bxcppdev/bxtap/
 
 Details on supported formulae:
 
-* **BxJsontools**: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/)
-  C++ library for JSON serialization.
-  Installation of the 0.1.0 version (C++11):
+*   **BxJsontools**: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/)
+    C++ library for JSON serialization.
+    Installation of the 0.1.0 version (C++11):
 ```sh
 $ brew install bxcppdev/bxtap/bxjsontools
 ```
 
-* **BxRabbitMQ**: The [BxRabbitMQ](https://github.com/BxCppDev/bxrabbitmq/)
-  C++ library for RabbitQ client and server management.
-  Installation of the 0.3.0 version:
+*   **BxRabbitMQ**: The [BxRabbitMQ](https://github.com/BxCppDev/bxrabbitmq/)
+    C++ library for RabbitQ client and server management.
+    Installation of the 0.3.0 version:
 ```sh
 $ brew install bxcppdev/bxtap/bxrabbitmq [--with-manager]
 ```
 
-* **Protobuf**: The [Protocol Buffers](https://developers.google.com/protocol-buffers/)
-  C++ and Java libraries.
-  Installation of the 3.3.0 version:
+*   **Protobuf**: The [Protocol Buffers](https://developers.google.com/protocol-buffers/)
+    C++ and Java libraries.
+    Installation of the 3.3.0 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/protobuf@3.3.0
 ```
 
-* **BxProtobuftools**: The [BxProtobuftools](https://github.com/BxCppDev/bxprotobuftools/) C++ library for Protocol Buffer based serialization.
-  Installation of the 0.2.0 version:
+*   **BxProtobuftools**: The [BxProtobuftools](https://github.com/BxCppDev/bxprotobuftools/) C++ library for Protocol Buffer based serialization.
+    Installation of the 0.2.0 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/bxprotobuftools
 ```
 
-* **Boost**: The [Boost](https://www.boost.org/) C++ library.
-  Installation of the 1.63 version:
+*   **Boost**: The [Boost](https://www.boost.org/) C++ library.
+    Installation of the 1.63 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/boost --c++11
 ```
 
-* **Camp**: The [Camp](https://github.com/tegesoft/camp) C++ reflection library.
-  Installation of the 0.8.0 version:
+*   **Camp**: The [Camp](https://github.com/tegesoft/camp) C++ reflection library.
+    Installation of the 0.8.0 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/camp --c++11
 ```
 
-* **CLHEP**: The [CLHEP](http://proj-clhep.web.cern.ch/proj-clhep/) C++ library for High Energy Physics.
-  Installation of the 2.1.3.1 version:
+*   **CLHEP**: The [CLHEP](http://proj-clhep.web.cern.ch/proj-clhep/) C++ library for High Energy Physics.
+    Installation of the 2.1.3.1 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/clhep --c++11
 ```
 
-* **Xerces-C**: The [Xerces-C](https://xerces.apache.org/xerces-c/) XML Parser.
-  Installation of the 3.1.4 version:
+*   **Xerces-C**: The [Xerces-C](https://xerces.apache.org/xerces-c/) XML Parser.
+    Installation of the 3.1.4 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/xerces-c --c++11
 ```
 
-* **Geant4**: The [Geant4](http://geant4.cern.ch/) C++ toolkit for the simulation of the
-  passage of particles through matter.
-  Installation of the 9.6.4 version:
+*   **Geant4**: The [Geant4](http://geant4.cern.ch/) C++ toolkit for the simulation of the
+    passage of particles through matter.
+    Installation of the 9.6.4 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c
 ```
 
-* **Root** (version 6): The [Root](http://root.cern.ch/) Data Analysis Framework.
-  Installation of the 6.08.06 version:
+*   **Root** (version 6): The [Root](http://root.cern.ch/) Data Analysis Framework.
+    Installation of the 6.08.06 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/root6 --c++11
 ```
 
-* **Qt5** : The [Qt5](http://qt-project.org/) C++ core libraries.
-  Installation of the 5.8.0 version:
+*   **Qt5** : The [Qt5](http://qt-project.org/) C++ core libraries.
+    Installation of the 5.8.0 version:
 
 ```sh
 $ brew install bxcppdev/bxtap/qt5-base --c++11
 ```
 
-* **Bayeux** (last release): The [Bayeux](http://github.com/BxCppDev) C++ library:
+*   **Bayeux** (last release): The [Bayeux](http://github.com/BxCppDev) C++ library:
 
 ```sh
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
 ```
 
-  * **Bayeux** (version 3.0.0) : The [Bayeux](http://github.com/BxCppDev) C++ library:
+  +   **Bayeux** (version 3.0.0) : The [Bayeux](http://github.com/BxCppDev) C++ library:
 
 ```sh
 $ brew install bxcppdev/bxtap/bayeux@3.100 --with-devtools --with-test
 ```
 
-  * **Bayeux** (version 3.1.0) : The [Bayeux](http://github.com/BxCppDev) C++ library.
-    Installation of the 3.1.0 version:
+  +   **Bayeux** (version 3.1.0) : The [Bayeux](http://github.com/BxCppDev) C++ library.
 
 ```sh
 $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 ```
 
-* **Vire** : not available yet.
+*   **Vire** : not available yet.
 
 
 ## Examples
@@ -273,8 +272,8 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 
 ### Install Bayeux
 
-* Install the Bayeux last release:
-    * Step by step:
+*   Install the Bayeux last release:
+	+   Step by step:
 ```sh
 $ brew install cmake
 $ brew install doxygen --build-from-source
@@ -287,7 +286,7 @@ $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c [
 $ brew install bxcppdev/bxtap/root6
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test --ignore-dependencies
 ```
-    * One shot:
+	+   One shot:
 ```sh
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
 ```
@@ -298,7 +297,7 @@ WIP
 
 ## Useful links
 
-* [Linuxbrew](http://linuxbrew.sh/)
-  * Brew tap [documentation](https://github.com/Homebrew/brew/blob/master/docs/brew-tap.md)
-  * Brew formulae [documentation](https://github.com/Homebrew/brew/raw/master/docs/Formula-Cookbook.md)
-* [SuperNEMO-DBD](https://github.com/SuperNEMO-DBD) : original work on Linuxbrew support for [Bayeux](https://github.com/BxCppDev/Bayeux)
+*   [Linuxbrew](http://linuxbrew.sh/)
+    +   Brew tap [documentation](https://github.com/Homebrew/brew/blob/master/docs/brew-tap.md)
+	+   Brew formulae [documentation](https://github.com/Homebrew/brew/raw/master/docs/Formula-Cookbook.md)
+*   [SuperNEMO-DBD](https://github.com/SuperNEMO-DBD) : original work on Linuxbrew support for [Bayeux](https://github.com/BxCppDev/Bayeux)
