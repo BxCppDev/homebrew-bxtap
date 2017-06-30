@@ -266,7 +266,7 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 * Install the Bayeux last release:
 
     - Step by step:
-```sh
+```
 $ brew install cmake
 $ brew install doxygen --build-from-source
 $ brew install bxcppdev/bxtap/icu4c --c++11
