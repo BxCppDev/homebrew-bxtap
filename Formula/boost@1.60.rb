@@ -46,6 +46,8 @@ class BoostAT160 < Formula
   #   url "https://github.com/SuperNEMO-DBD/BoostCMakeSupport.git", :using => :git
   # end
 
+  keg_only "Conflicts with production version Boost 1.63"
+
   env :userpaths
 
   option :universal

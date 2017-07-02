@@ -11,7 +11,7 @@ class BayeuxAT310 < Formula
   end
 
   head do
-    version "3.1.0"
+    version "3.2.0"
     url "https://github.com/BxCppDev/Bayeux.git", :branch => "develop"
   end
 
@@ -28,9 +28,9 @@ class BayeuxAT310 < Formula
   depends_on "bxcppdev/bxtap/boost" => ["c++11", "with-icu4c"]
   depends_on "bxcppdev/bxtap/camp" => "c++11"
   depends_on "bxcppdev/bxtap/clhep" => "c++11"
+  depends_on "bxcppdev/bxtap/qt5-base"
   depends_on "bxcppdev/bxtap/geant4" => "c++11"
   depends_on "bxcppdev/bxtap/root6"
-  depends_on "bxcppdev/bxtap/qt5-base"
 
   def install
     ENV.cxx11

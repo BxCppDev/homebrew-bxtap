@@ -279,11 +279,10 @@ $ brew install bxcppdev/bxtap/geant4 --c++11 \
 $ brew install bxcppdev/bxtap/root6
 $ brew install bxcppdev/bxtap/bayeux \
     --with-devtools \
-    --with-test \
-    --ignore-dependencies
+    --with-test
 ```
 
-* One shot installation:
+* One shot installation with dependencies automatically resolved:
 ```sh
 $ brew install bxcppdev/bxtap/bayeux \
     --with-devtools \
