@@ -319,12 +319,16 @@ $ brew install bxcppdev/bxtap/bayeux \
 
 ### Install Vire
 
+WIP
+
 ```sh
 $ brew install bxcppdev/bxtap/bayeux@3.1.0 \
     --with-devtools \
     --with-test \
     [--without-geant4]
 ```
+
+
 
 ## Useful links
 
