@@ -53,6 +53,7 @@ function do_linuxbrew_setup()
   export PATH="${LINUXBREW_INSTALL_DIR}/bin:${PATH}"
   export MANPATH="${LINUXBREW_INSTALL_DIR}/share/man:${MANPATH}"
   export INFOPATH="${LINUXBREW_INSTALL_DIR}/share/info:${INFOPATH}"
+  # Additional commands can be added here...
   echo >&2 "[info] do_linuxbrew_setup: Linuxbrew is setup."
   return 0
 }
@@ -90,7 +91,6 @@ including dependencies. In that case, it is possible to set the following enviro
 ```sh
 $ export HOMEBREW_BUILD_FROM_SOURCE=1
 ```
-
 
 ### Setup Linuxbrew
 
@@ -140,27 +140,29 @@ $ brew tap bxcppdev/homebrew-bxtap
 the         ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap``
 directory.
 
-3. Prioritize the ``bxcppdev/homebrew-bxtap`` tap in your Linuxbrew package manager (see: http://docs.brew.sh/brew-tap.html):
+### Additional useful commands
+
+1. Prioritize the ``bxcppdev/homebrew-bxtap`` tap in your Linuxbrew package
+   manager (see: http://docs.brew.sh/brew-tap.html):
 ```sh
 $ brew tap-pin bxcppdev/homebrew-bxtap
 ```
 
-4. If you want  to install a local  copy of the tap,  for example because
+2. If you want  to install a local  copy of the tap,  for example because
 you want, as a BxCppDev developper or contributor, to test a brand new
 formula, please run:
 ```sh
 $ brew tap bxcppdev/homebrew-bxtap file:///path/to/your/homebrew-bxtap/local/git/repo
 ```
-     You'll be able to locally debug and test a new formula from your local repository.
+   You'll be able to locally debug and test a new formula from your local repository.
 
-5. You can deregister the ``homebrew-bxtap`` tap from your Linuxbrew package manager:
+3. You can deregister the ``homebrew-bxtap`` tap from your Linuxbrew package manager:
 ```sh
 $ brew tap-unpin bxcppdev/homebrew-bxtap
 $ brew untap bxcppdev/homebrew-bxtap
 ```
 
 ## List of available formulae
-
 
 You can print the list of supported formulae published by ``bxcppdev/bxtap`` :
 
@@ -255,7 +257,8 @@ $ brew install bxcppdev/bxtap/bxjsontools [--without-test]
 $ brew install bxcppdev/bxtap/bxrabbitmq [--with-manager]
 ```
 
-* **BxProtobuftools**: The [BxProtobuftools](https://github.com/BxCppDev/bxprotobuftools/) C++ library for Protocol Buffer based serialization. Installation of the 0.2.0 version:
+* **BxProtobuftools**: The [BxProtobuftools](https://github.com/BxCppDev/bxprotobuftools/)
+  C++ library for Protocol Buffer based serialization. Installation of the 0.2.0 version:
 ```sh
 $ brew install bxcppdev/bxtap/bxprotobuftools
 ```
@@ -278,7 +281,6 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test [--withou
 
 
 ## Examples
-
 
 ### Install Bayeux
 
