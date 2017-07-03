@@ -131,7 +131,7 @@ repository.
 $ linuxbrew_setup
 ```
 
-2. Register the ``homebrew-bxtap`` tap in your Linuxbrew package manager:
+2. Register the ``bxcppdev/homebrew-bxtap`` tap in your Linuxbrew package manager:
 ```sh
 $ brew tap bxcppdev/homebrew-bxtap
 ```
@@ -140,7 +140,12 @@ $ brew tap bxcppdev/homebrew-bxtap
 the         ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap``
 directory.
 
-3. If you want  to install a local  copy of the tap,  for example because
+3. Prioritize the ``bxcppdev/homebrew-bxtap`` tap in your Linuxbrew package manager:
+```sh
+$ brew tap-pin bxcppdev/homebrew-bxtap
+```
+
+4. If you want  to install a local  copy of the tap,  for example because
 you want, as a BxCppDev developper or contributor, to test a brand new
 formula, please run:
 ```sh
@@ -148,8 +153,9 @@ $ brew tap bxcppdev/homebrew-bxtap file:///path/to/your/homebrew-bxtap/local/git
 ```
      You'll be able to locally debug and test a new formula from your local repository.
 
-4. You can deregister the ``homebrew-bxtap`` tap from your Linuxbrew package manager:
+5. You can deregister the ``homebrew-bxtap`` tap from your Linuxbrew package manager:
 ```sh
+$ brew tap-unpin bxcppdev/homebrew-bxtap
 $ brew untap bxcppdev/homebrew-bxtap
 ```
 
@@ -168,7 +174,7 @@ Details on supported formulae:
 * **CMake**: The [CMake](https://www.cmake.org/) C++ library.
     Installation of the 3.8.2 version:
 ```sh
-$ brew install bxcppdev/bxtap/cmake
+$ brew install bxcppdev/bxtap/cmake [--with-brew-curl]
 ```
 
 * **cURLpp**: The [cURLpp](http://www.curlpp.org/) C++ library.
@@ -204,7 +210,7 @@ $ brew install bxcppdev/bxtap/qt5-base --c++11
 * **Xerces-C**: The [Xerces-C](https://xerces.apache.org/xerces-c/) XML Parser.
     Installation of the 3.1.4 version:
 ```sh
-$ brew install bxcppdev/bxtap/xerces-c --c++11
+$ brew install bxcppdev/bxtap/xerces-c --c++11 [--with-brew-curl]
 ```
 
 * **Geant4**: The [Geant4](http://geant4.cern.ch/) C++ toolkit for the simulation of the
@@ -265,7 +271,7 @@ $ brew install bxcppdev/bxtap/bayeux@3.0.0 --with-devtools --with-test
 
   Installation of Bayeux-3.1.0 :
 ```sh
-$ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
+$ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test [--without-geant4]
 ```
 
 * **Vire** : not available yet.

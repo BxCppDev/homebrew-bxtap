@@ -18,13 +18,16 @@ class Cmake < Formula
     sha256 "3ef250f93f1887d99c567542e987938bf1cb49af06275e0081b547765e03e6ac"
   end
 
+  option "with-brew-curl", "Use Linuxbrew-ed curl"
   option "without-docs", "Don't build man pages"
   option "with-completion", "Install Bash completion (Has potential problems with system bash)"
 
   depends_on "sphinx-doc" => :build if build.with? "docs"
   unless OS.mac?
     depends_on "bzip2"
-    #depends_on "curl" # Remove brewed cURL
+    if  build.with? "brew-curl"
+      depends_on "curl"
+    end
     depends_on "libidn" => :optional
     depends_on "ncurses"
   end
