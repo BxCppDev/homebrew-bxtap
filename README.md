@@ -280,7 +280,7 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 ```
 $ brew install bxcppdev/bxtap/cmake
 $ brew install doxygen --build-from-source
-$ brew install bxcppdev/bxtap/icu4c --c++11
+$ brew install icu4c --c++11
 $ brew install bxcppdev/bxtap/boost --c++11 --with-icu4c
 $ brew install bxcppdev/bxtap/camp --c++11
 $ brew install bxcppdev/bxtap/clhep --c++11

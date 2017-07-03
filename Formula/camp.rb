@@ -8,7 +8,7 @@ class Camp < Formula
 
   option :cxx11
 
-  depends_on "cmake" => :build
+  depends_on "bxcppdev/bxtap/cmake" => :build
 
   # This appears to be a more robust way of defining options so that the
   # dependency is always installed

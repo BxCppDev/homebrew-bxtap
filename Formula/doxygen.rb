@@ -21,7 +21,7 @@ class Doxygen < Formula
   option "with-qt5", "Build GUI frontend with Qt support."
   option "with-llvm", "Build with libclang support."
 
-  depends_on "cmake" => :build
+  depends_on "bxcppdev/bxtap/cmake" => :build
   depends_on "graphviz" => :optional
   depends_on "qt5" => :optional
   depends_on "llvm" => :optional

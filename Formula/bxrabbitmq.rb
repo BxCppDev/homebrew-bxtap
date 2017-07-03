@@ -7,7 +7,7 @@ class Bxrabbitmq < Formula
   head "https://github.com/BxCppDev/bxrabbitmq.git", :branch => "develop"
 
   needs :cxx11
-  depends_on "cmake" => :build
+  depends_on "bxcppdev/bxtap/cmake" => :build
   depends_on "rabbitmq-c"
   depends_on "pkg-config"
 
@@ -15,7 +15,7 @@ class Bxrabbitmq < Formula
   option "with-manager", "Built the RabbitMQ server management API"
   if build.with? "manager"
     depends_on "bxcppdev/bxtap/bxjsontools"
-    depends_on "curlpp"
+    depends_on "bxcppdev/bxtap/curlpp"
   end
 
   def install
