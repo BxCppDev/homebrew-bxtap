@@ -165,6 +165,18 @@ $ brew search bxcppdev/bxtap/
 
 Details on supported formulae:
 
+* **CMake**: The [CMake](https://www.cmake.org/) C++ library.
+    Installation of the 3.8.2 version:
+```sh
+$ brew install bxcppdev/bxtap/cmake
+```
+
+* **cURLpp**: The [cURLpp](http://www.curlpp.org/) C++ library.
+    Installation of the 0.8.1 version:
+```sh
+$ brew install bxcppdev/bxtap/curlpp
+```
+
 * **Boost**: The [Boost](https://www.boost.org/) C++ library.
     Installation of the 1.63 version:
 ```sh
@@ -266,7 +278,7 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 
 * Install the Bayeux last release step by step:
 ```
-$ brew install cmake
+$ brew install bxcppdev/bxtap/cmake
 $ brew install doxygen --build-from-source
 $ brew install bxcppdev/bxtap/icu4c --c++11
 $ brew install bxcppdev/bxtap/boost --c++11 --with-icu4c
