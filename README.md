@@ -328,8 +328,13 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 \
     --with-test \
     [--without-geant4]
 ```
-
-
+2. Install dependencies:
+```sh
+$ brew install bxcppdev/bxtap/protobuf@3.3.0
+$ brew install bxcppdev/bxtap/bxprotobuftools
+$ brew install bxcppdev/bxtap/bxjsontools
+$ brew install bxcppdev/bxtap/bxrabbitmq --with-manager
+```
 
 ## Useful links
 
