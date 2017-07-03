@@ -277,21 +277,29 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test
 ### Install Bayeux
 
 * Install the Bayeux last release step by step:
-```
+```sh
 $ brew install bxcppdev/bxtap/cmake
-$ brew install doxygen --build-from-source
+$ brew install bxcppdev/bxtap/doxygen --build-from-source
 $ brew install icu4c --c++11
 $ brew install bxcppdev/bxtap/boost --c++11 --with-icu4c
 $ brew install bxcppdev/bxtap/camp --c++11
 $ brew install bxcppdev/bxtap/clhep --c++11
 $ brew install bxcppdev/bxtap/qt5-base
+$ brew install bxcppdev/bxtap/root6
 $ brew install bxcppdev/bxtap/geant4 --c++11 \
     --with-opengl-x11 \
     --with-xerces-c
-$ brew install bxcppdev/bxtap/root6
 $ brew install bxcppdev/bxtap/bayeux \
     --with-devtools \
-    --with-test
+    --with-test \
+```
+
+* Install Bayeux 3.1.0 without the Geant4 module:
+```sh
+$ brew install bxcppdev/bxtap/bayeux@3.1.0 \
+    --with-devtools \
+    --with-test \
+    --without-geant4
 ```
 
 * One shot installation with dependencies automatically resolved:
