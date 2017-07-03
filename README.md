@@ -177,6 +177,8 @@ Details on supported formulae:
 $ brew install bxcppdev/bxtap/cmake [--with-brew-curl]
 ```
 
+   *Note*: Ubuntu 16.04 has its own system cURL which maybe used to build CMake.
+
 * **cURLpp**: The [cURLpp](http://www.curlpp.org/) C++ library.
     Installation of the 0.8.1 version:
 ```sh
@@ -212,6 +214,8 @@ $ brew install bxcppdev/bxtap/qt5-base --c++11
 ```sh
 $ brew install bxcppdev/bxtap/xerces-c --c++11 [--with-brew-curl]
 ```
+
+   *Note*: Ubuntu 16.04 has its own system cURL which maybe used to build Xerces-C.
 
 * **Geant4**: The [Geant4](http://geant4.cern.ch/) C++ toolkit for the simulation of the
     passage of particles through matter.
