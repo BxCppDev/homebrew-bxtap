@@ -26,7 +26,7 @@ class Bayeux < Formula
   option "with-test",     "Build test programs"
 
   depends_on "bxcppdev/bxtap/cmake" => :build
-  depends_on "doxygen" => :build
+  depends_on "bxcppdev/bxtap/doxygen" => :build
   depends_on "gsl"
   depends_on "readline"
 
