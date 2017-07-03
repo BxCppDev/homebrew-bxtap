@@ -5,7 +5,7 @@ class XercesC < Formula
   sha256 "c98eedac4cf8a73b09366ad349cb3ef30640e7a3089d360d40a3dde93f66ecf6"
 
   option :cxx11
-  option "with-brew-curl", "Use Linuxbrew-ed curl"
+  option "with-brew-curl", "Install and use Linuxbrew-ed curl"
 
   bottle do
     cellar :any

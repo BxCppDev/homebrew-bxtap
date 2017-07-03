@@ -12,8 +12,8 @@ class BayeuxAT310 < Formula
   option "with-test",     "Build test programs"
   option "with-geant4",   "Build Geant4 module"
 
-  depends_on "cmake" => :build
-  depends_on "doxygen" => :build
+  depends_on "bxcppdev/bxtap/cmake" => :build
+  depends_on "bxcppdev/bxtap/doxygen" => :build
   depends_on "gsl"
   depends_on "readline"
 

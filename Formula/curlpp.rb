@@ -11,7 +11,7 @@ class Curlpp < Formula
     sha256 "fd39edf63c0745f9d39a76f7b428eba285af313967ad4697d4fb08b705ee3eef" => :yosemite
   end
 
-  depends_on "cmake" => :build
+  depends_on "bxcppdev/bxtap/cmake" => :build
 
   needs :cxx11
 

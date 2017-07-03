@@ -140,7 +140,7 @@ $ brew tap bxcppdev/homebrew-bxtap
 the         ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap``
 directory.
 
-3. Prioritize the ``bxcppdev/homebrew-bxtap`` tap in your Linuxbrew package manager:
+3. Prioritize the ``bxcppdev/homebrew-bxtap`` tap in your Linuxbrew package manager (see: http://docs.brew.sh/brew-tap.html):
 ```sh
 $ brew tap-pin bxcppdev/homebrew-bxtap
 ```
