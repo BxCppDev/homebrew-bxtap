@@ -10,11 +10,6 @@ class BayeuxAT300 < Formula
     sha256 "fdaaac2dc738d0875b06b795a16d3017775f26de7f57ed836408b8c8a5349f3b"
   end
 
-  head do
-    version "3.1.0"
-    url "https://github.com/BxCppDev/Bayeux.git", :branch => "develop"
-  end
-
   keg_only "Conflicts with production version of Bayeux"
 
   option "with-devtools", "Build debug tools for Bayeux developers"
