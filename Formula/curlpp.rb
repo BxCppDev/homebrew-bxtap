@@ -11,7 +11,7 @@ class Curlpp < Formula
     sha256 "fd39edf63c0745f9d39a76f7b428eba285af313967ad4697d4fb08b705ee3eef" => :yosemite
   end
 
-  # depends_on "cmake" => :build
+  depends_on "bxcppdev/bxtap/cmake" => :build
 
   needs :cxx11
 
@@ -35,10 +35,10 @@ class Curlpp < Formula
           myHandle.setOpt(new curlpp::options::Url("https://google.com"));
           myHandle.perform();
         } catch (curlpp::RuntimeError & e) {
-          std::cout << e.what() << std::endl;
+          std::cerr << e.what() << std::endl;
           return -1;
         } catch (curlpp::LogicError & e) {
-          std::cout << e.what() << std::endl;
+          std::cerr << e.what() << std::endl;
           return -1;
         }
 
