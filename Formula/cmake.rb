@@ -24,7 +24,7 @@ class Cmake < Formula
   depends_on "sphinx-doc" => :build if build.with? "docs"
   unless OS.mac?
     depends_on "bzip2"
-    #depends_on "curl"
+    #depends_on "curl" # Remove brewed cURL
     depends_on "libidn" => :optional
     depends_on "ncurses"
   end
