@@ -28,20 +28,20 @@ class Curlpp < Formula
       #include <curlpp/Options.hpp>
       #include <curlpp/Exception.hpp>
 
-      int main() {
+      int main()
+      {
         try {
           curlpp::Cleanup myCleanup;
           curlpp::Easy myHandle;
           myHandle.setOpt(new curlpp::options::Url("https://google.com"));
           myHandle.perform();
         } catch (curlpp::RuntimeError & e) {
-          std::cerr << e.what() << std::endl;
+          std::cerr << "[error] " << e.what() << std::endl;
           return -1;
         } catch (curlpp::LogicError & e) {
-          std::cerr << e.what() << std::endl;
+          std::cerr << "[error] " << e.what() << std::endl;
           return -1;
         }
-
         return 0;
       }
     EOS
