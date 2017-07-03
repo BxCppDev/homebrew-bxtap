@@ -177,7 +177,7 @@ Details on supported formulae:
 $ brew install bxcppdev/bxtap/cmake [--with-brew-curl]
 ```
 
-    *Note*: Ubuntu 16.04 has its own system cURL (7.47.0) which maybe used to build CMake.
+  *Note*: Ubuntu 16.04 has its own system cURL (7.47.0) which maybe used to build CMake.
 
 * **cURLpp**: The [cURLpp](http://www.curlpp.org/) C++ library.
   Installation of the 0.8.1 version:
