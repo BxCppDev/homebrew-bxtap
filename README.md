@@ -321,6 +321,7 @@ $ brew install bxcppdev/bxtap/bayeux \
 
 WIP
 
+1. First install Bayeux:
 ```sh
 $ brew install bxcppdev/bxtap/bayeux@3.1.0 \
     --with-devtools \
