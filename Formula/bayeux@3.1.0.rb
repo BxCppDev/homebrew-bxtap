@@ -10,6 +10,7 @@ class BayeuxAT310 < Formula
 
   option "with-devtools", "Build debug tools for Bayeux developers"
   option "with-test",     "Build test programs"
+  option "with-geant4",   "Build Geant4 module"
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
@@ -22,7 +23,9 @@ class BayeuxAT310 < Formula
   depends_on "bxcppdev/bxtap/camp" => "c++11"
   depends_on "bxcppdev/bxtap/clhep" => "c++11"
   depends_on "bxcppdev/bxtap/qt5-base"
-  depends_on "bxcppdev/bxtap/geant4" => "c++11"
+  if build.with? "geant4"
+    depends_on "bxcppdev/bxtap/geant4" => "c++11"
+  end
   depends_on "bxcppdev/bxtap/root6"
 
   def install
@@ -35,6 +38,7 @@ class BayeuxAT310 < Formula
       bx_cmake_args << "-DBAYEUX_WITH_QT_GUI=ON"
       bx_cmake_args << "-DBAYEUX_WITH_DEVELOPER_TOOLS=OFF" unless build.with? "devtools"
       bx_cmake_args << "-DBAYEUX_ENABLE_TESTING=ON" if build.with? "test"
+      bx_cmake_args << "-DBAYEUX_WITH_GEANT4_MODULE=OFF" if build.without? "geant4"
       system "cmake", "..", *bx_cmake_args
       system "make"
       if build.with? "test"
