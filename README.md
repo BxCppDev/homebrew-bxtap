@@ -172,7 +172,7 @@ $ brew search bxcppdev/bxtap/
 Details on supported formulae:
 
 * **CMake**: The [CMake](https://www.cmake.org/) C++ library.
-    Installation of the 3.8.2 version:
+  Installation of the 3.8.2 version:
 ```sh
 $ brew install bxcppdev/bxtap/cmake [--with-brew-curl]
 ```
@@ -180,48 +180,47 @@ $ brew install bxcppdev/bxtap/cmake [--with-brew-curl]
     *Note*: Ubuntu 16.04 has its own system cURL (7.47.0) which maybe used to build CMake.
 
 * **cURLpp**: The [cURLpp](http://www.curlpp.org/) C++ library.
-    Installation of the 0.8.1 version:
+  Installation of the 0.8.1 version:
 ```sh
 $ brew install bxcppdev/bxtap/curlpp
 ```
 
-    *Note*: No explicit dependency on cURL (but cascading from CMake).
+  *Note*: No explicit dependency on cURL (but cascading from CMake).
 
 * **Boost**: The [Boost](https://www.boost.org/) C++ library.
-    Installation of the 1.63 version:
+  Installation of the 1.63 version:
 ```sh
 $ brew install bxcppdev/bxtap/boost --c++11
 ```
 
 * **Camp**: The [Camp](https://github.com/tegesoft/camp) C++ reflection library.
-    Installation of the 0.8.0 version:
+  Installation of the 0.8.0 version:
 ```sh
 $ brew install bxcppdev/bxtap/camp --c++11
 ```
 
 * **CLHEP**: The [CLHEP](http://proj-clhep.web.cern.ch/proj-clhep/) C++ library for High Energy Physics.
-    Installation of the 2.1.3.1 version:
+  Installation of the 2.1.3.1 version:
 ```sh
 $ brew install bxcppdev/bxtap/clhep --c++11
 ```
 
 * **Qt5** : The [Qt5](http://qt-project.org/) C++ core libraries.
-    Installation of the 5.8.0 version:
+  Installation of the 5.8.0 version:
 ```sh
 $ brew install bxcppdev/bxtap/qt5-base --c++11
 ```
 
 * **Xerces-C**: The [Xerces-C](https://xerces.apache.org/xerces-c/) XML Parser.
-    Installation of the 3.1.4 version:
+  Installation of the 3.1.4 version:
 ```sh
 $ brew install bxcppdev/bxtap/xerces-c --c++11 [--with-brew-curl]
 ```
 
-    *Note*: Ubuntu 16.04 has its own system cURL which maybe used to build Xerces-C.
+  *Note*: Ubuntu 16.04 has its own system cURL which maybe used to build Xerces-C.
 
 * **Geant4**: The [Geant4](http://geant4.cern.ch/) C++ toolkit for the simulation of the
-    passage of particles through matter.
-    Installation of the 9.6.4 version:
+  passage of particles through matter. Installation of the 9.6.4 version:
 ```sh
 $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c
 ```
@@ -232,35 +231,31 @@ $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c
 $ brew install bxcppdev/bxtap/root6 --c++11
 ```
 
-    *Note*: Specific command to be used in order to properly setup Root6 (can be added
-    in the ``do_linuxbrew_setup`` function):
+  *Note*: Specific command to be used in order to properly setup Root6 (can be added in the ``do_linuxbrew_setup`` function):
 ```sh
 $ . $(brew --prefix root6)/libexec/thisroot.sh
 ```
 
 * **Protobuf**: The [Protocol Buffers](https://developers.google.com/protocol-buffers/)
-    C++ and Java libraries.
-    Installation of the 3.3.0 version:
+  C++ and Java libraries. Installation of the 3.3.0 version:
 ```sh
 $ brew install bxcppdev/bxtap/protobuf@3.3.0  [--with-brew-build] [--with-java] [--with-brew-java]
 ```
 
 * **BxJsontools**: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/)
-    C++ library for JSON serialization.
-    Installation of the 0.1.0 version (C++11):
+  C++ library for JSON serialization. Installation of the 0.1.0 version (C++11):
 ```sh
 $ brew install bxcppdev/bxtap/bxjsontools [--without-test]
 ```
 
 * **BxRabbitMQ**: The [BxRabbitMQ](https://github.com/BxCppDev/bxrabbitmq/)
-    C++ library for RabbitQ client and server management.
-    Installation of the 0.3.0 version:
+  C++ library for RabbitQ client and server management.
+  Installation of the 0.3.0 version:
 ```sh
 $ brew install bxcppdev/bxtap/bxrabbitmq [--with-manager]
 ```
 
-* **BxProtobuftools**: The [BxProtobuftools](https://github.com/BxCppDev/bxprotobuftools/) C++ library for Protocol Buffer based serialization.
-    Installation of the 0.2.0 version:
+* **BxProtobuftools**: The [BxProtobuftools](https://github.com/BxCppDev/bxprotobuftools/) C++ library for Protocol Buffer based serialization. Installation of the 0.2.0 version:
 ```sh
 $ brew install bxcppdev/bxtap/bxprotobuftools
 ```
@@ -269,13 +264,12 @@ $ brew install bxcppdev/bxtap/bxprotobuftools
 ```sh
 $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
 ```
-
-    Installation of Bayeux-3.0.0 :
+  Installation of Bayeux-3.0.0 :
 ```sh
 $ brew install bxcppdev/bxtap/bayeux@3.0.0 --with-devtools --with-test
 ```
 
-    Installation of Bayeux-3.1.0 :
+  Installation of Bayeux-3.1.0 :
 ```sh
 $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test [--without-geant4]
 ```
