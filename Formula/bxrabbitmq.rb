@@ -13,9 +13,12 @@ class Bxrabbitmq < Formula
 
   option "without-test", "Inhibit test programs"
   option "with-manager", "Built the RabbitMQ server management API"
+  option "with-brew-curlpp", "Use the Brew-ed cURLpp library"
   if build.with? "manager"
     depends_on "bxcppdev/bxtap/bxjsontools"
-    depends_on "bxcppdev/bxtap/curlpp"
+    if build.with? "brew-curlpp"
+      depends_on "bxcppdev/bxtap/curlpp"
+    end
   end
 
   def install
