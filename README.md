@@ -176,7 +176,7 @@ Details on supported formulae:
 * **CMake**: The [CMake](https://www.cmake.org/) C++ library.
   Installation of the 3.8.2 version:
 ```sh
-$ brew install bxcppdev/bxtap/cmake [--with-brew-curl]
+$ brew install bxcppdev/bxtap/cmake
 ```
 
   *Note*: Ubuntu 16.04 has its own system cURL (7.47.0) which maybe used to build CMake.
@@ -186,8 +186,6 @@ $ brew install bxcppdev/bxtap/cmake [--with-brew-curl]
 ```sh
 $ brew install bxcppdev/bxtap/curlpp
 ```
-
-  *Note*: No explicit dependency on cURL (but cascading from CMake).
 
 * **Boost**: The [Boost](https://www.boost.org/) C++ library.
   Installation of the 1.63 version:
@@ -216,10 +214,8 @@ $ brew install bxcppdev/bxtap/qt5-base --c++11
 * **Xerces-C**: The [Xerces-C](https://xerces.apache.org/xerces-c/) XML Parser.
   Installation of the 3.1.4 version:
 ```sh
-$ brew install bxcppdev/bxtap/xerces-c --c++11 [--with-brew-curl]
+$ brew install bxcppdev/bxtap/xerces-c --c++11
 ```
-
-  *Note*: Ubuntu 16.04 has its own system cURL which maybe used to build Xerces-C.
 
 * **Geant4**: The [Geant4](http://geant4.cern.ch/) C++ toolkit for the simulation of the
   passage of particles through matter. Installation of the 9.6.4 version:
@@ -241,7 +237,7 @@ $ . $(brew --prefix root6)/libexec/thisroot.sh
 * **Protobuf**: The [Protocol Buffers](https://developers.google.com/protocol-buffers/)
   C++ and Java libraries. Installation of the 3.3.0 version:
 ```sh
-$ brew install bxcppdev/bxtap/protobuf@3.3.0  [--with-brew-build] [--with-java] [--with-brew-java]
+$ brew install bxcppdev/bxtap/protobuf@3.3.0 [--with-java] [--with-brew-java]
 ```
 
 * **BxJsontools**: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/)
