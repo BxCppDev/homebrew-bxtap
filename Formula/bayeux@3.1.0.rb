@@ -8,6 +8,12 @@ class BayeuxAT310 < Formula
     sha256 "37df4ffbaf330fd2be7e152177a367f350b1c45acf484704b55fe1c2f8e12f0d"
   end
 
+  devel do
+    version "3.1.0"
+    url "https://github.com/BxCppDev/Bayeux.git",
+        :branch => "release-3.1.0"
+  end
+
   option "with-devtools", "Build debug tools for Bayeux developers"
   option "with-test",     "Build test programs"
   option "with-geant4",   "Build Geant4 module"
