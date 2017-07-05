@@ -8,14 +8,16 @@ class Camp < Formula
 
   option :cxx11
 
-  depends_on "bxcppdev/bxtap/cmake" => :build
+  # depends_on "bxcppdev/bxtap/cmake" => :build
+  depends_on "cmake" => :build
 
   # This appears to be a more robust way of defining options so that the
   # dependency is always installed
   option "with-doxygen", "Build with doxygen documentation"
-  # if build.with? "doxygen"
-  depends_on "bxcppdev/bxtap/doxygen" => [:optional, :build]
-  # end
+  if build.with? "doxygen"
+    # depends_on "bxcppdev/bxtap/doxygen" => [:optional, :build]
+    depends_on "doxygen" => [:optional, :build]
+  end
 
   if build.cxx11?
     depends_on "bxcppdev/bxtap/boost" => "c++11"

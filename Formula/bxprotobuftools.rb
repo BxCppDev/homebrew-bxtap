@@ -9,7 +9,8 @@ class Bxprotobuftools < Formula
   option "without-test", "Inhibit test programs"
 
   needs :cxx11
-  depends_on "bxcppdev/bxtap/cmake" => :build
+  # depends_on "bxcppdev/bxtap/cmake" => :build
+  depends_on "cmake" => :build
   depends_on "bxcppdev/bxtap/protobuf@3.3.0"
 
   def install

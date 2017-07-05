@@ -7,7 +7,8 @@ class Root6 < Formula
   sha256 "ea31b047ba6fc04b0b312667349eaf1498a254ccacd212144f15ffcb3f5c0592"
   head "http://root.cern.ch/git/root.git"
 
-  depends_on "bxcppdev/bxtap/cmake" => :build
+  # depends_on "bxcppdev/bxtap/cmake" => :build
+  depends_on "cmake" => :build
   depends_on "openssl" => :optional
   depends_on "gsl" => :recommended
   depends_on "sqlite" => :recommended

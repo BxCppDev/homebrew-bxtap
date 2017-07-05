@@ -39,7 +39,8 @@ class Geant4 < Formula
   option "with-opengl-x11", "Build OpenGL X11 driver" if OS.linux?
   option "with-notimeout", "Set notimeout in installing data"
 
-  depends_on "bxcppdev/bxtap/cmake" => :build
+  # depends_on "bxcppdev/bxtap/cmake" => :build
+  depends_on "cmake" => :build
 
   if build.cxx11?
     depends_on "bxcppdev/bxtap/clhep" => ["c++11"]

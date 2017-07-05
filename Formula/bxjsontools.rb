@@ -7,7 +7,8 @@ class Bxjsontools < Formula
   head "https://github.com/BxCppDev/bxjsontools.git", :branch => "develop"
 
   needs :cxx11
-  depends_on "bxcppdev/bxtap/cmake" => :build
+  # depends_on "bxcppdev/bxtap/cmake" => :build
+  depends_on "cmake" => :build
 
   option "without-test", "Inhibit test programs"
 

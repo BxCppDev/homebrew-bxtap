@@ -12,7 +12,8 @@ class Curlpp < Formula
   end
 
   option "with-test",     "Build test programs"
-  depends_on "bxcppdev/bxtap/cmake" => :build
+  # depends_on "bxcppdev/bxtap/cmake" => :build
+  depends_on "cmake" => :build
   depends_on "curl"
 
   needs :cxx11

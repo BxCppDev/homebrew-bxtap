@@ -17,7 +17,8 @@ class Root5 < Formula
 
    option :cxx11
 
-   depends_on "bxcppdev/bxtap/cmake" => :build
+   # depends_on "bxcppdev/bxtap/cmake" => :build
+   depends_on "cmake" => :build
    depends_on "openssl"
    depends_on "gsl" => :recommended
    depends_on :python => :recommended

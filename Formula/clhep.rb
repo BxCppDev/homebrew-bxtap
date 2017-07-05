@@ -10,7 +10,8 @@ class Clhep < Formula
 
   option :cxx11
 
-  depends_on "bxcppdev/bxtap/cmake" => :build
+  # depends_on "bxcppdev/bxtap/cmake" => :build
+  depends_on "cmake" => :build
 
   def install
     ENV.cxx11 if build.cxx11?
