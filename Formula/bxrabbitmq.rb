@@ -6,7 +6,12 @@ class Bxrabbitmq < Formula
     url "https://github.com/BxCppDev/bxrabbitmq/archive/0.3.0.tar.gz"
     version "0.3.0"
     sha256 "4630e430b36780c253c7a16fd5ae8b88aa57f9617c3e0ca35016f6647757eeed"
-    head "https://github.com/BxCppDev/bxrabbitmq.git", :branch => "develop"
+    ### head "https://github.com/BxCppDev/bxrabbitmq.git", :branch => "develop"
+  end
+
+  head do
+    version "0.4.0"
+    url "https://github.com/BxCppDev/bxrabbitmq.git", :branch => "develop"
   end
 
   needs :cxx11
