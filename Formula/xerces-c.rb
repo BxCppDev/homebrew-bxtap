@@ -5,7 +5,6 @@ class XercesC < Formula
   sha256 "c98eedac4cf8a73b09366ad349cb3ef30640e7a3089d360d40a3dde93f66ecf6"
 
   option :cxx11
-  option "with-brew-curl", "Install and use Linuxbrew-ed curl"
 
   bottle do
     cellar :any
@@ -17,9 +16,7 @@ class XercesC < Formula
   end
 
   unless OS.mac?
-    if  build.with? "brew-curl"
-      depends_on "curl"
-    end
+    depends_on "curl"
     depends_on "icu4c"
   end
 

@@ -15,9 +15,9 @@ class Root5 < Formula
 
    keg_only "Conflicts with production version ROOT6"
 
-   depends_on "bxcppdev/bxtap/cmake" => :build
    option :cxx11
 
+   depends_on "bxcppdev/bxtap/cmake" => :build
    depends_on "openssl"
    depends_on "gsl" => :recommended
    depends_on :python => :recommended

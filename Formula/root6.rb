@@ -8,8 +8,8 @@ class Root6 < Formula
   head "http://root.cern.ch/git/root.git"
 
   depends_on "bxcppdev/bxtap/cmake" => :build
-  depends_on "gsl" => :recommended
   depends_on "openssl" => :optional
+  depends_on "gsl" => :recommended
   depends_on "sqlite" => :recommended
   depends_on :python => :recommended
   # For LZMA
