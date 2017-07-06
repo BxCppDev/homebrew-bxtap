@@ -17,6 +17,7 @@ class BayeuxAT310 < Formula
   option "with-devtools", "Build debug tools for Bayeux developers"
   option "with-test",     "Build test programs"
   option "with-geant4",   "Build Geant4 module"
+  option "with-qt-gui",   "Build with Qt GUI components"
 
   # depends_on "bxcppdev/bxtap/cmake" => :build
   # depends_on "bxcppdev/bxtap/doxygen" => :build
@@ -30,7 +31,9 @@ class BayeuxAT310 < Formula
   depends_on "bxcppdev/bxtap/boost" => ["c++11", "with-icu4c"]
   depends_on "bxcppdev/bxtap/camp" => "c++11"
   depends_on "bxcppdev/bxtap/clhep" => "c++11"
-  depends_on "bxcppdev/bxtap/qt5-base"
+  if build.with? "qt-gui"
+    depends_on "bxcppdev/bxtap/qt5-base"
+  end
   if build.with? "geant4"
     depends_on "bxcppdev/bxtap/geant4" => "c++11"
   end
@@ -43,7 +46,7 @@ class BayeuxAT310 < Formula
       bx_cmake_args << "-DCMAKE_INSTALL_LIBDIR=lib"
       bx_cmake_args << "-DBAYEUX_CXX_STANDARD=11"
       bx_cmake_args << "-DBAYEUX_COMPILER_ERROR_ON_WARNING=OFF"
-      bx_cmake_args << "-DBAYEUX_WITH_QT_GUI=ON"
+      bx_cmake_args << "-DBAYEUX_WITH_QT_GUI=ON" if build.with? "qt-gui"
       bx_cmake_args << "-DBAYEUX_WITH_DEVELOPER_TOOLS=OFF" unless build.with? "devtools"
       bx_cmake_args << "-DBAYEUX_ENABLE_TESTING=ON" if build.with? "test"
       bx_cmake_args << "-DBAYEUX_WITH_GEANT4_MODULE=OFF" if build.without? "geant4"
