@@ -140,7 +140,7 @@ class BoostAT163 < Formula
         return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-std=c++1y", "-L#{lib}", "-lboost_system", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++11", "-L#{lib}", "-lboost_system", "-o", "test"
     system "./test"
   end
 end
