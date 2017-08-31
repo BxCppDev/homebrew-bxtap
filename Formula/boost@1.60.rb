@@ -82,10 +82,10 @@ class BoostAT160 < Formula
     end
   end
 
-  fails_with :llvm do
-    build 2335
-    cause "Dropped arguments to functions when linking with boost"
-  end
+  # fails_with :llvm do
+  #   build 2335
+  #   cause "Dropped arguments to functions when linking with boost"
+  # end
 
   def install
     # https://svn.boost.org/trac/boost/ticket/8841
