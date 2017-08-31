@@ -3,7 +3,7 @@ class Bxjsontools < Formula
   homepage "https://github.com/BxCppDev/bxjsontools"
   url      "https://github.com/BxCppDev/bxjsontools/archive/0.2.0.tar.gz"
   version  "0.2.0"
-  sha256   "c4d71d5257f9534d84c8d41e37b25565b07756636dbdbe3221a19d11689d162f"
+  sha256   "3b9db47372c0dfc0ec74db1008cb211c1a3dc74ed804c633053aa57fb82f0111"
   head     "https://github.com/BxCppDev/bxjsontools.git", :branch => "develop"
 
   needs :cxx11
