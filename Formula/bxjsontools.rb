@@ -1,13 +1,12 @@
 class Bxjsontools < Formula
-  desc "C++ JSON serialization API"
+  desc     "C++ JSON serialization API"
   homepage "https://github.com/BxCppDev/bxjsontools"
-  url "https://github.com/BxCppDev/bxjsontools/archive/0.2.0.tar.gz"
-  version "0.2.0"
-  sha256 "c4d71d5257f9534d84c8d41e37b25565b07756636dbdbe3221a19d11689d162f"
-  head "https://github.com/BxCppDev/bxjsontools.git", :branch => "develop"
+  url      "https://github.com/BxCppDev/bxjsontools/archive/0.2.0.tar.gz"
+  version  "0.2.0"
+  sha256   "c4d71d5257f9534d84c8d41e37b25565b07756636dbdbe3221a19d11689d162f"
+  head     "https://github.com/BxCppDev/bxjsontools.git", :branch => "develop"
 
   needs :cxx11
-  # depends_on "bxcppdev/bxtap/cmake" => :build
   depends_on "cmake" => :build
 
   option "without-test", "Inhibit test programs"
