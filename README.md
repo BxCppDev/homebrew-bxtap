@@ -17,9 +17,20 @@ of the software packages released by the BxCppDev group.
 We assume you have installed  Linuxbrew on your system. Our philosophy
 is not to *activate* Linuxbrew per  default but only when it is needed
 on your system. Recommended Linuxbrew installation and setup procedure
-is given below.
+are given  below.
 
 ## Installing Linuxbrew on your system
+
+We strongly  recommend that you  work from a  *bare* environment/shell
+which means that your ``PATH`` environment variable should be as short
+as possible. Example from a bash shell on Ubuntu 16.04:
+
+```sh
+$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin
+```
+
+Ideally the ``LD_LIBRARY_PATH`` environment variable should not be used.
 
 ### Installation steps for Ubuntu Linux 16.04:
 
@@ -121,7 +132,7 @@ This is it! You are ready to enjoy Linuxbrew.
 ## Installation of the tap
 
 Once  installed   and  setup  Linuxbrew   on  your  system,   you  can
-install/register   the  ``bxcppdev/homebrew-bxtap``   tap  in   your  Linuxbrew
+install/register the ``bxcppdev/homebrew-bxtap`` tap in your Linuxbrew
 repository.
 
 ### Installation steps
@@ -174,7 +185,7 @@ $ brew search bxcppdev/bxtap/
 Details on supported formulae:
 
 * **CMake**: The [CMake](https://www.cmake.org/) C++ library.
-  Installation of the 3.8.2 version:
+  Installation of the 3.9.1 version:
 ```sh
 $ brew install bxcppdev/bxtap/cmake
 ```
@@ -317,7 +328,7 @@ $ brew install bxcppdev/bxtap/bayeux \
 
 WIP
 
-1. First install Bayeux:
+1. Install Bayeux:
 ```sh
 $ brew install bxcppdev/bxtap/bayeux@3.1.0 \
     --with-devtools \
@@ -331,6 +342,9 @@ $ brew install bxcppdev/bxtap/bxprotobuftools
 $ brew install bxcppdev/bxtap/bxjsontools
 $ brew install bxcppdev/bxtap/bxrabbitmq --with-manager
 ```
+3. Install Vire:
+
+NOT AVAILABLE YET.
 
 ## Useful links
 
