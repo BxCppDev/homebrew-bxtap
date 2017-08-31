@@ -15,7 +15,6 @@ class RabbitmqC < Formula
 
   option "without-tools", "Build without command-line tools"
 
-  # depends_on "bxcppdev/bxtap/cmake" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "popt" if build.with? "tools"
