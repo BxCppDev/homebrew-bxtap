@@ -241,7 +241,7 @@ $ brew install bxcppdev/bxtap/protobuf@3.3.0 [--with-java] [--with-brew-java]
 ```
 
 * **BxJsontools**: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/)
-  C++ library for JSON serialization. Installation of the 0.1.0 version (C++11):
+  C++ library for JSON serialization. Installation of the 0.2.0 version (C++11):
 ```sh
 $ brew install bxcppdev/bxtap/bxjsontools [--without-test]
 ```

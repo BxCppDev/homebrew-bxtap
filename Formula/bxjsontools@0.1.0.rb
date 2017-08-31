@@ -1,9 +1,9 @@
-class Bxjsontools < Formula
+class BxjsontoolsAT010 < Formula
   desc "C++ JSON serialization API"
   homepage "https://github.com/BxCppDev/bxjsontools"
-  url "https://github.com/BxCppDev/bxjsontools/archive/0.2.0.tar.gz"
-  version "0.2.0"
-  sha256 "c4d71d5257f9534d84c8d41e37b25565b07756636dbdbe3221a19d11689d162f"
+  url "https://github.com/BxCppDev/bxjsontools/archive/0.1.0.tar.gz"
+  version "0.1.0"
+  sha256 "cc52b108182347b5599cf930d6af6f4dc25f51a2b89864cf7451485103851bf4"
   head "https://github.com/BxCppDev/bxjsontools.git", :branch => "develop"
 
   needs :cxx11
