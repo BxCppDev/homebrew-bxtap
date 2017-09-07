@@ -14,25 +14,28 @@ class BoostAT163 < Formula
     sha256 "3cb0deefc084ef0c9b3a2242e99e1367c7509e1f4fb57aa81721bdc87d12ff32" => :x86_64_linux
   end
 
-  option "with-icu4c", "Build regexp engine with icu support"
-  option "without-single", "Disable building single-threading variant"
-  option "without-static", "Disable building static library variant"
   option :cxx11
+  needs :cxx11 if build.cxx11?
 
+  option "with-icu4c", "Build regexp engine with icu support"
   deprecated_option "with-icu" => "with-icu4c"
 
-  if build.cxx11?
-    depends_on "icu4c" => [:optional, "c++11"]
-  else
-    depends_on "icu4c" => :optional
+  option "with-system-deps", "Use system dependencies"
+  unless build.with? "system-deps"
+    if build.cxx11?
+      depends_on "icu4c" => [:optional, "c++11"]
+    else
+      depends_on "icu4c" => :optional
+    end
+
+    unless OS.mac?
+      depends_on "bzip2"
+      depends_on "zlib"
+    end
   end
 
-  unless OS.mac?
-    depends_on "bzip2"
-    depends_on "zlib"
-  end
-
-  needs :cxx11 if build.cxx11?
+  option "without-single", "Disable building single-threading variant"
+  option "without-static", "Disable building static library variant"
 
   def install
     # Reduce memory usage below 4 GB for Circle CI.
