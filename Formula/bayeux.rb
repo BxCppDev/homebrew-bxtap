@@ -1,32 +1,30 @@
 # Imported from SuperNEMO-DBD/homebrew-cadfael/Formula/bayeux.rb
 
 class Bayeux < Formula
-  desc "Bayeux Library"
+  desc     "Bayeux Library"
   homepage "https://github.com/BxCppDev/Bayeux"
 
   stable do
     version "3.0.0"
-    url "https://github.com/BxCppDev/Bayeux/archive/Bayeux-3.0.0.tar.gz"
-    sha256 "fdaaac2dc738d0875b06b795a16d3017775f26de7f57ed836408b8c8a5349f3b"
+    url     "https://github.com/BxCppDev/Bayeux/archive/Bayeux-3.0.0.tar.gz"
+    sha256  "fdaaac2dc738d0875b06b795a16d3017775f26de7f57ed836408b8c8a5349f3b"
   end
 
   head do
     version "3.0.0"
-    url "https://github.com/BxCppDev/Bayeux.git",
-        :branch => "master"
+    url     "https://github.com/BxCppDev/Bayeux.git",
+            :branch => "master"
   end
 
   devel do
     version "3.1.0"
-    url "https://github.com/BxCppDev/Bayeux.git",
-        :branch => "develop"
+    url     "https://github.com/BxCppDev/Bayeux.git",
+            :branch => "develop"
   end
 
   option "with-devtools", "Build debug tools for Bayeux developers"
   option "with-test",     "Build test programs"
 
-  # depends_on "bxcppdev/bxtap/cmake" => :build
-  # depends_on "bxcppdev/bxtap/doxygen" => :build
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gsl"
@@ -62,6 +60,8 @@ class Bayeux < Formula
 
   test do
     system "#{bin}/bxquery", "--help"
-    system "#{bin}/bxg4_production", "--help"
+    if build.with? "geant4"
+      system "#{bin}/bxg4_production", "--help"
+    end
   end
 end

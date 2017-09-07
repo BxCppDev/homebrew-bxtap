@@ -36,7 +36,7 @@ Ideally the ``LD_LIBRARY_PATH`` environment variable should not be used.
 
 Here we assume you use a bash shell:
 
-1. Install dependencies:
+1. Install system dependencies:
 ```sh
 $ sudo apt-get install build-essential curl git python-setuptools ruby
 ```
@@ -122,9 +122,13 @@ The ``brew`` executable will be available from:
 $ which brew
 /path/to/Linuxbrew/installation/directory/bin/brew
 ```
-and you will be able to  immediately enter a brew shell when needed:
+and you will be able to immediately enter a brew shell when needed:
 ```sh
 $ brew sh
+```
+or use the ``brew`` command:
+```sh
+$ brew help
 ```
 
 This is it! You are ready to enjoy Linuxbrew.
@@ -148,7 +152,7 @@ $ brew tap bxcppdev/homebrew-bxtap
 ```
    The            tap            is            downloaded            from
 ``https://github.com/BxCppDev/homebrew-bxtap.git``  and  installed  in
-the         ``${HOME}/linuxbrew/Library/Taps/bxcppdev/homebrew-bxtap``
+the         ``$(brew --prefix)/Library/Taps/bxcppdev/homebrew-bxtap``
 directory.
 
 ### Additional useful commands
@@ -172,6 +176,7 @@ $ brew tap bxcppdev/homebrew-bxtap file:///path/to/your/homebrew-bxtap/local/git
 $ brew tap-unpin bxcppdev/homebrew-bxtap
 $ brew untap bxcppdev/homebrew-bxtap
 ```
+   However, packages previously installed through the tap should meet issues.
 
 ## List of available formulae
 
@@ -184,13 +189,16 @@ $ brew search bxcppdev/bxtap/
 
 Details on supported formulae:
 
-* **CMake**: The [CMake](https://www.cmake.org/) C++ library.
-  Installation of the 3.9.1 version:
+* **CMake** (obsolete): The [CMake](https://www.cmake.org/) C++ library.
+  Installation of the 3.8.2 version:
 ```sh
 $ brew install bxcppdev/bxtap/cmake
 ```
 
-  *Note*: Ubuntu 16.04 has its own system cURL (7.47.0) which maybe used to build CMake.
+	*Note*: Linuxbrew/core provides its own CMake formula.
+
+	*Note*: Ubuntu 16.04 has its own system cURL (7.47.0) which maybe used to build CMake.
+
 
 * **cURLpp**: The [cURLpp](http://www.curlpp.org/) C++ library.
   Installation of the 0.8.1 version:
@@ -198,11 +206,15 @@ $ brew install bxcppdev/bxtap/cmake
 $ brew install bxcppdev/bxtap/curlpp
 ```
 
+	*Note*: Linuxbrew/core provides its own cURLpp formula.
+
 * **Boost**: The [Boost](https://www.boost.org/) C++ library.
   Installation of the 1.63 version:
 ```sh
 $ brew install bxcppdev/bxtap/boost --c++11
 ```
+
+	*Note*: Linuxbrew/core provides its own Boost formulas.
 
 * **Camp**: The [Camp](https://github.com/tegesoft/camp) C++ reflection library.
   Installation of the 0.8.0 version:
@@ -216,11 +228,15 @@ $ brew install bxcppdev/bxtap/camp --c++11
 $ brew install bxcppdev/bxtap/clhep --c++11
 ```
 
+	*Note*: Linuxbrew provides its own CLHEP formula.
+
 * **Qt5** : The [Qt5](http://qt-project.org/) C++ core libraries.
   Installation of the 5.8.0 version:
 ```sh
 $ brew install bxcppdev/bxtap/qt5-base --c++11
 ```
+
+	*Note*: Linuxbrew provides its own QT5 formula which conflicts with this qt5-base.
 
 * **Xerces-C**: The [Xerces-C](https://xerces.apache.org/xerces-c/) XML Parser.
   Installation of the 3.1.4 version:
@@ -228,11 +244,15 @@ $ brew install bxcppdev/bxtap/qt5-base --c++11
 $ brew install bxcppdev/bxtap/xerces-c --c++11
 ```
 
+	*Note*: Linuxbrew provides its own Xerces-C formula.
+
 * **Geant4**: The [Geant4](http://geant4.cern.ch/) C++ toolkit for the simulation of the
   passage of particles through matter. Installation of the 9.6.4 version:
 ```sh
 $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c
 ```
+
+	*Note*: Linuxbrew provides its own Geant4 formula.
 
 * **Root** (version 6): The [Root](http://root.cern.ch/) Data Analysis Framework.
   Installation of the 6.08.06 version:
@@ -240,7 +260,7 @@ $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c
 $ brew install bxcppdev/bxtap/root6 --c++11
 ```
 
-  *Note*: Specific command to be used in order to properly setup Root6 (can be added in the ``do_linuxbrew_setup`` function):
+  *Note*: Specific command to be used in order to properly setup ROOT 6 (can be added in the ``do_linuxbrew_setup`` function):
 ```sh
 $ . $(brew --prefix root6)/libexec/thisroot.sh
 ```
@@ -248,8 +268,10 @@ $ . $(brew --prefix root6)/libexec/thisroot.sh
 * **Protobuf**: The [Protocol Buffers](https://developers.google.com/protocol-buffers/)
   C++ and Java libraries. Installation of the 3.3.0 version:
 ```sh
-$ brew install bxcppdev/bxtap/protobuf@3.3.0 [--with-java] [--with-brew-java]
+$ brew install bxcppdev/bxtap/protobuf [--with-java] [--with-brew-java]
 ```
+
+	*Note*: Linuxbrew provides its own Protobuf formulas but they do not support Java .
 
 * **BxJsontools**: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/)
   C++ library for JSON serialization. Installation of the 0.2.0 version (C++11):
@@ -292,9 +314,11 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test [--withou
 ### Install Bayeux
 
 * Install the Bayeux last release step by step:
+
+  - Brew some Linuxbrew modules:
 ```sh
-$ brew install bxcppdev/bxtap/cmake
-$ brew install bxcppdev/bxtap/doxygen --build-from-source
+$ brew install cmake
+$ brew install doxygen --build-from-source
 $ brew install icu4c --c++11
 $ brew install bxcppdev/bxtap/boost --c++11 --with-icu4c
 $ brew install bxcppdev/bxtap/camp --c++11
@@ -304,47 +328,35 @@ $ brew install bxcppdev/bxtap/root6
 $ brew install bxcppdev/bxtap/geant4 --c++11 \
     --with-opengl-x11 \
     --with-xerces-c
-$ brew install bxcppdev/bxtap/bayeux \
-    --with-devtools \
-    --with-test \
+$ brew install bxcppdev/bxtap/bayeux [--without-geant4]
 ```
 
-* Install Bayeux 3.1.0 without the Geant4 module:
-```sh
-$ brew install bxcppdev/bxtap/bayeux@3.1.0 \
-    --with-devtools \
-    --with-test \
-    --without-geant4
-```
-
-* One shot installation with dependencies automatically resolved:
+* Installation with all dependencies automatically resolved:
 ```sh
 $ brew install bxcppdev/bxtap/bayeux \
-    --with-devtools \
-    --with-test
 ```
 
 ### Install Vire
 
 WIP
 
-1. Install Bayeux:
+1. Install system dependencies (Ubuntu 16.04):
 ```sh
-$ brew install bxcppdev/bxtap/bayeux@3.1.0 \
-    --with-devtools \
-    --with-test \
-    [--without-geant4]
+$ sudo apt-get install openjdk-8-jdk
+$ sudo apt-get install maven
 ```
 2. Install dependencies:
 ```sh
-$ brew install bxcppdev/bxtap/protobuf@3.3.0
+$ brew install bxcppdev/bxtap/protobuf
 $ brew install bxcppdev/bxtap/bxprotobuftools
 $ brew install bxcppdev/bxtap/bxjsontools
 $ brew install bxcppdev/bxtap/bxrabbitmq --with-manager
 ```
-3. Install Vire:
-
-NOT AVAILABLE YET.
+3. Install Bayeux (Geant4 module is not required):
+```sh
+$ brew install bxcppdev/bxtap/bayeux@3.1.0 [--without-geant4]
+```
+4. Install Vire: NOT AVAILABLE YET.
 
 ## Useful links
 

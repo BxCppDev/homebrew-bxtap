@@ -1,13 +1,12 @@
 class Root6 < Formula
-  desc "CERN C++ Data Analysis and Persistency Libraries"
+  desc     "CERN C++ Data Analysis and Persistency Libraries"
   homepage "http://root.cern.ch"
-  url "http://root.cern.ch/download/root_v6.08.06.source.tar.gz"
-  mirror "https://fossies.org/linux/misc/root_v6.08.06.source.tar.gz"
-  version "6.08.06"
-  sha256 "ea31b047ba6fc04b0b312667349eaf1498a254ccacd212144f15ffcb3f5c0592"
-  head "http://root.cern.ch/git/root.git"
+  url      "http://root.cern.ch/download/root_v6.08.06.source.tar.gz"
+  mirror   "https://fossies.org/linux/misc/root_v6.08.06.source.tar.gz"
+  version  "6.08.06"
+  sha256   "ea31b047ba6fc04b0b312667349eaf1498a254ccacd212144f15ffcb3f5c0592"
+  head     "http://root.cern.ch/git/root.git"
 
-  # depends_on "bxcppdev/bxtap/cmake" => :build
   depends_on "cmake" => :build
   depends_on "openssl" => :optional
   depends_on "gsl" => :recommended

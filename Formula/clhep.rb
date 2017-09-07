@@ -1,20 +1,21 @@
+# coding: utf-8
 class Clhep < Formula
-  desc "C++ Class Library for High Energy Physics"
+  desc     "C++ Class Library for High Energy Physics"
   homepage "http://proj-clhep.web.cern.ch/proj-clhep/"
-  url "http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/clhep-2.1.3.1.tgz"
-  sha256 "5d3e45b39a861731fe3a532bb1426353bf62b54c7b90ecf268827e50f925642b"
+  url      "http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/clhep-2.1.3.1.tgz"
+  sha256   "5d3e45b39a861731fe3a532bb1426353bf62b54c7b90ecf268827e50f925642b"
 
   # Patch for clang compatibility, adapted from MacPorts
   # Not working patch: Hunk #1 FAILED at 114.
   # patch :DATA
 
   option :cxx11
+  needs  :cxx11 if build.cxx11?
 
-  # depends_on "bxcppdev/bxtap/cmake" => :build
   depends_on "cmake" => :build
 
   def install
-    ENV.cxx11 if build.cxx11?
+    ENV.cxx11 # if build.cxx11?
     mkdir "clhep-build" do
       system "cmake", "../CLHEP", *std_cmake_args
       system "make", "install"

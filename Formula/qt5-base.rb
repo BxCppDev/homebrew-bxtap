@@ -1,8 +1,8 @@
 class Qt5Base < Formula
-  desc "Qt5 Core Libraries"
+  desc     "Qt5 Core Libraries"
   homepage "http://qt-project.org/"
-  url "http://download.qt.io/official_releases/qt/5.8/5.8.0/submodules/qtbase-opensource-src-5.8.0.tar.gz"
-  sha256 "0f6ecd94abd148f1ea4ad08905308af973c6fad9e8fca7491d68dbc8fbd88872"
+  url      "http://download.qt.io/official_releases/qt/5.8/5.8.0/submodules/qtbase-opensource-src-5.8.0.tar.gz"
+  sha256   "0f6ecd94abd148f1ea4ad08905308af973c6fad9e8fca7491d68dbc8fbd88872"
 
   keg_only "Qt5 very picky about install locations, so keep it isolated"
 

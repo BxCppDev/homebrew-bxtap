@@ -1,26 +1,25 @@
 class BayeuxAT310 < Formula
-  desc "Bayeux 3.1.0 Library"
+  desc     "Bayeux 3.1.0 Library"
   homepage "https://github.com/BxCppDev/Bayeux"
 
   stable do
     version "3.1.0"
-    url "https://github.com/BxCppDev/Bayeux/archive/Bayeux-3.1.0-alpha.tar.gz"
-    sha256 "37df4ffbaf330fd2be7e152177a367f350b1c45acf484704b55fe1c2f8e12f0d"
+    url     "https://github.com/BxCppDev/Bayeux/archive/Bayeux-3.1.0-beta-1.tar.gz"
+    sha256  "b3bbe1daa1abed5fc062577e4005043d454d0939e46aeb6e619961dd3c8144ab"
   end
 
   devel do
     version "3.1.0"
-    url "https://github.com/BxCppDev/Bayeux.git",
-        :branch => "release-3.1.0"
+    url     "https://github.com/BxCppDev/Bayeux.git",
+            :branch => "release-3.1.0"
   end
 
-  option "with-devtools", "Build debug tools for Bayeux developers"
-  option "with-test",     "Build test programs"
-  option "with-geant4",   "Build Geant4 module"
-  option "with-qt-gui",   "Build with Qt GUI components"
+  option "without-devtools", "Do not build additional tools for Bayeux developers"
+  option "without-test",     "Do not build test programs"
+  option "without-geant4",   "Do not build Geant4 module"
+  option "with-lahague",     "Build lahague module"
+  option "with-qt-gui",      "Build with Qt GUI components"
 
-  # depends_on "bxcppdev/bxtap/cmake" => :build
-  # depends_on "bxcppdev/bxtap/doxygen" => :build
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "gsl"
@@ -50,6 +49,7 @@ class BayeuxAT310 < Formula
       bx_cmake_args << "-DBAYEUX_WITH_DEVELOPER_TOOLS=OFF" unless build.with? "devtools"
       bx_cmake_args << "-DBAYEUX_ENABLE_TESTING=ON" if build.with? "test"
       bx_cmake_args << "-DBAYEUX_WITH_GEANT4_MODULE=OFF" if build.without? "geant4"
+      bx_cmake_args << "-DBAYEUX_WITH_LAHAGUE=ON" if build.with? "lahague"
       system "cmake", "..", *bx_cmake_args
       system "make"
       if build.with? "test"
@@ -61,6 +61,8 @@ class BayeuxAT310 < Formula
 
   test do
     system "#{bin}/bxquery", "--help"
-    system "#{bin}/bxg4_production", "--help"
+    if build.with? "geant4"
+      system "#{bin}/bxg4_production", "--help"
+    end
   end
 end

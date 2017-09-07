@@ -1,9 +1,9 @@
 class Boost < Formula
-  desc "Collection of portable C++ source libraries"
+  desc     "Collection of portable C++ source libraries"
   homepage "https://www.boost.org/"
-  url "https://downloads.sourceforge.net/project/boost/boost/1.63.0/boost_1_63_0.tar.bz2"
-  sha256 "beae2529f759f6b3bf3f4969a19c2e9d6f0c503edcb2de4a61d1428519fcb3b0"
-  head "https://github.com/boostorg/boost.git"
+  url      "https://downloads.sourceforge.net/project/boost/boost/1.63.0/boost_1_63_0.tar.bz2"
+  sha256   "beae2529f759f6b3bf3f4969a19c2e9d6f0c503edcb2de4a61d1428519fcb3b0"
+  head     "https://github.com/boostorg/boost.git"
 
   bottle do
     cellar :any
@@ -14,12 +14,13 @@ class Boost < Formula
     sha256 "3cb0deefc084ef0c9b3a2242e99e1367c7509e1f4fb57aa81721bdc87d12ff32" => :x86_64_linux
   end
 
-  option "with-icu4c", "Build regexp engine with icu support"
+  option :cxx11
+  needs  :cxx11 if build.cxx11?
+
+  option "with-icu4c",     "Build regexp engine with icu support"
+  deprecated_option "with-icu" => "with-icu4c"
   option "without-single", "Disable building single-threading variant"
   option "without-static", "Disable building static library variant"
-  option :cxx11
-
-  deprecated_option "with-icu" => "with-icu4c"
 
   if build.cxx11?
     depends_on "icu4c" => [:optional, "c++11"]
@@ -31,8 +32,6 @@ class Boost < Formula
     depends_on "bzip2"
     depends_on "zlib"
   end
-
-  needs :cxx11 if build.cxx11?
 
   def install
     # Reduce memory usage below 4 GB for Circle CI.

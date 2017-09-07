@@ -3,9 +3,9 @@ class Root5 < Formula
 
    stable do
      version "5.34.36"
-     sha256 "fc868e5f4905544c3f392cc9e895ef5571a08e48682e7fe173bd44c0ba0c7dcd"
-     url "https://root.cern.ch/download/root_v#{version}.source.tar.gz"
-     mirror "http://ftp.riken.jp/pub/ROOT/root_v#{version}.source.tar.gz"
+     sha256  "fc868e5f4905544c3f392cc9e895ef5571a08e48682e7fe173bd44c0ba0c7dcd"
+     url     "https://root.cern.ch/download/root_v#{version}.source.tar.gz"
+     mirror  "http://ftp.riken.jp/pub/ROOT/root_v#{version}.source.tar.gz"
    end
    revision 1
 
@@ -16,8 +16,8 @@ class Root5 < Formula
    keg_only "Conflicts with production version ROOT6"
 
    option :cxx11
+   needs  :cxx11 if build.cxx11?
 
-   # depends_on "bxcppdev/bxtap/cmake" => :build
    depends_on "cmake" => :build
    depends_on "openssl"
    depends_on "gsl" => :recommended

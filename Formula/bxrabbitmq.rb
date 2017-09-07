@@ -15,7 +15,7 @@ class Bxrabbitmq < Formula
   end
 
   needs :cxx11
-  # depends_on "bxcppdev/bxtap/cmake" => :build
+
   depends_on "cmake" => :build
   # depends_on "bxcppdev/bxtap/rabbitmq-c"
   depends_on "rabbitmq-c"

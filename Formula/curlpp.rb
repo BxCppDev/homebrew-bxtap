@@ -1,8 +1,8 @@
 class Curlpp < Formula
-  desc "C++ wrapper for libcURL"
+  desc     "C++ wrapper for libcURL"
   homepage "http://www.curlpp.org"
-  url "https://github.com/jpbarrette/curlpp/archive/v0.8.1.tar.gz"
-  sha256 "97e3819bdcffc3e4047b6ac57ca14e04af85380bd93afe314bee9dd5c7f46a0a"
+  url      "https://github.com/jpbarrette/curlpp/archive/v0.8.1.tar.gz"
+  sha256   "97e3819bdcffc3e4047b6ac57ca14e04af85380bd93afe314bee9dd5c7f46a0a"
 
   bottle do
     cellar :any
@@ -11,8 +11,7 @@ class Curlpp < Formula
     sha256 "fd39edf63c0745f9d39a76f7b428eba285af313967ad4697d4fb08b705ee3eef" => :yosemite
   end
 
-  option "with-test",     "Build test programs"
-  # depends_on "bxcppdev/bxtap/cmake" => :build
+  option "without-test", "Do not build test programs"
   depends_on "cmake" => :build
   depends_on "curl"
 
