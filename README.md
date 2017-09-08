@@ -57,8 +57,9 @@ Here we assume you use a bash shell:
 
 1.  Install  system dependencies  required  to  initiate properly  the
     Linuxbrew installation:
-```sh $ sudo apt-get  install build-essential
-curl git python-setuptools ruby ```
+```sh
+$ sudo apt-get install build-essential curl git python-setuptools ruby
+```
 
 2. Clone the Linuxbrew GitHub repository:
 ```sh
