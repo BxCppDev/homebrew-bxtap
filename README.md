@@ -274,6 +274,7 @@ $ brew install bxcppdev/bxtap/camp --c++11
 ```sh
 $ brew install bxcppdev/bxtap/clhep --c++11
 ```
+
   Note: Linuxbrew provides its own CLHEP formula.
 
 * **Qt5** base: The [Qt5](http://qt-project.org/) C++ core libraries.
@@ -281,6 +282,7 @@ $ brew install bxcppdev/bxtap/clhep --c++11
 ```sh
 $ brew install bxcppdev/bxtap/qt5-base --c++11
 ```
+
   Note: Linuxbrew provides its own QT5 formula which conflicts with this qt5-base.
 
 * **Xerces-C**: The [Xerces-C](https://xerces.apache.org/xerces-c/) XML parser.
