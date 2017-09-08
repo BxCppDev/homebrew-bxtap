@@ -302,7 +302,7 @@ $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c
 ```sh
 $ brew install bxcppdev/bxtap/root6 --c++11
 ```
-    Note: Specific command to be used in order to properly setup ROOT 6 (can be added in the ``do_linuxbrew_setup`` function):
+    Note: Here is a command to be used in order to properly setup ROOT 6. It can be added in the ``do_linuxbrew_setup`` function:
 ```sh
 $ . $(brew --prefix root6)/libexec/thisroot.sh
 ```
