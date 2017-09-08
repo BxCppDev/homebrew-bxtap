@@ -86,7 +86,11 @@ function do_linuxbrew_setup()
   export PATH="${LINUXBREW_INSTALL_DIR}/bin:${PATH}"
   export MANPATH="${LINUXBREW_INSTALL_DIR}/share/man:${MANPATH}"
   export INFOPATH="${LINUXBREW_INSTALL_DIR}/share/info:${INFOPATH}"
-  # Additional commands can be added here...
+  # Additional commands may be added from here:
+  # export HOMEBREW_TEMP=/some/directory/for/building/brew/driven/software/packages
+  # export HOMEBREW_CACHE=/some/directory/for/caching/brew/downloads
+  # export HOMEBREW_BUILD_FROM_SOURCE=1
+  # source $(brew --prefix root6)/libexec/thisroot.sh
   echo >&2 "[info] do_linuxbrew_setup: Linuxbrew is setup."
   return 0
 }
