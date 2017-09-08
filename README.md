@@ -12,45 +12,66 @@
 ## Introduction
 
 This tap provides a set of Linuxbrew formulae to ease the installation
-of the software packages released by the BxCppDev group.
+of the  software packages released  by the  BxCppDev group and  try to
+solve  software  dependency  issues.  Linuxbrew is  not  the  ultimate
+solution to solve package installation and dependency problems. It can
+be  very useful  and  practical  but it  may  also  add some  software
+management complexity and concern on some particular environment.
 
 We assume you have installed  Linuxbrew on your system. Our philosophy
 is not to *activate* Linuxbrew per  default but only when it is needed
-on your system. Recommended Linuxbrew installation and setup procedure
-are given  below.
+on  your system,  mainly to  use the  tools provided  by the  BxCppDev
+group.   Recommended Linuxbrew  installation and  setup procedures  are
+given below.
+
+Ubuntu  Linux being  our main  development system,  we give  here some
+installation  and  configuration  hints   for  this  environment.   In
+principle,  the  procedures  explained  below  should  work  on  other
+distros, maybe with some minor changes . However, it is very difficult
+for us to  guarantee it will work  for your own system;  we don't have
+the resources to check all existing working envs.
 
 ## Installing Linuxbrew on your system
 
 We strongly  recommend that you  work from a  *bare* environment/shell
 which means that your ``PATH`` environment variable should be as short
-as possible. Example from a bash shell on Ubuntu 16.04:
+as possible  and confined for a  minimal system usage. Example  from a
+bash shell on Ubuntu 16.04:
 
 ```sh
 $ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin
 ```
 
-Ideally the ``LD_LIBRARY_PATH`` environment variable should not be used.
+Ideally  the ``LD_LIBRARY_PATH``  environment variable  should not  be
+used  at all,  i.e. it  should *not*  be set  in your  default working
+environment      from      your     ``.bashrc``      profile      (see
+https://blogs.oracle.com/ali/avoiding-ldlibrarypath%3a-the-options). Our
+experience is that the use of ``LD_LIBRARY_PATH`` by end users in some
+arbitrary customer environment often ends with problems.
+
 
 ### Installation steps for Ubuntu Linux 16.04:
 
 Here we assume you use a bash shell:
 
-1. Install system dependencies:
-```sh
-$ sudo apt-get install build-essential curl git python-setuptools ruby
-```
+1.  Install  system dependencies  required  to  initiate properly  the
+    Linuxbrew installation:
+```sh $ sudo apt-get  install build-essential
+curl git python-setuptools ruby ```
 
 2. Clone the Linuxbrew GitHub repository:
 ```sh
 $ git clone https://github.com/Linuxbrew/brew.git ${HOME}/linuxbrew
 ```
 
-   *Note:* Here the ``HOME`` directory can be changed to any location of your filesystem
-   for which you have write access and also enough available storage capacity, depending on which software you
-   will need to manage through Linuxbrew (several Gb sounds reasonnable).
+   *Note:* Here the ``HOME`` directory  can be changed to any location
+   of your filesystem for which you  have write access and also enough
+   available storage  capacity, depending  on which software  you will
+   need to manage through Linuxbrew (several Gb sounds reasonnable).
 
-3. Edit your ``~/.bashrc`` file and create a bash setup function for Linuxbrew:
+3. Edit your ``~/.bashrc`` file and create a bash setup function for Linuxbrew
+   as well as a companion alias:
 ```sh
 function do_linuxbrew_setup()
 {
@@ -71,6 +92,24 @@ function do_linuxbrew_setup()
 alias linuxbrew_setup='do_linuxbrew_setup'
 ```
 
+  This approach allows  not to setup Linuxbrew by default  but only on
+  explicit demand  from a given shell.  IMHO, it is a  bad practice to
+  systematically  load tons  of  paths to  all  the software  binaries
+  installed on your system. You end  up with a very heavy environment,
+  polluted by plenty of software that  you won't use during a specific
+  working session. Our credo is thus: *Activate only what you will use!*
+
+  When you want to use the Linuxbrew software, open a terminal and type:
+```sh
+$ linuxbrew_setup
+```
+
+  Then  your shell  is  ready to  go further  with  Linuxbrew and  the
+  software it provides  to you.  When you are done  with Linuxbrew and
+  its embedded  companions, simply end  this shell.  Of course,  it is
+  not a perfect approach and it may not cover all users' needs or ways
+  of working.
+
 ### Test Linuxbrew after installation
 
 From a bare shell, *activate* your Linuxbrew system:
@@ -78,29 +117,38 @@ From a bare shell, *activate* your Linuxbrew system:
 $ export PATH="${HOME}/linuxbrew/bin:${PATH}
 ```
 
-Then try install a package:
+Then try install a dummy package:
 ```sh
 $ brew install hello
+...
+$ which hello
+/home/your-login/Linuxbrew/linuxbrew/bin/hello
+$ hello
+Bonjour, le monde !
 ```
 
 ### Optional setup of temporary and cache directories
 
 Linuxbrew uses  default locations to store  downloaded files (default:
-``~/.cache/Homebrew/``  on  Linux)   and  temporary  build  directories
-(default:  ``/tmp``).  It  may  occur these  default  paths  are  not
+``~/.cache/Homebrew/``  on  Linux)  and  temporary  build  directories
+(default:  ``/tmp``).   It  may  occur these  default  paths  are  not
 suitable on your system or have  not enough storage capacity.  You can
 explicitely define dedicated  directories to be used  during the build
-process. For that, define the two following environment variables:
+process.  For  that, you  can  define  the two  following  environment
+variables:
 ```sh
-$ export HOMEBREW_TEMP=/some/directory/for/brew/driven/software/build
+$ export HOMEBREW_TEMP=/some/directory/for/building/brew/driven/software/packages
 $ export HOMEBREW_CACHE=/some/directory/for/caching/brew/downloads
 ```
-Such lines can be added in the setup script shown above (in function ``do_linuxbrew_setup``).
+Such lines can  be added in the setup script  shown above (in function
+``do_linuxbrew_setup``).
 
-You may also want to force the installation of brew formulae from source only,
-including dependencies. In that case, it is possible to set the following environment variable:
+You may  also want  to force  the installation  of brew  formulae from
+source only, including  dependencies. In that case, it  is possible to
+set   the    following   environment   variable:
 ```sh
-$ export HOMEBREW_BUILD_FROM_SOURCE=1
+$ export
+HOMEBREW_BUILD_FROM_SOURCE=1
 ```
 
 ### Setup Linuxbrew
@@ -116,6 +164,7 @@ Your ``PATH`` should then be updated to something like:
 $ echo $PATH
 /path/to/Linuxbrew/installation/directory/bin:/other/directories/in/your/path...
 ```
+Thus Linuxbrew binary path has the priority over other paths, including the system path.
 
 The ``brew`` executable will be available from:
 ```sh
@@ -176,7 +225,8 @@ $ brew tap bxcppdev/homebrew-bxtap file:///path/to/your/homebrew-bxtap/local/git
 $ brew tap-unpin bxcppdev/homebrew-bxtap
 $ brew untap bxcppdev/homebrew-bxtap
 ```
-   However, packages previously installed through the tap should meet issues.
+   However, I expect the packages previously installed through the tap
+   should meet issues in a short term.
 
 ## List of available formulae
 
@@ -230,7 +280,7 @@ $ brew install bxcppdev/bxtap/clhep --c++11
 
 	*Note*: Linuxbrew provides its own CLHEP formula.
 
-* **Qt5** : The [Qt5](http://qt-project.org/) C++ core libraries.
+* **Qt5** base: The [Qt5](http://qt-project.org/) C++ core libraries.
   Installation of the 5.8.0 version:
 ```sh
 $ brew install bxcppdev/bxtap/qt5-base --c++11
@@ -238,7 +288,7 @@ $ brew install bxcppdev/bxtap/qt5-base --c++11
 
 	*Note*: Linuxbrew provides its own QT5 formula which conflicts with this qt5-base.
 
-* **Xerces-C**: The [Xerces-C](https://xerces.apache.org/xerces-c/) XML Parser.
+* **Xerces-C**: The [Xerces-C](https://xerces.apache.org/xerces-c/) XML parser.
   Installation of the 3.1.4 version:
 ```sh
 $ brew install bxcppdev/bxtap/xerces-c --c++11
@@ -260,7 +310,7 @@ $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c
 $ brew install bxcppdev/bxtap/root6 --c++11
 ```
 
-  *Note*: Specific command to be used in order to properly setup ROOT 6 (can be added in the ``do_linuxbrew_setup`` function):
+   *Note*: Specific command to be used in order to properly setup ROOT 6 (can be added in the ``do_linuxbrew_setup`` function):
 ```sh
 $ . $(brew --prefix root6)/libexec/thisroot.sh
 ```
@@ -271,7 +321,7 @@ $ . $(brew --prefix root6)/libexec/thisroot.sh
 $ brew install bxcppdev/bxtap/protobuf [--with-java] [--with-brew-java]
 ```
 
-	*Note*: Linuxbrew provides its own Protobuf formulas but they do not support Java .
+	*Note*: Linuxbrew provides its own Protobuf formulas but they do not support Java.
 
 * **BxJsontools**: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/)
   C++ library for JSON serialization. Installation of the 0.2.0 version (C++11):
@@ -280,7 +330,7 @@ $ brew install bxcppdev/bxtap/bxjsontools [--without-test]
 ```
 
 * **BxRabbitMQ**: The [BxRabbitMQ](https://github.com/BxCppDev/bxrabbitmq/)
-  C++ library for RabbitQ client and server management.
+  C++ library for RabbitMQ client and server management.
   Installation of the 0.3.0 version:
 ```sh
 $ brew install bxcppdev/bxtap/bxrabbitmq [--with-manager]
