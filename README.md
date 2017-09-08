@@ -245,10 +245,8 @@ Details on supported formulae:
 ```sh
 $ brew install bxcppdev/bxtap/cmake
 ```
-
 	**Note**: Linuxbrew/core provides its own CMake formula.
-
-	**Note**: Ubuntu 16.04 has its own system cURL (7.47.0) which maybe used to build CMake.
+	Ubuntu 16.04 has its own system cURL (7.47.0) which maybe used to build CMake.
 
 
 * **cURLpp**: The [cURLpp](http://www.curlpp.org/) C++ library.
@@ -256,7 +254,6 @@ $ brew install bxcppdev/bxtap/cmake
 ```sh
 $ brew install bxcppdev/bxtap/curlpp
 ```
-
 	**Note**: Linuxbrew/core provides its own cURLpp formula.
 
 * **Boost**: The [Boost](https://www.boost.org/) C++ library.
@@ -264,7 +261,6 @@ $ brew install bxcppdev/bxtap/curlpp
 ```sh
 $ brew install bxcppdev/bxtap/boost --c++11
 ```
-
 	**Note**: Linuxbrew/core provides its own Boost formulas.
 
 * **Camp**: The [Camp](https://github.com/tegesoft/camp) C++ reflection library.
@@ -278,7 +274,6 @@ $ brew install bxcppdev/bxtap/camp --c++11
 ```sh
 $ brew install bxcppdev/bxtap/clhep --c++11
 ```
-
 	**Note**: Linuxbrew provides its own CLHEP formula.
 
 * **Qt5** base: The [Qt5](http://qt-project.org/) C++ core libraries.
@@ -322,7 +317,7 @@ $ . $(brew --prefix root6)/libexec/thisroot.sh
 $ brew install bxcppdev/bxtap/protobuf [--with-java] [--with-brew-java]
 ```
 
-	**Note**: Linuxbrew provides its own Protobuf formulas but they do not support Java.
+	 **Note**: Linuxbrew provides its own Protobuf formulas but they do not support Java.
 
 * **BxJsontools**: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/)
   C++ library for JSON serialization. Installation of the 0.2.0 version (C++11):
