@@ -66,7 +66,7 @@ $ sudo apt-get install build-essential curl git python-setuptools ruby
 $ git clone https://github.com/Linuxbrew/brew.git ${HOME}/linuxbrew
 ```
 
-   *Note:* Here the ``HOME`` directory  can be changed to any location
+   Note: Here the ``HOME`` directory  can be changed to any location
    of your filesystem for which you  have write access and also enough
    available storage  capacity, depending  on which software  you will
    need to manage through Linuxbrew (several Gb sounds reasonnable).
@@ -245,8 +245,8 @@ Details on supported formulae:
 ```sh
 $ brew install bxcppdev/bxtap/cmake
 ```
-	Note: Linuxbrew/core provides its own CMake formula.
-	Ubuntu 16.04 has its own system cURL (7.47.0) which maybe used to build CMake.
+    Note: Linuxbrew/core provides its own CMake formula.
+    Ubuntu 16.04 has its own system cURL (7.47.0) which maybe used to build CMake.
 
 
 * **cURLpp**: The [cURLpp](http://www.curlpp.org/) C++ library.
@@ -254,14 +254,14 @@ $ brew install bxcppdev/bxtap/cmake
 ```sh
 $ brew install bxcppdev/bxtap/curlpp
 ```
-	Note: Linuxbrew/core provides its own cURLpp formula.
+    Note: Linuxbrew/core provides its own cURLpp formula.
 
 * **Boost**: The [Boost](https://www.boost.org/) C++ library.
   Installation of the 1.63 version:
 ```sh
 $ brew install bxcppdev/bxtap/boost --c++11
 ```
-	Note: Linuxbrew/core provides its own Boost formulas.
+    Note: Linuxbrew/core provides its own Boost formulas.
 
 * **Camp**: The [Camp](https://github.com/tegesoft/camp) C++ reflection library.
   Installation of the 0.8.0 version:
@@ -274,37 +274,35 @@ $ brew install bxcppdev/bxtap/camp --c++11
 ```sh
 $ brew install bxcppdev/bxtap/clhep --c++11
 ```
-
-  Note: Linuxbrew provides its own CLHEP formula.
+    Note: Linuxbrew provides its own CLHEP formula.
 
 * **Qt5** base: The [Qt5](http://qt-project.org/) C++ core libraries.
   Installation of the 5.8.0 version:
 ```sh
 $ brew install bxcppdev/bxtap/qt5-base --c++11
 ```
-
-  Note: Linuxbrew provides its own QT5 formula which conflicts with this qt5-base.
+    Note: Linuxbrew provides its own QT5 formula which conflicts with this qt5-base.
 
 * **Xerces-C**: The [Xerces-C](https://xerces.apache.org/xerces-c/) XML parser.
   Installation of the 3.1.4 version:
 ```sh
 $ brew install bxcppdev/bxtap/xerces-c --c++11
 ```
-  Note: Linuxbrew provides its own Xerces-C formula.
+    Note: Linuxbrew provides its own Xerces-C formula.
 
 * **Geant4**: The [Geant4](http://geant4.cern.ch/) C++ toolkit for the simulation of the
   passage of particles through matter. Installation of the 9.6.4 version:
 ```sh
 $ brew install bxcppdev/bxtap/geant4 --c++11 --with-opengl-x11 --with-xerces-c
 ```
-  Note: Linuxbrew provides its own Geant4 formula.
+    Note: Linuxbrew provides its own Geant4 formula.
 
 * **Root** (version 6): The [Root](http://root.cern.ch/) Data Analysis Framework.
   Installation of the 6.08.06 version:
 ```sh
 $ brew install bxcppdev/bxtap/root6 --c++11
 ```
-  Note: Specific command to be used in order to properly setup ROOT 6 (can be added in the ``do_linuxbrew_setup`` function):
+    Note: Specific command to be used in order to properly setup ROOT 6 (can be added in the ``do_linuxbrew_setup`` function):
 ```sh
 $ . $(brew --prefix root6)/libexec/thisroot.sh
 ```
@@ -314,7 +312,7 @@ $ . $(brew --prefix root6)/libexec/thisroot.sh
 ```sh
 $ brew install bxcppdev/bxtap/protobuf [--with-java] [--with-brew-java]
 ```
-  Note: Linuxbrew provides its own Protobuf formulas but they do not support Java.
+    Note: Linuxbrew provides its own Protobuf formulas but they do not support Java.
 
 * **BxJsontools**: The [BxJsontools](https://github.com/BxCppDev/bxjsontools/)
   C++ library for JSON serialization. Installation of the 0.2.0 version (C++11):
