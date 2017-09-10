@@ -13,31 +13,35 @@ class Bayeux < Formula
   head do
     version "3.0.0"
     url     "https://github.com/BxCppDev/Bayeux.git",
-            :branch => "master"
+            :branch => "develop"
   end
 
   devel do
     version "3.1.0"
     url     "https://github.com/BxCppDev/Bayeux.git",
-            :branch => "develop"
+            :branch => "release-3.1.0"
   end
 
-  option "with-devtools", "Build debug tools for Bayeux developers"
-  option "with-test",     "Build test programs"
+  needs :cxx11
+
+  option "without-devtools", "Do not build developers tools"
+  option "without-test",     "Do not build test programs"
+  option "without-geant4",   "Do not build Geant4 module"
 
   depends_on "cmake" => :build
-  depends_on "doxygen" => :build
+  depends_on "bxcppdev/bxtap/doxygen" => :build
   depends_on "gsl"
   depends_on "readline"
 
-  needs :cxx11
   depends_on "icu4c" => "c++11"
   depends_on "bxcppdev/bxtap/boost" => ["c++11", "with-icu4c"]
-  depends_on "bxcppdev/bxtap/camp" => "c++11"
+  depends_on "bxcppdev/bxtap/camp"  => "c++11"
   depends_on "bxcppdev/bxtap/clhep" => "c++11"
-  depends_on "bxcppdev/bxtap/geant4" => "c++11"
-  depends_on "bxcppdev/bxtap/root6"
   depends_on "bxcppdev/bxtap/qt5-base"
+  depends_on "bxcppdev/bxtap/root6"
+  if build.with? "geant4"
+    depends_on "bxcppdev/bxtap/geant4" => "c++11"
+  end
 
   def install
     ENV.cxx11
@@ -48,7 +52,8 @@ class Bayeux < Formula
       bx_cmake_args << "-DBAYEUX_COMPILER_ERROR_ON_WARNING=OFF"
       bx_cmake_args << "-DBAYEUX_WITH_QT_GUI=ON"
       bx_cmake_args << "-DBAYEUX_WITH_DEVELOPER_TOOLS=OFF" unless build.with? "devtools"
-      bx_cmake_args << "-DBAYEUX_ENABLE_TESTING=ON" if build.with? "test"
+      bx_cmake_args << "-DBAYEUX_ENABLE_TESTING=ON"        if     build.with? "test"
+      bx_cmake_args << "-DBAYEUX_WITH_GEANT4_MODULE=OFF"   unless build.with? "geant4"
       system "cmake", "..", *bx_cmake_args
       system "make"
       if build.with? "test"

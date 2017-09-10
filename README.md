@@ -365,11 +365,13 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test [--withou
   - Brew some Linuxbrew modules:
 ```sh
 $ brew install cmake
+$ brew install readline
 $ brew install icu4c --build-from-source --c++11
+$ brew install gsl
 $ brew install bxcppdev/bxtap/doxygen --build-from-source
-$ brew install bxcppdev/bxtap/boost   --c++11 --with-icu4c
-$ brew install bxcppdev/bxtap/camp    --c++11
-$ brew install bxcppdev/bxtap/clhep   --c++11
+$ brew install bxcppdev/bxtap/boost   --c++11 --with-icu4c --build-from-source
+$ brew install bxcppdev/bxtap/camp    --c++11 --build-from-source
+$ brew install bxcppdev/bxtap/clhep   --c++11 --build-from-source
 $ brew install bxcppdev/bxtap/qt5-base
 $ brew install bxcppdev/bxtap/root6
 $ brew install bxcppdev/bxtap/geant4  --c++11 \
@@ -380,7 +382,7 @@ $ brew install bxcppdev/bxtap/bayeux [--without-geant4]
 
 * Installation with all dependencies automatically resolved:
 ```sh
-$ brew install bxcppdev/bxtap/bayeux \
+$ brew install bxcppdev/bxtap/bayeux
 ```
 
 ### Install Vire
