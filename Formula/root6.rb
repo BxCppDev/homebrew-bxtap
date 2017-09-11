@@ -83,7 +83,7 @@ class Root6 < Formula
         cmake_opt("mathmore", "gsl"),
         cmake_opt("tbb"),
         *std_cmake_args
-      system "make", "install"
+      system "make", "-j", "install"
     end
 
     libexec.mkpath

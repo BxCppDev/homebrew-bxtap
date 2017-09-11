@@ -20,7 +20,7 @@ class Curlpp < Formula
   def install
     ENV.cxx11
     system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "make", "-j", "install"
   end
 
   if build.with? "test"

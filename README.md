@@ -362,7 +362,7 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test [--withou
 
 * Install the Bayeux last release step by step:
 
-  - Brew some Linuxbrew modules:
+  - Brew some Linuxbrew modules from source:
 ```sh
 $ brew install cmake                           --build-from-source
 $ brew install readline                        --build-from-source
@@ -381,7 +381,7 @@ $ brew install bxcppdev/bxtap/geant4   --c++11 --build-from-source \
 $ brew install bxcppdev/bxtap/bayeux
 ```
 
-* Installation with all dependencies automatically resolved:
+* Installation with all dependencies automatically resolved and built from source:
 ```sh
 $ export HOMEBREW_BUILD_FROM_SOURCE=1
 $ brew install bxcppdev/bxtap/bayeux

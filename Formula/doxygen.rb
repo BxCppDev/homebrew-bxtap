@@ -50,7 +50,7 @@ class Doxygen < Formula
 
     mkdir "build" do
       system "cmake", "..", *args
-      system "make"
+      system "make", "-j"
     end
     bin.install Dir["build/bin/*"]
     man1.install Dir["doc/*.1"]

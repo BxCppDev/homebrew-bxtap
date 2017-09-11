@@ -29,7 +29,7 @@ class Camp < Formula
     mkdir "brew-camp-build" do
       ENV.cxx11 if build.cxx11?
       system "cmake", "..", *std_cmake_args
-      system "make"
+      system "make", "-j"
       system "make", "doc" if build.with? "doxygen"
       system "make", "install"
     end

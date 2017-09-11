@@ -18,7 +18,7 @@ class Clhep < Formula
     ENV.cxx11 # if build.cxx11?
     mkdir "clhep-build" do
       system "cmake", "../CLHEP", *std_cmake_args
-      system "make", "install"
+      system "make", "-j", "install"
     end
   end
 

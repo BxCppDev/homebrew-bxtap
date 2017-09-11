@@ -58,7 +58,7 @@ class Qt5Base < Formula
 
     resource("qtsvg").stage do
       system "#{bin}/qmake"
-      system "make", "install"
+      system "make", "-j", "install"
     end
   end
 

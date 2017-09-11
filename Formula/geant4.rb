@@ -69,7 +69,7 @@ class Geant4 < Formula
       args << "-DGEANT4_USE_OPENGL_X11=ON" if build.with? "opengl-x11"
 
       system "cmake", "../", *args
-      system "make", "install"
+      system "make", "-j", "install"
     end
   end
 
