@@ -37,6 +37,7 @@ class Bayeux < Formula
   depends_on "bxcppdev/bxtap/boost" => ["c++11", "with-icu4c"]
   depends_on "bxcppdev/bxtap/camp"  => "c++11"
   depends_on "bxcppdev/bxtap/clhep" => "c++11"
+  depends_on "bxcppdev/bxtap/xerces-c" => "c++11"
   depends_on "bxcppdev/bxtap/qt5-base"
   depends_on "bxcppdev/bxtap/root6"
   if build.with? "geant4"

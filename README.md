@@ -364,17 +364,18 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test [--withou
 
   - Brew some Linuxbrew modules:
 ```sh
-$ brew install cmake
-$ brew install readline
-$ brew install icu4c --build-from-source --c++11
-$ brew install gsl
-$ brew install bxcppdev/bxtap/doxygen --build-from-source
-$ brew install bxcppdev/bxtap/boost   --c++11 --with-icu4c --build-from-source
-$ brew install bxcppdev/bxtap/camp    --c++11 --build-from-source
-$ brew install bxcppdev/bxtap/clhep   --c++11 --build-from-source
-$ brew install bxcppdev/bxtap/qt5-base
-$ brew install bxcppdev/bxtap/root6
-$ brew install bxcppdev/bxtap/geant4  --c++11 \
+$ brew install cmake    --build-from-source
+$ brew install readline --build-from-source
+$ brew install icu4c    --c++11 --build-from-source
+$ brew install gsl      --build-from-source
+$ brew install bxcppdev/bxtap/doxygen  --build-from-source
+$ brew install bxcppdev/bxtap/boost    --c++11 --build-from-source --with-icu4c
+$ brew install bxcppdev/bxtap/camp     --c++11 --build-from-source
+$ brew install bxcppdev/bxtap/clhep    --c++11 --build-from-source
+$ brew install bxcppdev/bxtap/xerces-c --c++11 --build-from-source
+$ brew install bxcppdev/bxtap/qt5-base         --build-from-source
+$ brew install bxcppdev/bxtap/root6            --build-from-source
+$ brew install bxcppdev/bxtap/geant4   --c++11 --build-from-source \
     --with-opengl-x11 \
     --with-xerces-c
 $ brew install bxcppdev/bxtap/bayeux [--without-geant4]
@@ -383,6 +384,11 @@ $ brew install bxcppdev/bxtap/bayeux [--without-geant4]
 * Installation with all dependencies automatically resolved:
 ```sh
 $ brew install bxcppdev/bxtap/bayeux
+```
+
+* Installation of the last unstable version:
+```sh
+$ brew install --devel bxcppdev/bxtap/bayeux
 ```
 
 ### Install Vire
@@ -403,7 +409,7 @@ $ brew install bxcppdev/bxtap/bxrabbitmq --with-manager
 ```
 3. Install Bayeux (Geant4 module is not required):
 ```sh
-$ brew install bxcppdev/bxtap/bayeux@3.1.0 [--without-geant4]
+$ brew install --devel bxcppdev/bxtap/bayeux [--without-geant4]
 ```
 4. Install Vire: NOT AVAILABLE YET.
 
