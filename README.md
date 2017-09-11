@@ -383,6 +383,7 @@ $ brew install bxcppdev/bxtap/bayeux
 
 * Installation with all dependencies automatically resolved:
 ```sh
+$ export HOMEBREW_BUILD_FROM_SOURCE=1
 $ brew install bxcppdev/bxtap/bayeux
 ```
 
