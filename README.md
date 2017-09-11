@@ -102,16 +102,16 @@ alias linuxbrew_setup='do_linuxbrew_setup'
   systematically  load tons  of  paths to  all  the software  binaries
   installed on your system. You end  up with a very heavy environment,
   polluted by plenty of software that  you won't use during a specific
-  working session. Our credo is thus: *Activate only what you will use!*
+  working session. Our credo is thus: *Activate only what you will use!*.
 
-  When you want to use the Linuxbrew software, open a terminal and type:
+  So, when you want to use the Linuxbrew software, open a terminal and type:
 ```sh
 $ linuxbrew_setup
 ```
 
   Then  your shell  is  ready to  go further  with  Linuxbrew and  the
   software it provides  to you.  When you are done  with Linuxbrew and
-  its embedded  companions, simply end  this shell.  Of course,  it is
+  its embedded  companions, simply terminate  the shell.  Of course,  it is
   not a perfect approach and it may not cover all users' needs or ways
   of working.
 
@@ -364,21 +364,21 @@ $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test [--withou
 
   - Brew some Linuxbrew modules:
 ```sh
-$ brew install cmake    --build-from-source
-$ brew install readline --build-from-source
-$ brew install icu4c    --c++11 --build-from-source
-$ brew install gsl      --build-from-source
-$ brew install bxcppdev/bxtap/doxygen  --build-from-source
-$ brew install bxcppdev/bxtap/boost    --c++11 --build-from-source --with-icu4c
+$ brew install cmake                           --build-from-source
+$ brew install readline                        --build-from-source
+$ brew install icu4c                   --c++11 --build-from-source
+$ brew install gsl                             --build-from-source
+$ brew install bxcppdev/bxtap/doxygen          --build-from-source
+$ brew install bxcppdev/bxtap/boost    --c++11 --build-from-source \
+    --with-icu4c
 $ brew install bxcppdev/bxtap/camp     --c++11 --build-from-source
 $ brew install bxcppdev/bxtap/clhep    --c++11 --build-from-source
 $ brew install bxcppdev/bxtap/xerces-c --c++11 --build-from-source
 $ brew install bxcppdev/bxtap/qt5-base         --build-from-source
 $ brew install bxcppdev/bxtap/root6            --build-from-source
 $ brew install bxcppdev/bxtap/geant4   --c++11 --build-from-source \
-    --with-opengl-x11 \
-    --with-xerces-c
-$ brew install bxcppdev/bxtap/bayeux [--without-geant4]
+    --with-opengl-x11
+$ brew install bxcppdev/bxtap/bayeux
 ```
 
 * Installation with all dependencies automatically resolved:

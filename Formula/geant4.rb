@@ -65,7 +65,7 @@ class Geant4 < Formula
       args << "-DGEANT4_USE_SYSTEM_EXPAT=ON"
       # args << "-DGEANT4_USE_SYSTEM_ZLIB=ON"
 
-      args << "-DGEANT4_USE_GDML=ON" if build.with? "xerces-c"
+      args << "-DGEANT4_USE_GDML=ON" # if build.with? "xerces-c"
       args << "-DGEANT4_USE_OPENGL_X11=ON" if build.with? "opengl-x11"
 
       system "cmake", "../", *args
