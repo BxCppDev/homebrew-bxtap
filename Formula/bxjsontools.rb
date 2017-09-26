@@ -9,8 +9,8 @@ class Bxjsontools < Formula
   end
 
   head do
+    url     "https://github.com/BxCppDev/bxjsontools.git", :branch => "develop"
     version "0.3.0"
-    "https://github.com/BxCppDev/bxjsontools.git", :branch => "develop"
   end
 
   needs :cxx11
