@@ -1,6 +1,7 @@
 class Protobuf < Formula
   desc     "Protocol Buffers C++ API"
   homepage "https://developers.google.com/protocol-buffers/"
+
   url      "https://github.com/google/protobuf/archive/v3.3.0.tar.gz"
   version  "3.3.0"
   sha256   "94c414775f275d876e5e0e4a276527d155ab2d0da45eed6b7734301c330be36e"
