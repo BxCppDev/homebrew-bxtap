@@ -3,9 +3,9 @@ class Bxjsontools < Formula
   homepage "https://github.com/BxCppDev/bxjsontools"
 
   stable do
-    url      "https://github.com/BxCppDev/bxjsontools/archive/0.2.0.tar.gz"
-    version  "0.2.0"
-    sha256   "3b9db47372c0dfc0ec74db1008cb211c1a3dc74ed804c633053aa57fb82f0111"
+    url      "https://github.com/BxCppDev/bxjsontools/archive/0.2.1.tar.gz"
+    version  "0.2.1"
+    sha256   "a97337c8f5c6cfbb17d3551a60773fa89d66a6799a4579bdb225ab76bd032f8a"
   end
 
   head do
