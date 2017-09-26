@@ -1,16 +1,16 @@
 class Bxrabbitmq < Formula
-  desc "C++ RabbitMQ client and server management API"
+  desc     "C++ RabbitMQ client and server management API"
   homepage "https://github.com/BxCppDev/bxrabbitmq"
 
   stable do
-    url "https://github.com/BxCppDev/bxrabbitmq/archive/0.3.1.tar.gz"
+    url     "https://github.com/BxCppDev/bxrabbitmq/archive/0.3.1.tar.gz"
     version "0.3.1"
-    sha256 "0ac8e1b3b22c491601e49a364c504f29c3d559394a34817840626dfbb8119379"
+    sha256   "0ac8e1b3b22c491601e49a364c504f29c3d559394a34817840626dfbb8119379"
    end
 
   head do
+    url     "https://github.com/BxCppDev/bxrabbitmq.git", :branch => "develop"
     version "0.4.0"
-    url "https://github.com/BxCppDev/bxrabbitmq.git", :branch => "develop"
   end
 
   needs :cxx11
