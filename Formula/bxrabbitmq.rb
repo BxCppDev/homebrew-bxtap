@@ -3,9 +3,9 @@ class Bxrabbitmq < Formula
   homepage "https://github.com/BxCppDev/bxrabbitmq"
 
   stable do
-    url "https://github.com/BxCppDev/bxrabbitmq/archive/0.3.0.tar.gz"
-    version "0.3.0"
-    sha256 "4630e430b36780c253c7a16fd5ae8b88aa57f9617c3e0ca35016f6647757eeed"
+    url "https://github.com/BxCppDev/bxrabbitmq/archive/0.3.1.tar.gz"
+    version "0.3.1"
+    sha256 "0ac8e1b3b22c491601e49a364c504f29c3d559394a34817840626dfbb8119379"
     ### head "https://github.com/BxCppDev/bxrabbitmq.git", :branch => "develop"
   end
 
@@ -17,7 +17,6 @@ class Bxrabbitmq < Formula
   needs :cxx11
 
   depends_on "cmake" => :build
-  # depends_on "bxcppdev/bxtap/rabbitmq-c"
   depends_on "rabbitmq-c"
   depends_on "pkg-config"
 
