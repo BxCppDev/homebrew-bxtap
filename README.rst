@@ -360,8 +360,8 @@ Details on supported formulas:
 
        $ brew install bxcppdev/bxtap/root6 --c++11
 
-   Note: Here is a command to be used in order to properly setup ROOT
-     6. It can be added in the ``do_linuxbrew_setup`` function:
+   Note: Here is a command to be used in order to properly setup ROOT 6.X.
+   It can be added in the ``do_linuxbrew_setup`` function:
 
    .. code:: sh
 
