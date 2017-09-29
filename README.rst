@@ -2,6 +2,7 @@
 homebrew-bxtap : Linuxbrew tap for the BxCppDev software suite
 ==============================================================
 
+.. image:: resources/logo/bxtap-256x256.png
 
 .. contents::
 
