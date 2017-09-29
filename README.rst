@@ -483,23 +483,23 @@ WIP
 
    .. code:: sh
 
-       $ sudo apt-get install openjdk-8-jdk
-       $ sudo apt-get install maven
+      $ sudo apt-get install openjdk-8-jdk
+      $ sudo apt-get install maven
 
 #. Install dependencies:
 
    .. code:: sh
 
-       $ brew install bxcppdev/bxtap/protobuf
-       $ brew install bxcppdev/bxtap/bxprotobuftools
-       $ brew install bxcppdev/bxtap/bxjsontools
-       $ brew install bxcppdev/bxtap/bxrabbitmq --with-manager
+      $ brew install bxcppdev/bxtap/protobuf
+      $ brew install bxcppdev/bxtap/bxprotobuftools
+      $ brew install bxcppdev/bxtap/bxjsontools
+      $ brew install bxcppdev/bxtap/bxrabbitmq --with-manager
 
 #. Install Bayeux (Geant4 module is not required):
 
    .. code:: sh
 
-       $ brew install --devel bxcppdev/bxtap/bayeux --without-geant4
+      $ brew install --devel bxcppdev/bxtap/bayeux --without-geant4
 
 #. Install Vire: NOT AVAILABLE YET.
 
