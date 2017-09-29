@@ -25,7 +25,7 @@ given below.
 Ubuntu  Linux being  our main  development system,  we give  here some
 installation  and   configuration  hints  for  this   environment.  In
 principle,  the  procedures  explained  below  should  work  on  other
-distros, maybe with some minor changes . However, it is very difficult
+distros, maybe with some minor changes. However, it is very difficult
 for us to  guarantee it will work  for your own system;  we don't have
 the resources to check all existing working envs.
 
@@ -126,9 +126,9 @@ From a bare shell, *activate* your Linuxbrew system:
 
 .. code:: sh
 
-    $ export PATH="${HOME}/linuxbrew/bin:${PATH}
+    $ export PATH="${HOME}/linuxbrew/bin:${PATH}"
 
-Then try install a dummy package:
+Then install a dummy package:
 
 .. code:: sh
 
@@ -165,7 +165,9 @@ set the following environment variable:
 .. code:: sh
 
     $ export HOMEBREW_BUILD_FROM_SOURCE=1
-..
+
+This will  prevent to  install any  brewed software  from pre-compiled
+binary packages (*bottles*).
 
 Setup Linuxbrew
 ~~~~~~~~~~~~~~~
