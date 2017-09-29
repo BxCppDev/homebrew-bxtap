@@ -297,7 +297,7 @@ Details on supported formulas:
 
        $ brew install bxcppdev/bxtap/boost --c++11
 
-   Note: Linuxbrew/core provides its own Boost formulas.
+  Note: Linuxbrew/core provides its own Boost formulas.
 
 - **Camp**:
   The   `Camp  <https://github.com/tegesoft/camp>`__   C++
@@ -316,7 +316,7 @@ Details on supported formulas:
 
        $ brew install bxcppdev/bxtap/clhep --c++11
 
-   Note: Linuxbrew provides its own CLHEP formula.
+  Note: Linuxbrew provides its own CLHEP formula.
 
 - **Qt5**   base:
   The   `Qt5  <http://qt-project.org/>`__   C++  core
@@ -326,8 +326,8 @@ Details on supported formulas:
 
 	$ brew install bxcppdev/bxtap/qt5-base --c++11
 
-   Note: Linuxbrew provides  its own QT5 formula  which conflicts with
-   this qt5-base.
+  Note: Linuxbrew provides  its own QT5 formula  which conflicts with
+  this qt5-base.
 
 - **Xerces-C**:
   The `Xerces-C <https://xerces.apache.org/xerces-c/>`__
@@ -337,7 +337,7 @@ Details on supported formulas:
 
 	$ brew install bxcppdev/bxtap/xerces-c --c++11
 
-   Note: Linuxbrew provides its own Xerces-C formula.
+  Note: Linuxbrew provides its own Xerces-C formula.
 
 - **Geant4**:
   The `Geant4  <http://geant4.cern.ch/>`__ C++ toolkit for
@@ -360,8 +360,8 @@ Details on supported formulas:
 
        $ brew install bxcppdev/bxtap/root6 --c++11
 
-   Note: Here is a command to be used in order to properly setup ROOT 6.X.
-   It can be added in the ``do_linuxbrew_setup`` function:
+  Note: Here is a command to be used in order to properly setup ROOT 6.X.
+  It can be added in the ``do_linuxbrew_setup`` function:
 
    .. code:: sh
 
@@ -375,8 +375,8 @@ Details on supported formulas:
 
        $ brew install bxcppdev/bxtap/protobuf [--with-java] [--with-brew-java]
 
-   Note: Linuxbrew provides its own  Protobuf formulas but they do not
-   support Java.
+  Note: Linuxbrew provides its own  Protobuf formulas but they do not
+  support Java.
 
 - **BxJsontools**:
   The `BxJsontools <https://github.com/BxCppDev/bxjsontools/>`__
@@ -414,13 +414,13 @@ Details on supported formulas:
 
        $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
 
-   -  Installation of Bayeux-3.0.0 :
+  -  Installation of Bayeux-3.0.0 :
 
       .. code:: sh
 
           $ brew install bxcppdev/bxtap/bayeux@3.0.0 --with-devtools --with-test
 
-   -  Installation of Bayeux-3.1.0 :
+  -  Installation of Bayeux-3.1.0 :
 
       .. code:: sh
 
