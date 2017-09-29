@@ -1,10 +1,17 @@
 class Bxprotobuftools < Formula
-  desc "C++ tools for Protocol Buffers based serialization"
+  desc     "C++ tools for Protocol Buffers based serialization"
   homepage "https://github.com/BxCppDev/bxprotobuftools"
-  url "https://github.com/BxCppDev/bxprotobuftools/archive/0.2.0.tar.gz"
-  version "0.2.0"
-  sha256 "47f4b4010a96876bae8673531ce85469848fc1dc0d9c05c8dc0d5bcced2ffd16"
-  head "https://github.com/BxCppDev/bxprotobuftools.git", :branch => "develop"
+
+  stable do
+    url     "https://github.com/BxCppDev/bxprotobuftools/archive/0.2.1.tar.gz"
+    version "0.2.1"
+    sha256 "2ad1a9e78ad5e2a9f2e6c1fb2d4ced2308686ef543b8585978705eccfaba4095"
+  end
+
+  head do
+    url     "https://github.com/BxCppDev/bxprotobuftools.git", :branch => "develop"
+    version "0.3.0"
+   end
 
   option "without-test", "Inhibit test programs"
 
