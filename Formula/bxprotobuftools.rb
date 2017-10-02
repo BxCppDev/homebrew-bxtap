@@ -17,13 +17,13 @@ class Bxprotobuftools < Formula
 
   needs :cxx11
   depends_on "cmake" => :build
-  depends_on "bxcppdev/bxtap/protobuf@3.3.0"
+  depends_on "bxcppdev/bxtap/protobuf"
 
   def install
     ENV.cxx11
     mkdir "brew-bxprotobuftools-build" do
       args = std_cmake_args
-      args << "-DPROTOBUF_ROOT=#{HOMEBREW_PREFIX}/Cellar/protobuf@3.3.0/3.3.0"
+      args << "-DPROTOBUF_ROOT=#{HOMEBREW_PREFIX}/Cellar/protobuf/3.3.0"
       args << "-DBXPROTOBUFTOOLS_ENABLE_TESTING=OFF" if build.without? "test"
       system "cmake", "..", *args
       system "make"
