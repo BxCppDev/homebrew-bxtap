@@ -92,7 +92,7 @@ to manage through Linuxbrew (several Gb sounds reasonnable).
          # Additional commands may be added from here:
          # export HOMEBREW_CACHE=/some/directory/for/caching/brew/downloads
          # export HOMEBREW_TEMP=/some/directory/for/building/brew/driven/software/packages
-         # export HOMEBREW_BUILD_FROM_SOURCE=1
+	 # export HOMEBREW_BUILD_FROM_SOURCE=1
          # source $(brew --prefix root6)/libexec/thisroot.sh
          echo >&2 "[info] do_linuxbrew_setup: Linuxbrew is setup."
          return 0
@@ -396,9 +396,9 @@ Details on supported formulas:
   RabbitMQ client and server management.  Installation of the 0.3.1
   version:
 
-   .. code:: sh
+  .. code:: sh
 
-       $ brew install bxcppdev/bxtap/bxrabbitmq [--with-manager]
+     $ brew install bxcppdev/bxtap/bxrabbitmq [--with-manager]
 
 - **BxProtobuftools**:
   The `BxProtobuftools <https://github.com/BxCppDev/bxprotobuftools/>`__
@@ -406,29 +406,28 @@ Details on supported formulas:
   Protocol Buffer  based serialization.  Installation of  the 0.2.1
   version:
 
-   .. code:: sh
+  .. code:: sh
 
-       $ brew install bxcppdev/bxtap/bxprotobuftools
+     $ brew install bxcppdev/bxtap/bxprotobuftools
 
 - **Bayeux** (last release):
   The `Bayeux <http://github.com/BxCppDev/Bayeux>`__ C++ library:
 
-   .. code:: sh
+  .. code:: sh
 
-       $ brew install bxcppdev/bxtap/bayeux --with-devtools --with-test
+     $ brew install bxcppdev/bxtap/bayeux [--without-geant4] [--with-qt-gui]
 
   -  Installation of Bayeux-3.0.0 :
 
-      .. code:: sh
+     .. code:: sh
 
-          $ brew install bxcppdev/bxtap/bayeux@3.0.0 --with-devtools --with-test
+        $ brew install bxcppdev/bxtap/bayeux@3.0.0
 
   -  Installation of Bayeux-3.1.0 :
 
-      .. code:: sh
+     .. code:: sh
 
-	 $ brew install bxcppdev/bxtap/bayeux@3.1.0 --with-devtools --with-test \
-	     [--without-geant4]
+	$ brew install bxcppdev/bxtap/bayeux@3.1.0 [--without-geant4]
 
 -  **Vire** :
    The `Vire <http://github.com/BxCppDev/Vire>`__ C++ library (not available yet).
@@ -439,45 +438,60 @@ Examples
 Install the Bayeux last release step by step
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+* Install system dependencies (Ubuntu 16.04):
+
+  .. code:: sh
+
+     $ sudo aptitude install libgl-dev
+     $ sudo aptitude install libglu-dev
+     $ sudo aptitude install libcups2-dev
+     $ sudo aptitude install libxpm-dev
+     $ sudo aptitude install libxft-dev
+     $ sudo aptitude install libxml2-dev
+     $ sudo aptitude install \
+	    gnuplot5 \
+	    gnuplot5-doc \
+	    gnuplot-mode \
+	    gnuplot5-x11
+
 * Brew some Linuxbrew modules from source:
 
-   .. code:: sh
+  .. code:: sh
 
-      $ export HOMEBREW_BUILD_FROM_SOURCE=1
-      $ brew install cmake
-      $ brew install readline
-      $ brew install icu4c                   --c++11
-      $ brew install gsl
-      $ brew install bxcppdev/bxtap/doxygen
-      $ brew install bxcppdev/bxtap/boost    --c++11 \
-          --with-icu4c
-      $ brew install bxcppdev/bxtap/camp     --c++11
-      $ brew install bxcppdev/bxtap/clhep    --c++11
-      $ brew install bxcppdev/bxtap/xerces-c --c++11
-      $ brew install bxcppdev/bxtap/qt5-base
-      $ brew install bxcppdev/bxtap/root6
-      $ brew install bxcppdev/bxtap/geant4   --c++11  \
-          --with-opengl-x11
-      $ brew install bxcppdev/bxtap/bayeux
+     $ export HOMEBREW_BUILD_FROM_SOURCE=1
+     $ brew install cmake
+     $ brew install readline
+     $ brew install icu4c                   --c++11
+     $ brew install gsl
+     $ brew install bxcppdev/bxtap/doxygen
+     $ brew install bxcppdev/bxtap/boost    --c++11 \
+	    --with-icu4c
+     $ brew install bxcppdev/bxtap/camp     --c++11
+     $ brew install bxcppdev/bxtap/clhep    --c++11
+     $ brew install bxcppdev/bxtap/xerces-c --c++11
+     $ brew install bxcppdev/bxtap/qt5-base
+     $ brew install bxcppdev/bxtap/root6
+     $ brew install bxcppdev/bxtap/geant4   --c++11  \
+	    --with-opengl-x11
+     $ brew install bxcppdev/bxtap/bayeux
 
 * Installation with all dependencies  automatically resolved and built
   from source:
 
-   .. code:: sh
+  .. code:: sh
 
-       $ export HOMEBREW_BUILD_FROM_SOURCE=1
-       $ brew install bxcppdev/bxtap/bayeux
+     $ export HOMEBREW_BUILD_FROM_SOURCE=1
+     $ brew install bxcppdev/bxtap/bayeux
 
-* Installation of the last unstable version:
+* Installation of the development version:
 
-   .. code:: sh
+  .. code:: sh
 
-       $ brew install --devel bxcppdev/bxtap/bayeux
+     $ brew install --devel bxcppdev/bxtap/bayeux
+
 
 Install Vire
 ~~~~~~~~~~~~
-
-WIP
 
 #. Install system dependencies (Ubuntu 16.04):
 
@@ -499,9 +513,10 @@ WIP
 
    .. code:: sh
 
-      $ brew install --devel bxcppdev/bxtap/bayeux --without-geant4
+      $ brew install bxcppdev/bxtap/bayeux --without-geant4
 
 #. Install Vire: NOT AVAILABLE YET.
+
 
 Useful links
 ------------

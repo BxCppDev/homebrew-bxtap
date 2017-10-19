@@ -4,12 +4,12 @@ class BayeuxAT310 < Formula
 
   stable do
     version "3.1.0"
-    url     "https://github.com/BxCppDev/Bayeux/archive/Bayeux-3.1.0-beta-1.tar.gz"
-    sha256  "b3bbe1daa1abed5fc062577e4005043d454d0939e46aeb6e619961dd3c8144ab"
+    url     "https://github.com/BxCppDev/Bayeux/archive/Bayeux-3.1.0.tar.gz"
+    sha256  "c335aaa813bf305f1bcb1aa5e3d4f279f4f1d55cddf6116e39ced8e35329a061"
   end
 
   devel do
-    version "3.1.0"
+    version "3.1.1"
     url     "https://github.com/BxCppDev/Bayeux.git",
             :branch => "release-3.1.0"
   end
