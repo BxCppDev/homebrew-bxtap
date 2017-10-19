@@ -417,17 +417,17 @@ Details on supported formulas:
 
      $ brew install bxcppdev/bxtap/bayeux [--without-geant4] [--with-qt-gui]
 
-  -  Installation of Bayeux-3.0.0 :
-
-     .. code:: sh
-
-        $ brew install bxcppdev/bxtap/bayeux@3.0.0
-
   -  Installation of Bayeux-3.1.0 :
 
      .. code:: sh
 
 	$ brew install bxcppdev/bxtap/bayeux@3.1.0 [--without-geant4]
+
+  -  Installation of Bayeux-3.0.0 :
+
+     .. code:: sh
+
+        $ brew install bxcppdev/bxtap/bayeux@3.0.0
 
 -  **Vire** :
    The `Vire <http://github.com/BxCppDev/Vire>`__ C++ library (not available yet).
