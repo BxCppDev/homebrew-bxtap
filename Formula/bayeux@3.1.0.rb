@@ -9,7 +9,7 @@ class BayeuxAT310 < Formula
   end
 
   devel do
-    version "3.1.1"
+    version "3.2.0"
     url     "https://github.com/BxCppDev/Bayeux.git",
             :branch => "release-3.1.0"
   end
