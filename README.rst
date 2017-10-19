@@ -483,12 +483,6 @@ Install the Bayeux last release step by step
      $ export HOMEBREW_BUILD_FROM_SOURCE=1
      $ brew install bxcppdev/bxtap/bayeux
 
-* Installation of the development version:
-
-  .. code:: sh
-
-     $ brew install --devel bxcppdev/bxtap/bayeux
-
 
 Install Vire
 ~~~~~~~~~~~~
