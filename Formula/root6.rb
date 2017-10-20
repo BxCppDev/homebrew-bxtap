@@ -18,8 +18,6 @@ class Root6 < Formula
   # For XML on Linux
   depends_on "libxml2" if OS.linux?
 
-  option "with-parallel-build", "Use parallel build"
-
   needs :cxx11
 
   def cmake_opt(opt, pkg = opt)
@@ -86,11 +84,8 @@ class Root6 < Formula
         cmake_opt("mathmore", "gsl"),
         cmake_opt("tbb"),
         *std_cmake_args
-      if build.with? "parallel-build"
-        system "make", "-j", "install"
-      else
-        system "make", "install"
-      end
+      system "make", "-j#{ENV.make_jobs}"
+      system "make", "install"
     end
 
     libexec.mkpath
