@@ -51,7 +51,7 @@ class BayeuxAT310 < Formula
       bx_cmake_args << "-DBAYEUX_WITH_GEANT4_MODULE=OFF" if build.without? "geant4"
       bx_cmake_args << "-DBAYEUX_WITH_LAHAGUE=ON" if build.with? "lahague"
       system "cmake", "..", *bx_cmake_args
-      system "make"
+      system "make", "-j"
       if build.with? "test"
         system "make", "test"
       end
