@@ -5,7 +5,7 @@ class Bxprotobuftools < Formula
   stable do
     url     "https://github.com/BxCppDev/bxprotobuftools/archive/0.3.0.tar.gz"
     version "0.3.0"
-    sha256  "ed207ed377e8597f30bf26406ae7b1fb5818d70b45f1a02d016ed421f5d149b4"
+    sha256  "112805d7cad3aa9c4020974814315aaae2c3bc1af5820e978aded39710917082"
   end
 
   head do
