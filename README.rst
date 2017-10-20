@@ -72,6 +72,7 @@ your  filesystem for  which  you  have write  access  and also  enough
 available storage capacity, depending on  which software you will need
 to manage through Linuxbrew (several Gb sounds reasonnable).
 
+
 #. Edit your ``~/.bashrc``  file and create a bash  setup function for
    Linuxbrew as well as a companion alias:
 
@@ -93,6 +94,8 @@ to manage through Linuxbrew (several Gb sounds reasonnable).
          # export HOMEBREW_CACHE=/some/directory/for/caching/brew/downloads
          # export HOMEBREW_TEMP=/some/directory/for/building/brew/driven/software/packages
 	 # export HOMEBREW_BUILD_FROM_SOURCE=1
+	 # Set the number of parallel jobs during GNU make build:
+	 # export HOMEBREW_MAKE_JOBS=4
          # source $(brew --prefix root6)/libexec/thisroot.sh
          echo >&2 "[info] do_linuxbrew_setup: Linuxbrew is setup."
          return 0
@@ -138,6 +141,27 @@ Then install a dummy package:
     /home/your-login/Linuxbrew/linuxbrew/bin/hello
     $ hello
     Bonjour, le monde !
+
+Number of jobs used in parallle build
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can check the number of cores on your Linux system using:
+
+   .. code:: sh
+
+      $ cat /proc/cpuinfo | grep ^processor | wc -l
+      4
+
+This allows to define the following variable that will be used
+within brew to force the number of parallel jobs  during the build
+of any package:
+
+   .. code:: sh
+
+      $ export HOMEBREW_MAKE_JOBS=4
+
+You may also want to use less jobs than the available cores.
+
 
 Optional setup of temporary and cache directories
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
