@@ -413,7 +413,7 @@ Details on supported formulas:
 - **BxJsontools**:
   The `BxJsontools <https://github.com/BxCppDev/bxjsontools/>`__
   C++   library  for
-  JSON serialization. Installation of the 0.2.1 version (C++11):
+  JSON serialization. Installation of the 0.3 version (C++11):
 
   .. code:: sh
 
@@ -422,7 +422,7 @@ Details on supported formulas:
 - **BxRabbitMQ**:
   The `BxRabbitMQ <https://github.com/BxCppDev/bxrabbitmq/>`__
   C++  library   for
-  RabbitMQ client and server management.  Installation of the 0.3.1
+  RabbitMQ client and server management.  Installation of the 0.4
   version:
 
   .. code:: sh
