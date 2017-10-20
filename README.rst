@@ -142,26 +142,6 @@ Then install a dummy package:
     $ hello
     Bonjour, le monde !
 
-Number of jobs used in parallle build
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can check the number of cores on your Linux system using:
-
-   .. code:: sh
-
-      $ cat /proc/cpuinfo | grep ^processor | wc -l
-      4
-
-This allows to define the following variable that will be used
-within brew to force the number of parallel jobs  during the build
-of any package:
-
-   .. code:: sh
-
-      $ export HOMEBREW_MAKE_JOBS=4
-
-You may also want to use less jobs than the available cores.
-
 
 Optional setup of temporary and cache directories
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -182,6 +162,10 @@ variables:
 Such lines can  be added in the setup script  shown above (in function
 ``do_linuxbrew_setup``).
 
+
+Build from source only
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 You may  also want  to force  the installation  of brew  formulas from
 source only, including  dependencies. In that case, it  is possible to
 set the following environment variable:
@@ -192,6 +176,27 @@ set the following environment variable:
 
 This will  prevent to  install any  brewed software  from pre-compiled
 binary packages (*bottles*).
+
+Number of jobs used in parallel build
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can check the number of cores on your Linux system using:
+
+   .. code:: sh
+
+      $ cat /proc/cpuinfo | grep ^processor | wc -l
+      4
+
+This allows to define an  optimal value for the ``HOMEBREW_MAKE_JOBS``
+variable that will be used within brew to force the number of parallel
+jobs during the build of any package; example:
+
+   .. code:: sh
+
+      $ export HOMEBREW_MAKE_JOBS=4
+
+You may also want to use less or more jobs than the available cores
+but take care not to overload your system.
 
 Setup Linuxbrew
 ~~~~~~~~~~~~~~~
