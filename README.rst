@@ -432,7 +432,7 @@ Details on supported formulas:
 - **BxProtobuftools**:
   The `BxProtobuftools <https://github.com/BxCppDev/bxprotobuftools/>`__
   C++ library for
-  Protocol Buffer  based serialization.  Installation of  the 0.2.1
+  Protocol Buffer  based serialization.  Installation of  the 0.3.0
   version:
 
   .. code:: sh
