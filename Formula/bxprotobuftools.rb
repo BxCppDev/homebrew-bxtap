@@ -3,14 +3,14 @@ class Bxprotobuftools < Formula
   homepage "https://github.com/BxCppDev/bxprotobuftools"
 
   stable do
-    url     "https://github.com/BxCppDev/bxprotobuftools/archive/0.2.1.tar.gz"
-    version "0.2.1"
-    sha256 "2ad1a9e78ad5e2a9f2e6c1fb2d4ced2308686ef543b8585978705eccfaba4095"
+    url     "https://github.com/BxCppDev/bxprotobuftools/archive/0.3.0.tar.gz"
+    version "0.3.0"
+    sha256  "ed207ed377e8597f30bf26406ae7b1fb5818d70b45f1a02d016ed421f5d149b4"
   end
 
   head do
     url     "https://github.com/BxCppDev/bxprotobuftools.git", :branch => "develop"
-    version "0.3.0"
+    version "0.3.1"
    end
 
   option "without-test", "Inhibit test programs"
@@ -26,7 +26,7 @@ class Bxprotobuftools < Formula
       args << "-DPROTOBUF_ROOT=#{HOMEBREW_PREFIX}/Cellar/protobuf/3.3.0"
       args << "-DBXPROTOBUFTOOLS_ENABLE_TESTING=OFF" if build.without? "test"
       system "cmake", "..", *args
-      system "make"
+      system "make", "-j#{ENV.make_jobs}"
       if build.with? "test"
         system "make", "test"
       end
