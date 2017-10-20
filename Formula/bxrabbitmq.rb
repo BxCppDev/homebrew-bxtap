@@ -39,7 +39,7 @@ class Bxrabbitmq < Formula
       args << "-DBXRABBITMQ_WITH_MANAGER=ON"           if build.with? "manager"
       args << "-DBxJsontools_DIR=#{prefix}/lib/cmake/" if build.with? "manager"
       system "cmake", "..", *args
-      system "make"
+      system "make", "-j#{ENV.make_jobs}"
       if build.with? "test"
         system "make", "test"
       end

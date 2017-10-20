@@ -3,14 +3,19 @@ class Bxjsontools < Formula
   homepage "https://github.com/BxCppDev/bxjsontools"
 
   stable do
-    url      "https://github.com/BxCppDev/bxjsontools/archive/0.2.1.tar.gz"
-    version  "0.2.1"
-    sha256   "a97337c8f5c6cfbb17d3551a60773fa89d66a6799a4579bdb225ab76bd032f8a"
+    url      "https://github.com/BxCppDev/bxjsontools/archive/0.3.0.tar.gz"
+    version  "0.3.0"
+    sha256   "5f7661eb44c011ce136059848eceb09ccb38baa718c2585c89a6f18fab2ab488"
   end
 
   head do
+    url     "https://github.com/BxCppDev/bxjsontools.git", :branch => "master"
+    version "0.3.1"
+  end
+
+  devel do
     url     "https://github.com/BxCppDev/bxjsontools.git", :branch => "develop"
-    version "0.3.0"
+    version "0.3.1"
   end
 
   needs :cxx11
@@ -25,7 +30,7 @@ class Bxjsontools < Formula
       args = std_cmake_args
       args << "-DBXJSONTOOLS_ENABLE_TESTING=OFF" if build.without? "test"
       system "cmake", "..", *args
-      system "make"
+      system "make", "-j#{ENV.make_jobs}"
       if build.with? "test"
         system "make", "test"
       end
