@@ -3,19 +3,19 @@ class Bxrabbitmq < Formula
   homepage "https://github.com/BxCppDev/bxrabbitmq"
 
   stable do
-    url     "https://github.com/BxCppDev/bxrabbitmq/archive/0.4.0.tar.gz"
-    version "0.4.0"
-    sha256  "2133b094a716aa64e842ae7ef5445f2c83e7dec7dc5d2b718240735d0b3d48e5"
+    url     "https://github.com/BxCppDev/bxrabbitmq/archive/0.4.1.tar.gz"
+    version "0.4.1"
+    sha256  "34d7379698ef09d5e1fcc19d37c66e4434654bcb5f8ffae3930d508f49076af1"
    end
 
   head do
     url     "https://github.com/BxCppDev/bxrabbitmq.git", :branch => "master"
-    version "0.4.1"
+    version "0.4.2"
   end
 
   devel do
     url     "https://github.com/BxCppDev/bxrabbitmq.git", :branch => "develop"
-    version "0.4.1"
+    version "0.4.2"
   end
 
   needs :cxx11
