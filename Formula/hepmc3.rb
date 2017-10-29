@@ -1,5 +1,5 @@
 # coding: utf-8
-class HepMC3 < Formula
+class Hepmc3 < Formula
   desc     "HepMC event record C++ Library"
   homepage "http://hepmc.web.cern.ch/hepmc/"
   url      "http://hepmc.web.cern.ch/hepmc/releases/hepmc3.0.0.tgz"
