@@ -31,6 +31,9 @@ class Bxdecay0 < Formula
       bxdecay0_cmake_args << "-DBXDECAY0_ENABLE_TESTING=OFF" if build.without? "test"
       system "cmake", "..", *bxdecay0_cmake_args
       system "make", "-j#{ENV.make_jobs}"
+      if build.with? "test"
+        system "make", "test"
+      end
       system "make", "install"
     end
   end
