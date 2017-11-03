@@ -6,7 +6,7 @@ class Bayeux < Formula
 
   stable do
     version "3.1.1"
-    url     "https://github.com/BxCppDev/Bayeux/archive/Bayeux-3.1.1.tar.gz"
+    url     "https://github.com/BxCppDev/Bayeux/archive/3.1.1.tar.gz"
     sha256  "3c97caa7d2a04f4a1ecd407ea549dee6fb2cb89eb948209ba4b73f9734d8972c"
   end
 
