@@ -5,13 +5,13 @@ class Bayeux < Formula
   homepage "https://github.com/BxCppDev/Bayeux"
 
   stable do
-    version "3.1.0"
-    url     "https://github.com/BxCppDev/Bayeux/archive/Bayeux-3.1.0.tar.gz"
-    sha256  "c335aaa813bf305f1bcb1aa5e3d4f279f4f1d55cddf6116e39ced8e35329a061"
+    version "3.1.1"
+    url     "https://github.com/BxCppDev/Bayeux/archive/Bayeux-3.1.1.tar.gz"
+    sha256  "3c97caa7d2a04f4a1ecd407ea549dee6fb2cb89eb948209ba4b73f9734d8972c"
   end
 
   head do
-    version "3.1.0"
+    version "3.1.1"
     url     "https://github.com/BxCppDev/Bayeux.git",
             :branch => "master"
   end
