@@ -56,7 +56,7 @@ class Bayeux < Formula
       bx_cmake_args << "-DBAYEUX_ENABLE_TESTING=ON"        if     build.with? "test"
       bx_cmake_args << "-DBAYEUX_WITH_GEANT4_MODULE=OFF"   unless build.with? "geant4"
       system "cmake", "..", *bx_cmake_args
-      system "make"
+      system "make", "-j#{ENV.make_jobs}"
       if build.with? "test"
         system "make", "test"
       end
