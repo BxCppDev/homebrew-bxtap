@@ -356,7 +356,7 @@ Details on supported formulas:
 
      .. code:: sh
 
-	$ brew install bxcppdev/bxtap/qt5-base --c++11
+	$ brew install bxcppdev/bxtap/qt5-base
 
   Note: Linuxbrew provides  its own QT5 formula  which conflicts with
   this qt5-base.
@@ -482,6 +482,8 @@ Install the Bayeux last release step by step
 	    gnuplot5-doc \
 	    gnuplot-mode \
 	    gnuplot5-x11
+     $ sudo aptitude install libgl-dev
+
 
 * Brew some Linuxbrew modules from source:
 
@@ -490,7 +492,7 @@ Install the Bayeux last release step by step
      $ export HOMEBREW_BUILD_FROM_SOURCE=1
      $ brew install cmake
      $ brew install readline
-     $ brew install icu4c                   --c++11
+     $ brew install icu4c
      $ brew install gsl
      $ brew install bxcppdev/bxtap/doxygen
      $ brew install bxcppdev/bxtap/boost    --c++11 \
@@ -498,8 +500,8 @@ Install the Bayeux last release step by step
      $ brew install bxcppdev/bxtap/camp     --c++11
      $ brew install bxcppdev/bxtap/clhep    --c++11
      $ brew install bxcppdev/bxtap/xerces-c --c++11
-     $ brew install bxcppdev/bxtap/qt5-base
      $ brew install bxcppdev/bxtap/root6
+     $ brew install bxcppdev/bxtap/qt5-base
      $ brew install bxcppdev/bxtap/geant4   --c++11  \
 	    --with-opengl-x11
      $ brew install bxcppdev/bxtap/bayeux
@@ -554,3 +556,24 @@ Useful links
 -  `SuperNEMO-DBD <https://github.com/SuperNEMO-DBD>`__ : original work
    on Linuxbrew support for
    `Bayeux <https://github.com/BxCppDev/Bayeux>`__
+
+
+Miscellaneous
+-------------
+
+* About Qt5:
+
+  A brew formula is provided for a minimal installation of Qt5 from brew: ``bxcppdev/bxtap/qt5-base``.
+
+  However, on Ubuntu, it is also possible to use the Qt5 system installation (version 5.5).
+  Should the ``qt5-base`` tap fail to build, please make a try with and rebuild Bayeux:
+
+  .. code:: sh
+
+     $ sudo aptitude install libqt5core5a
+     $ sudo aptitude install libqt5gui5
+     $ sudo aptitude install libqt5svg5
+     $ sudo aptitude install libqt5svg5-dev
+     $ sudo aptitude install libqt5widgets5
+     $ sudo aptitude install qtbase5-dev
+     $ sudo aptitude install qt5-default

@@ -27,7 +27,7 @@ class Bayeux < Formula
   option "without-devtools", "Do not build developers tools"
   option "without-test",     "Do not build test programs"
   option "without-geant4",   "Do not build Geant4 module"
-  option "with-brewed-qt5",   "Build using Qt from Linuxbrew"
+  option "with-system-qt5",  "Build using Qt from system (experimental)"
 
   depends_on "cmake" => :build
   depends_on "bxcppdev/bxtap/doxygen" => :build
@@ -39,7 +39,7 @@ class Bayeux < Formula
   depends_on "bxcppdev/bxtap/camp"  => "c++11"
   depends_on "bxcppdev/bxtap/clhep" => "c++11"
   depends_on "bxcppdev/bxtap/xerces-c" => "c++11"
-  if build.with? "brewed-qt5"
+  if build.without? "system-qt5"
     depends_on "bxcppdev/bxtap/qt5-base"
   end
   depends_on "bxcppdev/bxtap/root6"
