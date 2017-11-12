@@ -34,12 +34,14 @@ class Bayeux < Formula
   depends_on "gsl"
   depends_on "readline"
 
-  depends_on "icu4c" => "c++11"
+  depends_on "icu4c"
   depends_on "bxcppdev/bxtap/boost" => ["c++11", "with-icu4c"]
   depends_on "bxcppdev/bxtap/camp"  => "c++11"
   depends_on "bxcppdev/bxtap/clhep" => "c++11"
   depends_on "bxcppdev/bxtap/xerces-c" => "c++11"
-  depends_on "bxcppdev/bxtap/qt5-base" => ["with-brewed-qt5"]
+  if build.with? "brewed-qt5"
+    depends_on "bxcppdev/bxtap/qt5-base"
+  end
   depends_on "bxcppdev/bxtap/root6"
   if build.with? "geant4"
     depends_on "bxcppdev/bxtap/geant4" => "c++11"
