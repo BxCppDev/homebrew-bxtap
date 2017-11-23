@@ -379,8 +379,7 @@ Details on supported formulas:
      .. code:: sh
 
 	$ brew install bxcppdev/bxtap/geant4 --c++11 \
-	    --with-opengl-x11 \
-	    --with-xerces-c
+	    --with-opengl-x11
 
    Note: Linuxbrew provides its own Geant4 formula.
 
@@ -565,7 +564,7 @@ Miscellaneous
 
   A brew formula is provided for a minimal installation of Qt5 from brew: ``bxcppdev/bxtap/qt5-base``.
 
-  However, on Ubuntu, it is also possible to use the Qt5 system installation (version 5.5).
+  However, on Ubuntu 16.04, it is also possible to use the Qt5 system installation (version 5.5).
   Should the ``qt5-base`` tap fail to build, please make a try with and rebuild Bayeux:
 
   .. code:: sh
