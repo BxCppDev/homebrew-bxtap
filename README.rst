@@ -389,7 +389,7 @@ Details on supported formulas:
 
    .. code:: sh
 
-       $ brew install bxcppdev/bxtap/root6 --c++11
+       $ brew install bxcppdev/bxtap/root6
 
   Note: Here is a command to be used in order to properly setup ROOT 6.X.
   It can be added in the ``do_linuxbrew_setup`` function:
