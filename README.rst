@@ -443,6 +443,16 @@ Details on supported formulas:
 
      $ brew install bxcppdev/bxtap/bxprotobuftools
 
+- **BxDecay0**:
+  The `BxDecay0 <https://github.com/BxCppDev/bxdecay0/>`__
+  C++ library for Monte Carlo generation of nuclear decays (C++ port of the Fortran GENBB/Decay0 program).
+  Installation of the 1.0.0 version:
+
+  .. code:: sh
+
+     $ brew install bxcppdev/bxtap/bxdecay0
+
+
 - **Bayeux** (last release):
   The `Bayeux <http://github.com/BxCppDev/Bayeux>`__ C++ library:
 
