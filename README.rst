@@ -86,16 +86,21 @@ to manage through Linuxbrew (several Gb sounds reasonnable).
             return 1
          fi
          export LINUXBREW_INSTALL_DIR="${HOME}/linuxbrew" # Change this to your
-                                                      # Linuxbrew installation path
+                                                          # Linuxbrew installation path
          export PATH="${LINUXBREW_INSTALL_DIR}/bin:${PATH}"
          export MANPATH="${LINUXBREW_INSTALL_DIR}/share/man:${MANPATH}"
          export INFOPATH="${LINUXBREW_INSTALL_DIR}/share/info:${INFOPATH}"
+         export PKG_CONFIG_PATH="${LINUXBREW_INSTALL_DIR}/lib/pkgconfig:${PKG_CONFIG_PATH}"
          # Additional commands may be added from here:
+         # -- Set the path to a download cache directory:
          # export HOMEBREW_CACHE=/some/directory/for/caching/brew/downloads
+         # -- Set the path to a temporary working/build directory:
          # export HOMEBREW_TEMP=/some/directory/for/building/brew/driven/software/packages
+         # -- Uncomment the following line to force Linuxbrew builds from source:
 	 # export HOMEBREW_BUILD_FROM_SOURCE=1
-	 # Set the number of parallel jobs during GNU make build:
-	 # export HOMEBREW_MAKE_JOBS=4
+	 # -- Uncomment the following line to set the number of parallel jobs during GNU make build:
+         # export HOMEBREW_MAKE_JOBS=4
+         # -- Uncomment the following line to activate ROOT 6:
          # source $(brew --prefix root6)/libexec/thisroot.sh
          echo >&2 "[info] do_linuxbrew_setup: Linuxbrew is setup."
          return 0
@@ -325,7 +330,7 @@ Details on supported formulas:
   The  `Boost   <https://www.boost.org/>`__  C++  library.
   Installation of the 1.63 version:
 
-   .. code:: sh
+  .. code:: sh
 
        $ brew install bxcppdev/bxtap/boost --c++11
 
@@ -335,7 +340,7 @@ Details on supported formulas:
   The   `Camp  <https://github.com/tegesoft/camp>`__   C++
   reflection library.  Installation of the 0.8.0 version:
 
-   .. code:: sh
+  .. code:: sh
 
        $ brew install bxcppdev/bxtap/camp --c++11
 
@@ -344,7 +349,7 @@ Details on supported formulas:
   C++ library for High Energy Physics.  Installation of the 2.1.3.1
   version:
 
-   .. code:: sh
+  .. code:: sh
 
        $ brew install bxcppdev/bxtap/clhep --c++11
 
@@ -354,7 +359,7 @@ Details on supported formulas:
   The   `Qt5  <http://qt-project.org/>`__   C++  core
   libraries.  Installation of the 5.8.0 version:
 
-     .. code:: sh
+  .. code:: sh
 
 	$ brew install bxcppdev/bxtap/qt5-base
 
@@ -365,7 +370,7 @@ Details on supported formulas:
   The `Xerces-C <https://xerces.apache.org/xerces-c/>`__
   XML parser.  Installation of the 3.1.4 version:
 
-     .. code:: sh
+  .. code:: sh
 
 	$ brew install bxcppdev/bxtap/xerces-c --c++11
 
@@ -376,25 +381,25 @@ Details on supported formulas:
   the   simulation   of   the    passage   of   particles   through
   matter. Installation of the 9.6.4 version:
 
-     .. code:: sh
+  .. code:: sh
 
 	$ brew install bxcppdev/bxtap/geant4 --c++11 \
 	    --with-opengl-x11
 
-   Note: Linuxbrew provides its own Geant4 formula.
+  Note: Linuxbrew provides its own Geant4 formula.
 
 - **Root**  (version  6):
   The  `Root  <http://root.cern.ch/>`__  Data
   Analysis Framework.  Installation of the 6.08.06 version:
 
-   .. code:: sh
+  .. code:: sh
 
        $ brew install bxcppdev/bxtap/root6
 
   Note: Here is a command to be used in order to properly setup ROOT 6.X.
   It can be added in the ``do_linuxbrew_setup`` function:
 
-   .. code:: sh
+  .. code:: sh
 
        $ . $(brew --prefix root6)/libexec/thisroot.sh
 
@@ -402,7 +407,7 @@ Details on supported formulas:
   The `Protocol Buffers <https://developers.google.com/protocol-buffers/>`__
   C++ and Java libraries. Installation of the 3.3.0 version:
 
-   .. code:: sh
+  .. code:: sh
 
        $ brew install bxcppdev/bxtap/protobuf [--with-java] [--with-brew-java]
 
@@ -484,7 +489,7 @@ Install the Bayeux last release step by step
      $ sudo aptitude install libgl-dev
 
 
-* Brew some Linuxbrew modules from source:
+* Brew some Linuxbrew modules from source, step by step:
 
   .. code:: sh
 
@@ -494,15 +499,13 @@ Install the Bayeux last release step by step
      $ brew install icu4c
      $ brew install gsl
      $ brew install bxcppdev/bxtap/doxygen
-     $ brew install bxcppdev/bxtap/boost    --c++11 \
-	    --with-icu4c
+     $ brew install bxcppdev/bxtap/boost    --c++11 --with-icu4c
      $ brew install bxcppdev/bxtap/camp     --c++11
      $ brew install bxcppdev/bxtap/clhep    --c++11
      $ brew install bxcppdev/bxtap/xerces-c --c++11
      $ brew install bxcppdev/bxtap/root6
      $ brew install bxcppdev/bxtap/qt5-base
-     $ brew install bxcppdev/bxtap/geant4   --c++11  \
-	    --with-opengl-x11
+     $ brew install bxcppdev/bxtap/geant4   --c++11 --with-opengl-x11
      $ brew install bxcppdev/bxtap/bayeux
 
 * Installation with all dependencies  automatically resolved and built
@@ -562,10 +565,11 @@ Miscellaneous
 
 * About Qt5:
 
-  A brew formula is provided for a minimal installation of Qt5 from brew: ``bxcppdev/bxtap/qt5-base``.
+  A brew formula is provided for a minimal installation of Qt5 from brew: ``bxcppdev/bxtap/qt5-base`` (see above).
 
   However, on Ubuntu 16.04, it is also possible to use the Qt5 system installation (version 5.5).
-  Should the ``qt5-base`` tap fail to build, please make a try with and rebuild Bayeux:
+  Should the ``qt5-base`` tap fail to build, please make a try with the system Qt5 and then rebuild Bayeux.
+  Typically, you should use:
 
   .. code:: sh
 
