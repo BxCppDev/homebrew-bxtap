@@ -324,7 +324,8 @@ You can print the list of supported formulas published by
     $ brew search bxcppdev/bxtap/
     ...
 
-Details on supported formulas:
+Third party software
+~~~~~~~~~~~~~~~~~~~~
 
 - **Boost**:
   The  `Boost   <https://www.boost.org/>`__  C++  library.
@@ -413,6 +414,12 @@ Details on supported formulas:
 
   Note: Linuxbrew provides its own  Protobuf formulas but they do not
   support Java.
+
+
+
+BxCppDev software projects
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 - **BxJsontools**:
   The `BxJsontools <https://github.com/BxCppDev/bxjsontools/>`__
