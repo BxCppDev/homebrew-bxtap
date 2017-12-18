@@ -5,7 +5,7 @@ class Bxrabbitmq < Formula
   stable do
     url     "https://github.com/BxCppDev/bxrabbitmq/archive/0.4.2.tar.gz"
     version "0.4.2"
-    sha256  "34d7379698ef09d5e1fcc19d37c66e4434654bcb5f8ffae3930d508f49076af1"
+    sha256  "b3a67105b7de7e6e227ae9c032286ebf81773dbb8cc00a92f5df950f942bffb0"
    end
 
   head do
