@@ -3,7 +3,7 @@ class Bxrabbitmq < Formula
   homepage "https://github.com/BxCppDev/bxrabbitmq"
 
   stable do
-    url     "https://github.com/BxCppDev/bxrabbitmq/archive/0.4.1.tar.gz"
+    url     "https://github.com/BxCppDev/bxrabbitmq/archive/0.4.2.tar.gz"
     version "0.4.2"
     sha256  "34d7379698ef09d5e1fcc19d37c66e4434654bcb5f8ffae3930d508f49076af1"
    end
