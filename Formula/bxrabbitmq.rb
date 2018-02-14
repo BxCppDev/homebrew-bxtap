@@ -3,19 +3,19 @@ class Bxrabbitmq < Formula
   homepage "https://github.com/BxCppDev/bxrabbitmq"
 
   stable do
-    url     "https://github.com/BxCppDev/bxrabbitmq/archive/0.4.1.tar.gz"
-    version "0.4.1"
-    sha256  "34d7379698ef09d5e1fcc19d37c66e4434654bcb5f8ffae3930d508f49076af1"
+    url     "https://github.com/BxCppDev/bxrabbitmq/archive/0.4.2.tar.gz"
+    version "0.4.2"
+    sha256  "b3a67105b7de7e6e227ae9c032286ebf81773dbb8cc00a92f5df950f942bffb0"
    end
 
   head do
     url     "https://github.com/BxCppDev/bxrabbitmq.git", :branch => "master"
-    version "0.4.2"
+    version "0.4.3"
   end
 
   devel do
     url     "https://github.com/BxCppDev/bxrabbitmq.git", :branch => "develop"
-    version "0.4.2"
+    version "0.4.3"
   end
 
   needs :cxx11
@@ -40,9 +40,9 @@ class Bxrabbitmq < Formula
       args << "-DBxJsontools_DIR=#{prefix}/lib/cmake/" if build.with? "manager"
       system "cmake", "..", *args
       system "make", "-j#{ENV.make_jobs}"
-      if build.with? "test"
-        system "make", "test"
-      end
+      #if build.with? "test"
+      #  system "make", "test"
+      #end
       system "make", "install"
     end
   end
