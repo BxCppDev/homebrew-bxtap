@@ -11,7 +11,7 @@ class Root6 < Formula
   depends_on "openssl" => :optional
   depends_on "gsl" => :recommended
   depends_on "sqlite" => :recommended
-  depends_on :python => :recommended
+  depends_on "python" => :recommended
   # For LZMA
   depends_on "xz"
 
