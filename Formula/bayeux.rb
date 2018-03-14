@@ -10,16 +10,17 @@ class Bayeux < Formula
     sha256  "2bf6b887e654fadbb7373fbea550ec14adc8836758fb029bf56c76bb5177827d"
   end
 
-  # head do
-  #   version "3.1.2"
-  #   url     "https://github.com/BxCppDev/Bayeux.git",
-  #           :branch => "release-3.1.x"
-  # end
+  head do
+    version "3.1.2"
+    url     "https://github.com/BxCppDev/Bayeux.git",
+            :branch => "release-3.1.x"
+  end
 
-  # devel do
-  #   url     "https://github.com/BxCppDev/Bayeux.git",
-  #           :branch => "develop"
-  # end
+  devel do
+    version "3.2.0"
+    url     "https://github.com/BxCppDev/Bayeux.git",
+            :branch => "develop"
+  end
 
   needs :cxx11
 

@@ -49,8 +49,8 @@ https://blogs.oracle.com/ali/avoiding-ldlibrarypath%3a-the-options).
 Our experience is that the use  of ``LD_LIBRARY_PATH`` by end users in
 some arbitrary customer environment often ends with problems.
 
-Installation steps for Ubuntu Linux 16.04:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Installation steps for Ubuntu Linux 16.04
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Here we assume you use a bash shell:
 
@@ -467,17 +467,12 @@ BxCppDev software projects
 
      $ brew install bxcppdev/bxtap/bayeux [--without-geant4] [--with-qt-gui]
 
-  -  Installation of Bayeux-3.1.0 :
+  -  Installation of Bayeux-3.1.2 :
 
      .. code:: sh
 
-	$ brew install bxcppdev/bxtap/bayeux@3.1.0 [--without-geant4]
+	$ brew install bxcppdev/bxtap/bayeux@3.1.2 [--without-geant4]
 
-  -  Installation of Bayeux-3.0.0 :
-
-     .. code:: sh
-
-        $ brew install bxcppdev/bxtap/bayeux@3.0.0
 
 -  **Vire** :
    The `Vire <http://github.com/BxCppDev/Vire>`__ C++ library (not available yet).
@@ -524,6 +519,14 @@ Install the Bayeux last release step by step
      $ brew install bxcppdev/bxtap/qt5-base
      $ brew install bxcppdev/bxtap/geant4   --c++11 --with-opengl-x11
      $ brew install bxcppdev/bxtap/bayeux
+
+
+  or use explicitely the last Bayeux's tag:
+
+  .. code:: sh
+
+     $ brew install bxcppdev/bxtap/bayeux@3.1.2
+
 
 * Installation with all dependencies  automatically resolved and built
   from source:
