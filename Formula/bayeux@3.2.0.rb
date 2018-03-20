@@ -1,6 +1,6 @@
 # Imported from SuperNEMO-DBD/homebrew-cadfael/Formula/bayeux.rb
 
-class Bayeux < Formula
+class BayeuxAT320 < Formula
   desc     "Bayeux Library"
   homepage "https://github.com/BxCppDev/Bayeux"
 
@@ -8,18 +8,6 @@ class Bayeux < Formula
     version "3.2.0"
     url     "https://github.com/BxCppDev/Bayeux/archive/Bayeux-3.2.0.tar.gz"
     sha256  "00d7b4413d0fc1748e2116fd4f8cd7bcf3831f9113658a483e67af977f7b51ee"
-  end
-
-  head do
-    version "3.2.0"
-    url     "https://github.com/BxCppDev/Bayeux.git",
-            :branch => "release-3.2.x"
-  end
-
-  devel do
-    version "3.3.0"
-    url     "https://github.com/BxCppDev/Bayeux.git",
-            :branch => "develop"
   end
 
   needs :cxx11
