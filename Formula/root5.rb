@@ -22,7 +22,7 @@ class Root5 < Formula
    depends_on "bxcppdev/bxtap/gsl" => :recommended
    option "with-brew-python", "Use brewed Python"
    if build.with? "brew-python"
-     depends_on :python@2 => :recommended
+     depends_on :python => :recommended
    end
 
    def install
