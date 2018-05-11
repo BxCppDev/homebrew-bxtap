@@ -1,13 +1,13 @@
 class Root5 < Formula
+   desc "CERN ROOT C++ data analysis framework"
    homepage "http://root.cern.ch"
-
+   revision 3
    stable do
      version "5.34.36"
      sha256  "fc868e5f4905544c3f392cc9e895ef5571a08e48682e7fe173bd44c0ba0c7dcd"
      url     "https://root.cern.ch/download/root_v#{version}.source.tar.gz"
      mirror  "http://ftp.riken.jp/pub/ROOT/root_v#{version}.source.tar.gz"
    end
-   revision 1
 
    head do
      url "https://github.com/root-mirror/root.git", :branch => "v5-34-00-patches"
@@ -15,13 +15,15 @@ class Root5 < Formula
 
    keg_only "Conflicts with production version ROOT6"
 
-   option :cxx11
-   needs  :cxx11 if build.cxx11?
+   needs :cxx11
 
    depends_on "cmake" => :build
    depends_on "openssl"
-   depends_on "gsl" => :recommended
-   depends_on :python => :recommended
+   depends_on "bxcppdev/bxtap/gsl" => :recommended
+   option "with-brew-python", "Use brewed Python"
+   if build.with? "brew-python"
+     depends_on :python@2 => :recommended
+   end
 
    def install
      # When building the head, temp patch for ROOT-8032
@@ -30,7 +32,7 @@ class Root5 < Formula
      end
 
      mkdir "hb-build-root" do
-       ENV.cxx11 if build.cxx11?
+       ENV.cxx11
 
        # Defaults
        args = std_cmake_args
@@ -50,7 +52,7 @@ class Root5 < Formula
        args << "-Dbuiltin_glew=ON"
 
        # Options
-       args << "-Dcxx11=ON" if build.cxx11?
+       args << "-Dcxx11=ON"
        args << "-Dpython=".concat((build.with? "python") ? "ON" : "OFF")
        args << "-Dmathmore=".concat((build.with? "gsl") ? "ON" : "OFF")
 

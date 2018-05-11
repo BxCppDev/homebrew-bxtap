@@ -38,7 +38,9 @@ class Doxygen < Formula
 
   depends_on "cmake" => :build
   depends_on "graphviz" => :optional
-  depends_on "bxcppdev/bxtap/qt5-base" => :optional
+  if build.with? "qt"
+    depends_on "bxcppdev/bxtap/qt5-base" => :optional
+  end
   depends_on "llvm" => :optional
   depends_on "bison" unless OS.mac?
   depends_on "flex" unless OS.mac?
