@@ -15,7 +15,7 @@ class Gsl < Formula
 
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
-    system "make"
+    system "make", "-j#{ENV.make_jobs}"
     system "make", "install"
   end
 
