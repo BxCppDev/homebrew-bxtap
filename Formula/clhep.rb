@@ -1,20 +1,13 @@
+# coding: utf-8
 class Clhep < Formula
   desc     "C++ Class Library for High Energy Physics"
   homepage "http://proj-clhep.web.cern.ch/proj-clhep/"
-  revision 1
+  url      "http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/clhep-2.1.3.1.tgz"
+  sha256   "5d3e45b39a861731fe3a532bb1426353bf62b54c7b90ecf268827e50f925642b"
 
-  stable do
-    url    "http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/clhep-2.1.3.1.tgz"
-    sha256 "5d3e45b39a861731fe3a532bb1426353bf62b54c7b90ecf268827e50f925642b"
-
-    # Patch for clang compatibility, adapted from MacPorts
-    patch :DATA
-  end
-
-  devel do
-    url    "http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/clhep-2.3.1.0.tgz"
-    sha256 "66272ae3100d3aec096b1298e1e24ec25b80e4dac28332b45ec3284023592963"
-  end
+  # Patch for clang compatibility, adapted from MacPorts
+  # Not working patch: Hunk #1 FAILED at 114.
+  # patch :DATA
 
   needs :cxx11
 
@@ -24,8 +17,7 @@ class Clhep < Formula
     ENV.cxx11
     mkdir "clhep-build" do
       system "cmake", "../CLHEP", *std_cmake_args
-      system "make", "-j#{ENV.make_jobs}"
-      system "make", "install"
+      system "make", "-j#{ENV.make_jobs}", "install"
     end
   end
 
@@ -55,7 +47,7 @@ __END__
 #
 --- a/CLHEP/Matrix/src/Vector.cc.orig
 +++ b/CLHEP/Matrix/src/Vector.cc
-@@ -114,9 +114,9 @@ HepVector::HepVector(const HepMatrix &hm1)
+@@ -114,9 +114,9 @@ 
 
  // trivial methods
 
