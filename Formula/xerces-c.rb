@@ -22,7 +22,7 @@ class XercesC < Formula
   end
 
   def install
-    ENV.cxx11 if build.cxx11?
+    ENV.cxx11 
     system "./configure",
            "--disable-dependency-tracking",
            "--prefix=#{prefix}"

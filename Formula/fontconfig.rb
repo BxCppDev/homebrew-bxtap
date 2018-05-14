@@ -41,8 +41,10 @@ class Fontconfig < Formula
     depends_on "libtool" => :build
     depends_on "bzip2"
     depends_on "expat"
+    # Breaks at install step on Ubuntu 18.04 :
+    ### depends_on "util-linux" # for libuuid
+    # Replace it with libuuid:
     depends_on "libuuid"
-    # depends_on "util-linux" # for libuuid
   end
 
   def install
