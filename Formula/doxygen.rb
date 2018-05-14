@@ -1,8 +1,8 @@
 class Doxygen < Formula
-  desc "Generate documentation for several programming languages"
+  desc     "Generate documentation for several programming languages"
   homepage "http://www.doxygen.org/"
   revision 1
-  head "https://github.com/doxygen/doxygen.git"
+  head     "https://github.com/doxygen/doxygen.git"
 
   stable do
     url "https://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.13.src.tar.gz"
@@ -43,10 +43,13 @@ class Doxygen < Formula
   end
   depends_on "llvm" => :optional
   depends_on "bison" unless OS.mac?
-  depends_on "flex" unless OS.mac?
+  depends_on "bxcppdev/bxtap/flex" unless OS.mac?
 
   def install
-    args = std_cmake_args << "-DCMAKE_OSX_DEPLOYMENT_TARGET:STRING=#{MacOS.version}"
+    args = std_cmake_args
+    if OS.mac?
+      args << "-DCMAKE_OSX_DEPLOYMENT_TARGET:STRING=#{MacOS.version}"
+    end
     args << "-Dbuild_wizard=ON" if build.with? "qt"
     args << "-Duse_libclang=ON -DLLVM_CONFIG=#{Formula["llvm"].opt_bin}/llvm-config" if build.with? "llvm"
 
