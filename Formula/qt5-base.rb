@@ -11,7 +11,7 @@ class Qt5Base < Formula
 
   unless OS.mac?
     depends_on "icu4c"
-    depends_on "fontconfig"
+    depends_on "bxcppdev/bxtap/fontconfig"
     depends_on "freetype"
     depends_on "zlib"
   end
