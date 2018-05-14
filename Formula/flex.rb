@@ -13,7 +13,7 @@ class Flex < Formula
     sha256 "8d28b5ea5d19869070bcfdd9c4b9ffe71078df508d2b5305af3256732a8cec9b" => :x86_64_linux
   end
 
-  keg_only :provided_by_osx, "Some formulae require a newer version of flex."
+  keg_only :provided_by_macos, "Some formulae require a newer version of flex."
 
   depends_on "gettext"
   depends_on "m4" unless OS.mac?
