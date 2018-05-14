@@ -84,7 +84,7 @@ class Qt5Base < Formula
   end
 
   test do
-    (testpath/"hello.pro").write <<-EOS.undent
+    (testpath/"hello.pro").write <<-EOS
       QT       += core
       QT       -= gui
       TARGET = hello
@@ -94,7 +94,7 @@ class Qt5Base < Formula
       SOURCES += main.cpp
     EOS
 
-    (testpath/"main.cpp").write <<-EOS.undent
+    (testpath/"main.cpp").write <<-EOS
       #include <QCoreApplication>
       #include <QDebug>
       int main(int argc, char *argv[])
