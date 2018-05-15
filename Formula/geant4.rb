@@ -35,29 +35,22 @@ class Geant4 < Formula
     sha256  "702fb0f7a78d4bdf1e3f14508de26e4db5e2df6a21a8066a92b7e6ce21f4eb2d"
   end
 
-  option :cxx11
-  needs  :cxx11 if build.cxx11?
+  needs :cxx11
 
   option "with-opengl-x11", "Build OpenGL X11 driver" if OS.linux?
   option "with-notimeout", "Set notimeout in installing data"
 
   depends_on "cmake" => :build
-
-  if build.cxx11?
-    depends_on "bxcppdev/bxtap/clhep" => ["c++11"]
-    depends_on "bxcppdev/bxtap/xerces-c" => [:recommended, "c++11"]
-  else
-    depends_on "bxcppdev/bxtap/clhep"
-    depends_on "bxcppdev/bxtap/xerces-c" => :recommended
-  end
+  depends_on "bxcppdev/bxtap/clhep" 
+  depends_on "bxcppdev/bxtap/xerces-c" 
 
   def install
-    ENV.cxx11 if build.cxx11?
+    ENV.cxx11 
     mkdir "brew-geant4-build" do
       args = std_cmake_args
       args << "-DCMAKE_INSTALL_LIBDIR=lib"
       args << "-DCMAKE_BUILD_WITH_INSTALL_RPATH=ON"
-      args << "-DGEANT4_BUILD_CXXSTD=c++11" if build.cxx11?
+      args << "-DGEANT4_BUILD_CXXSTD=c++11"
       args << "-DGEANT4_INSTALL_DATA=ON"
       args << "-DGEANT4_INSTALL_DATA_TIMEOUT=86400" if build.with? "notimeout"
       args << "-DGEANT4_USE_SYSTEM_CLHEP=ON"
@@ -65,7 +58,7 @@ class Geant4 < Formula
       args << "-DGEANT4_USE_SYSTEM_EXPAT=ON"
       # args << "-DGEANT4_USE_SYSTEM_ZLIB=ON"
 
-      args << "-DGEANT4_USE_GDML=ON" # if build.with? "xerces-c"
+      args << "-DGEANT4_USE_GDML=ON"
       args << "-DGEANT4_USE_OPENGL_X11=ON" if build.with? "opengl-x11"
 
       system "cmake", "../", *args
