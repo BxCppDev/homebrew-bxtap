@@ -1,7 +1,7 @@
 class Geant4 < Formula
   desc     "C++ toolkit for simulating the passage of particles through matter"
   homepage "http://geant4.cern.ch"
-  revision 4
+  revision 5
 
   stable do
     url     "http://geant4.cern.ch/support/source/geant4.9.6.p04.tar.gz"
@@ -37,10 +37,11 @@ class Geant4 < Formula
 
   needs :cxx11
 
-  option "with-opengl-x11", "Build OpenGL X11 driver" if OS.linux?
+  # option "with-opengl-x11", "Build OpenGL X11 driver" if OS.linux?
   option "with-notimeout", "Set notimeout in installing data"
 
   depends_on "cmake" => :build
+  # depends_on "expat" if OS.linux?
   depends_on "bxcppdev/bxtap/clhep" 
   depends_on "bxcppdev/bxtap/xerces-c" 
 
@@ -57,9 +58,8 @@ class Geant4 < Formula
       args << "-DCLHEP_ROOT_DIR=#{HOMEBREW_PREFIX}/lib"
       args << "-DGEANT4_USE_SYSTEM_EXPAT=ON"
       # args << "-DGEANT4_USE_SYSTEM_ZLIB=ON"
-
       args << "-DGEANT4_USE_GDML=ON"
-      args << "-DGEANT4_USE_OPENGL_X11=ON" if build.with? "opengl-x11"
+      args << "-DGEANT4_USE_OPENGL_X11=ON" # if build.with? "opengl-x11"
 
       system "cmake", "../", *args
       system "make", "-j#{ENV.make_jobs}", "install"
