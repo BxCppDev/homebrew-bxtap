@@ -14,7 +14,7 @@ of the  software packages released  by the  BxCppDev group and  try to
 solve  software  dependency  issues.  Linuxbrew is  not  the  ultimate
 solution to solve package installation and dependency problems. It can
 be  very useful  and  practical  but it  may  also  add some  software
-management complexity and concern on some particular environment.
+management complexity and issues on some particular environment.
 
 We assume you have installed  Linuxbrew on your system. Our philosophy
 is not to *activate* Linuxbrew per  default but only when it is needed
@@ -22,12 +22,13 @@ on  your system,  mainly to  use the  tools provided  by the  BxCppDev
 group.  Recommended Linuxbrew  installation and  setup procedures  are
 given below.
 
-Ubuntu  Linux being  our main  development system,  we give  here some
-installation  and   configuration  hints  for  this   environment.  In
-principle,  the  procedures  explained  below  should  work  on  other
-distros, maybe with some minor changes. However, it is very difficult
-for us to  guarantee it will work  for your own system;  we don't have
-the resources to check all existing working envs.
+Ubuntu Linux (current  release: 18.04 LTS) being  our main development
+system, we  give here  some installation  and configuration  hints for
+this environment.  In principle, the procedures explained below should
+work on other Linux distros,  maybe with some minor changes.  However,
+it is  very difficult for  us to guarantee it  will work for  your own
+system; we  don't have the  resources to check all  existing operating
+systems and/or environments.
 
 Installing Linuxbrew on your system
 -----------------------------------
@@ -35,12 +36,13 @@ Installing Linuxbrew on your system
 We strongly  recommend that you  work from a  *bare* environment/shell
 which means that your ``PATH`` environment variable should be as short
 as possible  and confined for a  minimal system usage. Example  from a
-bash shell on Ubuntu 16.04:
+bash shell on Ubuntu 18.04:
 
 .. code:: sh
 
-    $ echo $PATH
-    /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin
+   $ echo $PATH
+   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+..
 
 Ideally  the ``LD_LIBRARY_PATH``  environment variable  should not  be
 used at  all, i.e. it  should **not** be  set in your  default working
@@ -49,8 +51,8 @@ https://blogs.oracle.com/ali/avoiding-ldlibrarypath%3a-the-options).
 Our experience is that the use  of ``LD_LIBRARY_PATH`` by end users in
 some arbitrary customer environment often ends with problems.
 
-Installation steps for Ubuntu Linux 16.04
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Installation steps for Ubuntu Linux 16.04 or 18.04
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Here we assume you use a bash shell:
 
@@ -101,7 +103,9 @@ to manage through Linuxbrew (several Gb sounds reasonnable).
 	 # -- Uncomment the following line to set the number of parallel jobs during GNU make build:
          # export HOMEBREW_MAKE_JOBS=4
          # -- Uncomment the following line to activate ROOT 6:
-         # source $(brew --prefix root6)/libexec/thisroot.sh
+         # source $(brew --prefix root6)/bin/thisroot.sh     # for 6.12.04
+	 # or
+         # source $(brew --prefix root6)/libexec/thisroot.sh # for 6.08.06
          echo >&2 "[info] do_linuxbrew_setup: Linuxbrew is setup."
          return 0
        }
@@ -109,7 +113,7 @@ to manage through Linuxbrew (several Gb sounds reasonnable).
 
 This approach allows to setup Linuxbrew only on explicit demand from a
 given shell. IMHO, it is a bad practice to systematically load tons of
-paths to all  the software binaries installed on your  system. You end
+paths to all the executable programs installed on your system. You end
 up with a very heavy environment,  polluted by plenty of software that
 you won't  use during a specific  working session. Our credo  is thus:
 *Activate only what you will use!*.
@@ -164,7 +168,7 @@ variables:
     $ export HOMEBREW_TEMP=/some/directory/for/building/brew/driven/software/packages
     $ export HOMEBREW_CACHE=/some/directory/for/caching/brew/downloads
 
-Such lines can  be added in the setup script  shown above (in function
+Such lines can  be added in the setup script shown above (in function
 ``do_linuxbrew_setup``).
 
 
@@ -254,7 +258,9 @@ Installation of the tap
 
 Once  installed   and  setup  Linuxbrew   on  your  system,   you  can
 install/register the ``bxcppdev/homebrew-bxtap`` tap in your Linuxbrew
-repository.
+repository. This tap will add a set of Linuxbrew formulas dedicated to
+the installation and usage of software provided by the BxCppDev group.
+This includes third party dependee software packages too.
 
 Installation steps
 ~~~~~~~~~~~~~~~~~~
@@ -273,9 +279,9 @@ Installation steps
        $ brew tap bxcppdev/homebrew-bxtap
 
    The           tap            is           downloaded           from
-   ``https://github.com/BxCppDev/homebrew-bxtap.git`` and installed locally in
-   your    ``$(brew --prefix)/Library/Taps/bxcppdev/homebrew-bxtap``
-   directory.
+   ``https://github.com/BxCppDev/homebrew-bxtap.git``   and  installed
+   locally               in                your               ``$(brew
+   --prefix)/Library/Taps/bxcppdev/homebrew-bxtap`` directory.
 
 Additional useful commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -289,19 +295,6 @@ A few more commands may be useful:
 
        $ brew tap-pin bxcppdev/homebrew-bxtap
 
-#. If you want to install a local copy of the tap, for example because
-   you want, as a BxCppDev developper  or contributor, to test a brand
-   new formula, please run:
-
-   .. code:: sh
-
-      $ brew tap bxcppdev/homebrew-bxtap \
-          file:///path/to/your/homebrew-bxtap/local/git/repo
-
-
-   You'll be  able to locally debug  and test a new  formula from your
-   local repository.
-
 #. You can  deregister the ``homebrew-bxtap`` tap  from your Linuxbrew
    package manager:
 
@@ -312,6 +305,22 @@ A few more commands may be useful:
 
    However, I expect the packages previously installed through the tap
    should meet issues in a short term.
+
+Note
+----
+  
+If you want to install a local copy of the tap, for example because
+you want, as a BxCppDev developper  or contributor, to test a brand
+new formula, please run:
+
+.. code:: sh
+
+   $ brew tap bxcppdev/homebrew-bxtap \
+       file:///path/to/your/homebrew-bxtap/local/git/repo
+
+
+You'll be  able to locally debug  and test a new  formula from your
+local repository.
 
 List of available formulas
 --------------------------
@@ -333,7 +342,7 @@ Third party software
 
   .. code:: sh
 
-       $ brew install bxcppdev/bxtap/boost --c++11
+       $ brew install bxcppdev/bxtap/boost
 
   Note: Linuxbrew/core provides its own Boost formulas.
 
@@ -343,7 +352,7 @@ Third party software
 
   .. code:: sh
 
-       $ brew install bxcppdev/bxtap/camp --c++11
+       $ brew install bxcppdev/bxtap/camp
 
 - **CLHEP**:
   The `CLHEP <http://proj-clhep.web.cern.ch/proj-clhep/>`__
@@ -352,13 +361,13 @@ Third party software
 
   .. code:: sh
 
-       $ brew install bxcppdev/bxtap/clhep --c++11
+       $ brew install bxcppdev/bxtap/clhep
 
   Note: Linuxbrew provides its own CLHEP formula.
 
 - **Qt5**   base:
   The   `Qt5  <http://qt-project.org/>`__   C++  core
-  libraries.  Installation of the 5.8.0 version:
+  libraries.  Installation of the 5.10.0 version:
 
   .. code:: sh
 
@@ -369,11 +378,11 @@ Third party software
 
 - **Xerces-C**:
   The `Xerces-C <https://xerces.apache.org/xerces-c/>`__
-  XML parser.  Installation of the 3.1.4 version:
+  XML parser.  Installation of the 3.1.4_3 version:
 
   .. code:: sh
 
-	$ brew install bxcppdev/bxtap/xerces-c --c++11
+	$ brew install bxcppdev/bxtap/xerces-c 
 
   Note: Linuxbrew provides its own Xerces-C formula.
 
@@ -384,14 +393,14 @@ Third party software
 
   .. code:: sh
 
-	$ brew install bxcppdev/bxtap/geant4 --c++11 \
+	$ brew install bxcppdev/bxtap/geant4  \
 	    --with-opengl-x11
 
   Note: Linuxbrew provides its own Geant4 formula.
 
 - **Root**  (version  6):
   The  `Root  <http://root.cern.ch/>`__  Data
-  Analysis Framework.  Installation of the 6.08.06 version:
+  Analysis Framework.  Installation of the 6.12.04_1 version:
 
   .. code:: sh
 
@@ -487,18 +496,34 @@ Install the Bayeux last release step by step
 
   .. code:: sh
 
-     $ sudo aptitude install libgl-dev
-     $ sudo aptitude install libglu-dev
-     $ sudo aptitude install libcups2-dev
-     $ sudo aptitude install libxpm-dev
-     $ sudo aptitude install libxft-dev
-     $ sudo aptitude install libxml2-dev
-     $ sudo aptitude install \
+     $ sudo apt-get install libgl-dev
+     $ sudo apt-get install libglu-dev
+     $ sudo apt-get install libcups2-dev
+     $ sudo apt-get install libxpm-dev
+     $ sudo apt-get install libxft-dev
+     $ sudo apt-get install libxml2-dev
+     $ sudo apt-get install \
 	    gnuplot5 \
 	    gnuplot5-doc \
 	    gnuplot-mode \
 	    gnuplot5-x11
-     $ sudo aptitude install libgl-dev
+
+* Install system dependencies (Ubuntu 18.04):
+
+  .. code:: sh
+
+     $ sudo apt-get install libgl1-mesa-dev
+     $ sudo apt-get install libglu1-mesa-dev
+     $ sudo apt-get install libcups2-dev
+     $ sudo apt-get install libxpm-dev
+     $ sudo apt-get install libxft-dev
+     $ sudo apt-get install libxml2-dev
+     $ sudo apt-get install libxmu-dev
+     $ sudo apt-get install \
+	    gnuplot \
+	    gnuplot-doc \
+	    gnuplot-mode \
+	    gnuplot-x11
 
 
 * Brew some Linuxbrew modules from source, step by step:
@@ -509,15 +534,15 @@ Install the Bayeux last release step by step
      $ brew install cmake
      $ brew install readline
      $ brew install icu4c
-     $ brew install gsl
+     $ brew install bxcppdev/bxtap/gsl
      $ brew install bxcppdev/bxtap/doxygen
-     $ brew install bxcppdev/bxtap/boost    --c++11 --with-icu4c
-     $ brew install bxcppdev/bxtap/camp     --c++11
-     $ brew install bxcppdev/bxtap/clhep    --c++11
-     $ brew install bxcppdev/bxtap/xerces-c --c++11
-     $ brew install bxcppdev/bxtap/root6
+     $ brew install bxcppdev/bxtap/boost 
+     $ brew install bxcppdev/bxtap/camp     
+     $ brew install bxcppdev/bxtap/clhep    
      $ brew install bxcppdev/bxtap/qt5-base
-     $ brew install bxcppdev/bxtap/geant4   --c++11 --with-opengl-x11
+     $ brew install bxcppdev/bxtap/xerces-c 
+     $ brew install bxcppdev/bxtap/root6
+     $ brew install bxcppdev/bxtap/geant4 --with-opengl-x11
      $ brew install bxcppdev/bxtap/bayeux
 
 
