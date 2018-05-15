@@ -25,7 +25,7 @@ class Bxrabbitmq < Formula
   depends_on "pkg-config"
 
   option "without-test", "Inhibit test programs"
-  option "with-manager", "Built the RabbitMQ server management API"
+  option "without-manager", "Do not built the RabbitMQ server management API"
   if build.with? "manager"
     depends_on "bxcppdev/bxtap/bxjsontools"
     depends_on "curlpp"
