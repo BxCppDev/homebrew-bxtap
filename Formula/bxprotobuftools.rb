@@ -11,7 +11,7 @@ class Bxprotobuftools < Formula
   head do
     url     "https://github.com/BxCppDev/bxprotobuftools.git", :branch => "develop"
     version "0.3.1"
-   end
+  end
 
   option "without-test", "Inhibit test programs"
 
