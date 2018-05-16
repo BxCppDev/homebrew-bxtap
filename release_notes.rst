@@ -9,7 +9,8 @@ Ubuntu 18.04 notes
 
 * Add ``fontconfig`` formula:
 
-  * Remove dependee ``libuuid`` and force to use the system library:
+  * Used by the ``qt5-base`` formula:
+  * Remove dependee ``libuuid`` formula and thus force to use the system library:
 
     .. code:: shell
 	      
