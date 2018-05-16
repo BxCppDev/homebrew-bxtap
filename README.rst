@@ -371,6 +371,7 @@ Third party software
 
   .. code:: sh
 
+	$ sudo apt-get install libuuid1
 	$ brew install bxcppdev/bxtap/qt5-base
 
   Note: Linuxbrew provides  its own QT5 formula  which conflicts with
