@@ -474,13 +474,13 @@ BxCppDev software projects
 
   .. code:: sh
 
-     $ brew install bxcppdev/bxtap/bayeux [--without-geant4] [--with-qt-gui]
+     $ brew install bxcppdev/bxtap/bayeux [--without-geant4] 
 
-  -  Installation of Bayeux-3.1.2 :
+  -  Installation of Bayeux-3.2.0 :
 
      .. code:: sh
 
-	$ brew install bxcppdev/bxtap/bayeux@3.1.2 [--without-geant4]
+	$ brew install bxcppdev/bxtap/bayeux@3.2.0 [--without-geant4]
 
 
 -  **Vire** :
@@ -542,7 +542,7 @@ Install the Bayeux last release step by step
      $ brew install bxcppdev/bxtap/qt5-base
      $ brew install bxcppdev/bxtap/xerces-c 
      $ brew install bxcppdev/bxtap/root6
-     $ brew install bxcppdev/bxtap/geant4 --with-opengl-x11
+     $ brew install bxcppdev/bxtap/geant4 
      $ brew install bxcppdev/bxtap/bayeux
 
 
@@ -572,6 +572,13 @@ Install Vire
       $ sudo apt-get install openjdk-8-jdk
       $ sudo apt-get install maven
 
+#. Install system dependencies (Ubuntu 18.04):
+
+   .. code:: sh
+
+      $ sudo apt-get install openjdk-11-jdk openjdk-11-jre openjdk-11-doc
+      $ sudo apt-get install maven
+
 #. Install dependencies:
 
    .. code:: sh
@@ -579,7 +586,7 @@ Install Vire
       $ brew install bxcppdev/bxtap/protobuf
       $ brew install bxcppdev/bxtap/bxprotobuftools
       $ brew install bxcppdev/bxtap/bxjsontools
-      $ brew install bxcppdev/bxtap/bxrabbitmq --with-manager
+      $ brew install bxcppdev/bxtap/bxrabbitmq 
 
 #. Install Bayeux (Geant4 module is not required):
 
