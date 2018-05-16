@@ -7,7 +7,7 @@ class Protobuf < Formula
   sha256   "9a36bc1265fa83b8e818714c0d4f08b8cec97a1910de0754a321b11e66eb76de"
 
   needs :cxx11
-  option "with-brew-gcc5", "Use Linuxbrew gcc5"
+  #option "with-brew-gcc5", "Use Linuxbrew gcc5"
 
   option "with-java", "Build the Java Protocol Buffers runtime library"
   # option "with-brew-java", "Use Linuxbrew Java JDK"
@@ -18,10 +18,10 @@ class Protobuf < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "curl" => :build
-  depends_on "make" => :build
-  if build.with? "brew-gcc5"
-    depends_on "gcc5" => :build
-  end
+  #depends_on "make" => :build
+  # if build.with? "brew-gcc5"
+  #   depends_on "gcc5" => :build
+  # end
   depends_on "unzip" => :build
 
   # if build.with? "java"
