@@ -6,7 +6,7 @@ class Geant4AT1042 < Formula
   stable do
     url     "http://geant4.cern.ch/support/source/geant4.10.04.p02.tar.gz"
     version "10.4.2"
-    sha256  "997220a5386a43ac8f533fc7d5a8360aa1fd6338244d17deeaa583fb3a0f39fd"
+    sha256  "2cac09e799f2eb609a7f1e4082d3d9d3d4d9e1930a8c4f9ecdad72aad35cdf10"
   end
 
   needs :cxx11
