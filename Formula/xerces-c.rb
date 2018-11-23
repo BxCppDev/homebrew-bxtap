@@ -7,10 +7,10 @@ class XercesC < Formula
 
   needs  :cxx11
 
-  unless OS.mac?
-    depends_on "curl"
-    depends_on "icu4c"
-  end
+  # unless OS.mac?
+  #   depends_on "curl"
+  #   depends_on "icu4c"
+  # end
 
   def install
     ENV.cxx11 

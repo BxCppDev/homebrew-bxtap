@@ -36,14 +36,14 @@ class Doxygen < Formula
   deprecated_option "with-libclang" => "with-llvm"
   deprecated_option "with-qt5" => "with-qt"
 
-  depends_on "cmake" => :build
-  depends_on "graphviz" => :optional
-  if build.with? "qt"
-    depends_on "bxcppdev/bxtap/qt5-base" => :optional
-  end
-  depends_on "llvm" => :optional
-  depends_on "bison" unless OS.mac?
-  depends_on "bxcppdev/bxtap/flex" unless OS.mac?
+  # depends_on "cmake" => :build
+  # depends_on "graphviz" => :optional
+  # if build.with? "qt"
+  #   depends_on "bxcppdev/bxtap/qt5-base" => :optional
+  # end
+  # depends_on "llvm" => :optional
+  # depends_on "bison" unless OS.mac?
+  # depends_on "bxcppdev/bxtap/flex" unless OS.mac?
 
   def install
     args = std_cmake_args

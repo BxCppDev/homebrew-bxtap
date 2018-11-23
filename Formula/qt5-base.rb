@@ -6,14 +6,14 @@ class Qt5Base < Formula
 
   keg_only "Qt5 very picky about install locations, so keep it isolated"
 
-  depends_on :xcode => :build if OS.mac?
-  depends_on "pkg-config" => :build
+  # depends_on :xcode => :build if OS.mac?
+  # depends_on "pkg-config" => :build
 
   unless OS.mac?
-    depends_on "icu4c"
-    depends_on "bxcppdev/bxtap/fontconfig"
-    depends_on "freetype"
-    depends_on "zlib"
+    # depends_on "icu4c"
+    # depends_on "bxcppdev/bxtap/fontconfig"
+    # depends_on "freetype"
+    # depends_on "zlib"
   end
 
   conflicts_with "qt5", :because => "Core homebrew ships a complete Qt5 install"

@@ -7,12 +7,11 @@ class Boost < Formula
 
   needs :cxx11
 
-  depends_on "icu4c"
-
-  unless OS.mac?
-    depends_on "bzip2"
-    depends_on "zlib"
-  end
+  # depends_on "icu4c"
+  # unless OS.mac?
+  #   depends_on "bzip2"
+  #   depends_on "zlib"
+  # end
 
   def install
     # Reduce memory usage below 4 GB for Circle CI.

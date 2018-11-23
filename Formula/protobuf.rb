@@ -14,11 +14,11 @@ class Protobuf < Formula
   # option "with-brew-maven", "Use Linuxbrew Apache Maven"
   option "with-test", "Run build-time check"
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
-  depends_on "curl" => :build
-  #depends_on "make" => :build
+  # depends_on "autoconf" => :build
+  # depends_on "automake" => :build
+  # depends_on "libtool" => :build
+  # depends_on "curl" => :build
+  # depends_on "make" => :build
   # if build.with? "brew-gcc5"
   #   depends_on "gcc5" => :build
   # end

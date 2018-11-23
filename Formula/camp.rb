@@ -8,15 +8,15 @@ class Camp < Formula
 
   needs  :cxx11
 
-  depends_on "cmake" => :build
+  # depends_on "cmake" => :build
   depends_on "bxcppdev/bxtap/boost"
 
   # This appears to be a more robust way of defining options
   # so that the dependency is always installed
   option "with-doxygen", "Build with doxygen documentation"
-  if build.with? "doxygen"
-    depends_on "doxygen" => [:optional, :build]
-  end
+  #if build.with? "doxygen"
+  #  depends_on "doxygen" => [:optional, :build]
+  #end
 
   def install
     system "touch", "LICENSE.LGPL3.txt"

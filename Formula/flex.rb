@@ -15,9 +15,9 @@ class Flex < Formula
 
   keg_only :provided_by_macos, "Some formulae require a newer version of flex."
 
-  depends_on "gettext"
-  depends_on "m4" unless OS.mac?
-  depends_on "bison" => :build unless OS.mac?
+  # depends_on "gettext"
+  # depends_on "m4" unless OS.mac?
+  # depends_on "bison" => :build unless OS.mac?
 
   def install
     system "./configure", "--disable-dependency-tracking",

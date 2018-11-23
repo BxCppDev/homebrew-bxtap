@@ -1,4 +1,4 @@
-# coding: utf-8
+*# coding: utf-8
 class Clhep < Formula
   desc     "C++ Class Library for High Energy Physics"
   homepage "http://proj-clhep.web.cern.ch/proj-clhep/"
@@ -11,7 +11,7 @@ class Clhep < Formula
 
   needs :cxx11
 
-  depends_on "cmake" => :build
+  # depends_on "cmake" => :build
 
   def install
     ENV.cxx11

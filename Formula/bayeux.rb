@@ -29,9 +29,9 @@ class Bayeux < Formula
   option "without-geant4",   "Do not build Geant4 module"
   option "with-system-qt5",  "Build using Qt from system (experimental)"
 
-  depends_on "cmake" => :build
-  depends_on "icu4c"
-  depends_on "readline"
+  #depends_on "cmake" => :build
+  #depends_on "icu4c"
+  #depends_on "readline"
   depends_on "bxcppdev/bxtap/doxygen" => :build
   depends_on "bxcppdev/bxtap/gsl"
   depends_on "bxcppdev/bxtap/boost"

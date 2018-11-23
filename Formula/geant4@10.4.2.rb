@@ -16,7 +16,7 @@ class Geant4AT1042 < Formula
 
   depends_on "cmake" => :build
   # depends_on "expat" if OS.linux?
-  depends_on "bxcppdev/bxtap/clhep" 
+  depends_on "bxcppdev/bxtap/clhep@2.4.1.0" 
   depends_on "bxcppdev/bxtap/xerces-c" 
 
   def install

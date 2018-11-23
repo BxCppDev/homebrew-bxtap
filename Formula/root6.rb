@@ -9,13 +9,13 @@ class Root6 < Formula
 
   head "http://root.cern.ch/git/root.git"
 
-  depends_on "cmake" => :build
-  depends_on "libxml2" unless OS.mac? # For XML on Linux
-  depends_on "xz" # For LZMA
-  depends_on "openssl"
-  depends_on "sqlite"
-  depends_on "bxcppdev/bxtap/gsl"
-  depends_on "python@2"
+  # depends_on "cmake" => :build
+  # depends_on "libxml2" unless OS.mac? # For XML on Linux
+  # depends_on "xz" # For LZMA
+  # depends_on "openssl"
+  # depends_on "sqlite"
+  # depends_on "bxcppdev/bxtap/gsl"
+  # depends_on "python@2"
 
   conflicts_with "root", :because => "Bayeux requires custom root build"
 
