@@ -53,8 +53,7 @@ some arbitrary customer environment often ends with problems.
 
 Installation steps for Ubuntu Linux 16.04 or 18.04
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Here we assume you use a bash shell:
+Here we assume you use a Bash shell:
 
 #. Install  system  dependencies  required to  initiate  properly  the
    Linuxbrew installation:
@@ -62,21 +61,56 @@ Here we assume you use a bash shell:
    .. code:: sh
 
        $ sudo apt-get install build-essential curl git python-setuptools ruby
+   ..
 
+#. In  order to  minimize  the number  of  packages installed  through
+   Linuxbrew, the following system packages should also be installed on Ubuntu 18.04:
+
+   * ``make``
+   * ``ninja-build``
+   * ``cmake``
+   * ``m4``
+   * ``autoconf``
+   * ``automake``
+   * ``libautomake``
+   * ``libtool``
+   * ``pkg-config``
+   * ``gettext``
+   * ``libreadline7``, ``libreadline-dev``
+   * ``pandoc``
+   * ``python-docutils``
+   * ``doxygen``
+   * ``libexpat1``, ``libexpat1-dev``
+   * ``libbz2-1.0``, ``libbz2-dev``, ``bzip2``
+   * ``zlib1g``, ``zlib1g-dev``
+   * ``xz-utils``
+   * ``bison``, ``libbison-dev``
+   * ``graphviz-dev``, ``graphviz-doc``, ``libgraphviz-dev``
+   * ``libgsl23``, ``libgsl-dev``, ``gsl-bin``
+   * ``libfreetype6``, ``libfreetype6-dev``
+   * ``fontconfig``, ``fontconfig-dev``
+   * ``libfontconfig1``, ``libfontconfig1-dev``
+   * ``libxml2``, ``libxml2-dev``
+   * ``openssl``, ``libssl1.1-dev``
+   * ``sqlite``
+
+      
 #. Clone the Linuxbrew GitHub repository:
 
    .. code:: sh
 
-       $ git clone https://github.com/Linuxbrew/brew.git ${HOME}/linuxbrew
+       $ mkdir ${HOME}/Software/Linuxbrew
+       $ cd ${HOME}/Software/Linuxbrew
+       $ git clone https://github.com/Linuxbrew/brew.git linuxbrew
 
-Note: Here  the ``HOME`` directory can  be changed to any  location of
-your  filesystem for  which  you  have write  access  and also  enough
-available storage capacity, depending on  which software you will need
-to manage through Linuxbrew (several Gb sounds reasonnable).
+   **Note**: Here  the ``HOME`` directory can  be changed to any  location of
+   your  filesystem for  which  you  have write  access  and also  enough
+   available storage capacity, depending on  which software you will need
+   to manage through Linuxbrew (several Gb sounds reasonnable).
 
 
-#. Edit your ``~/.bashrc``  file and create a bash  setup function for
-   Linuxbrew as well as a companion alias:
+#. Edit your ``~/.bashrc``  file and create a Bash  setup function for
+   Linuxbrew as well as a useful alias:
 
    .. code:: sh
 
@@ -87,13 +121,14 @@ to manage through Linuxbrew (several Gb sounds reasonnable).
             echo >&2 "[warning] do_linuxbrew_setup: Linuxbrew is already setup!"
             return 1
          fi
-         export LINUXBREW_INSTALL_DIR="${HOME}/linuxbrew" # Change this to your
-                                                          # Linuxbrew installation path
+	 # Define the Linuxbrew installation path:
+         export LINUXBREW_INSTALL_DIR="${HOME}/Software/Linuxbrew/linuxbrew"
          export PATH="${LINUXBREW_INSTALL_DIR}/bin:${PATH}"
          export MANPATH="${LINUXBREW_INSTALL_DIR}/share/man:${MANPATH}"
          export INFOPATH="${LINUXBREW_INSTALL_DIR}/share/info:${INFOPATH}"
          export PKG_CONFIG_PATH="${LINUXBREW_INSTALL_DIR}/lib/pkgconfig:${PKG_CONFIG_PATH}"
-         # Additional commands may be added from here:
+	 
+         ### Additional commands may be added from here:
          # -- Set the path to a download cache directory:
          # export HOMEBREW_CACHE=/some/directory/for/caching/brew/downloads
          # -- Set the path to a temporary working/build directory:
@@ -106,39 +141,44 @@ to manage through Linuxbrew (several Gb sounds reasonnable).
          # source $(brew --prefix root6)/bin/thisroot.sh     # for 6.12.04
 	 # or
          # source $(brew --prefix root6)/libexec/thisroot.sh # for 6.08.06
+	 
          echo >&2 "[info] do_linuxbrew_setup: Linuxbrew is setup."
          return 0
        }
+       export -f do_linuxbrew_setup
        alias linuxbrew_setup='do_linuxbrew_setup'
+   ..
 
-This approach allows to setup Linuxbrew only on explicit demand from a
-given shell. IMHO, it is a bad practice to systematically load tons of
-paths to all the executable programs installed on your system. You end
-up with a very heavy environment,  polluted by plenty of software that
-you won't  use during a specific  working session. Our credo  is thus:
-*Activate only what you will use!*.
+   This approach allows to setup Linuxbrew only on explicit demand from a
+   given shell. IMHO, it is a bad practice to systematically load tons of
+   paths to all the executable programs installed on your system. You end
+   up with a very heavy environment,  polluted by plenty of software that
+   you won't  use during a specific  working session. Our credo  is thus:
+   *Activate only what you will use!*.
 
-So, when you  want to use the Linuxbrew software,  open a terminal and
-use the following alias (defined above):
+   So, when you  want to use the Linuxbrew software,  open a terminal and
+   use the following alias (defined above):
 
-.. code:: sh
+   .. code:: sh
 
-    $ linuxbrew_setup
-
-Then your shell is ready to go further with Linuxbrew and the software
-it provides to you. When you  are done with Linuxbrew and its embedded
-companions, simply terminate the shell. Of course, it is not a perfect
-approach  and  it   may  not  cover  all  users'  needs   or  ways  of
-working. Feel free to adapt according to your needs.
+      $ linuxbrew_setup
+   ..
+   
+   Then your shell is ready to go further with Linuxbrew and the software
+   it provides to you. When you  are done with Linuxbrew and its embedded
+   companions, simply terminate the shell. Of course, it is not a perfect
+   approach  and  it   may  not  cover  all  users'  needs   or  ways  of
+   working. Feel free to adapt according to your needs.
 
 Test Linuxbrew after installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From a bare shell, *activate* your Linuxbrew system:
+From a bare Bash shell, *activate* your Linuxbrew system:
 
 .. code:: sh
 
     $ export PATH="${HOME}/linuxbrew/bin:${PATH}"
+..
 
 Then install a dummy package:
 
@@ -150,7 +190,7 @@ Then install a dummy package:
     /home/your-login/Linuxbrew/linuxbrew/bin/hello
     $ hello
     Bonjour, le monde !
-
+..
 
 Optional setup of temporary and cache directories
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -167,6 +207,7 @@ variables:
 
     $ export HOMEBREW_TEMP=/some/directory/for/building/brew/driven/software/packages
     $ export HOMEBREW_CACHE=/some/directory/for/caching/brew/downloads
+..
 
 Such lines can  be added in the setup script shown above (in function
 ``do_linuxbrew_setup``).
@@ -197,7 +238,7 @@ You can check the number of cores on your Linux system using:
       4
 
 This allows to define an  optimal value for the ``HOMEBREW_MAKE_JOBS``
-variable that will be used within brew to force the number of parallel
+variable that will be used within Linuxbrew to force the number of parallel
 jobs during the build of any package; example:
 
    .. code:: sh
@@ -211,11 +252,18 @@ Setup Linuxbrew
 ~~~~~~~~~~~~~~~
 
 Each time you  need to use Linuxbrew and software  packages managed by
-Linuxbrew, you should use:
+Linuxbrew, you should use the function:
 
 .. code:: sh
 
-    $ linuxbrew_setup
+    $ do_linuxbrew_setup
+..
+
+or its alias:
+
+.. code:: sh
+
+    $ do_linuxbrew_setup
 ..
 
 Your ``PATH`` should then be updated to something like:
@@ -269,14 +317,16 @@ Installation steps
 
    .. code:: sh
 
-       $ linuxbrew_setup
+      $ linuxbrew_setup
+   ..
 
 #. Register  the  ``bxcppdev/homebrew-bxtap``  tap in  your  Linuxbrew
    package manager:
 
    .. code:: sh
 
-       $ brew tap bxcppdev/homebrew-bxtap
+      $ brew tap bxcppdev/homebrew-bxtap
+   ..
 
    The           tap            is           downloaded           from
    ``https://github.com/BxCppDev/homebrew-bxtap.git``   and  installed
@@ -293,16 +343,18 @@ A few more commands may be useful:
 
    .. code:: sh
 
-       $ brew tap-pin bxcppdev/homebrew-bxtap
+      $ brew tap-pin bxcppdev/homebrew-bxtap
+   ..
 
 #. You can  deregister the ``homebrew-bxtap`` tap  from your Linuxbrew
    package manager:
 
    .. code:: sh
 
-       $ brew tap-unpin bxcppdev/homebrew-bxtap
-       $ brew untap bxcppdev/homebrew-bxtap
-
+      $ brew tap-unpin bxcppdev/homebrew-bxtap
+      $ brew untap bxcppdev/homebrew-bxtap
+   ..
+   
    However, I expect the packages previously installed through the tap
    should meet issues in a short term.
 
@@ -317,7 +369,7 @@ new formula, please run:
 
    $ brew tap bxcppdev/homebrew-bxtap \
        file:///path/to/your/homebrew-bxtap/local/git/repo
-
+..
 
 You'll be  able to locally debug  and test a new  formula from your
 local repository.
@@ -332,6 +384,7 @@ You can print the list of supported formulas published by
 
     $ brew search bxcppdev/bxtap/
     ...
+..
 
 Third party software
 ~~~~~~~~~~~~~~~~~~~~
@@ -342,8 +395,9 @@ Third party software
 
   .. code:: sh
 
-       $ brew install bxcppdev/bxtap/boost
-
+     $ brew install bxcppdev/bxtap/boost
+  ..
+  
   Note: Linuxbrew/core provides its own Boost formulas.
 
 - **Camp**:
@@ -352,8 +406,9 @@ Third party software
 
   .. code:: sh
 
-       $ brew install bxcppdev/bxtap/camp
-
+     $ brew install bxcppdev/bxtap/camp
+  ..
+       
 - **CLHEP**:
   The `CLHEP <http://proj-clhep.web.cern.ch/proj-clhep/>`__
   C++ library for High Energy Physics.  Installation of the 2.1.3.1
@@ -361,7 +416,8 @@ Third party software
 
   .. code:: sh
 
-       $ brew install bxcppdev/bxtap/clhep
+     $ brew install bxcppdev/bxtap/clhep
+  ..
 
   Note: Linuxbrew provides its own CLHEP formula.
 
@@ -371,9 +427,10 @@ Third party software
 
   .. code:: sh
 
-	$ sudo apt-get install libuuid1
-	$ brew install bxcppdev/bxtap/qt5-base
-
+     $ sudo apt-get install libuuid1
+     $ brew install bxcppdev/bxtap/qt5-base
+  ..
+	
   Note: Linuxbrew provides  its own QT5 formula  which conflicts with
   this qt5-base.
 
@@ -383,8 +440,9 @@ Third party software
 
   .. code:: sh
 
-	$ brew install bxcppdev/bxtap/xerces-c 
-
+     $ brew install bxcppdev/bxtap/xerces-c 
+  ..
+	
   Note: Linuxbrew provides its own Xerces-C formula.
 
 - **Geant4**:
@@ -394,8 +452,9 @@ Third party software
 
   .. code:: sh
 
-	$ brew install bxcppdev/bxtap/geant4  \
-	    --with-opengl-x11
+     $ brew install bxcppdev/bxtap/geant4  \
+          --with-opengl-x11
+  ..
 
   Note: Linuxbrew provides its own Geant4 formula.
 
@@ -405,23 +464,26 @@ Third party software
 
   .. code:: sh
 
-       $ brew install bxcppdev/bxtap/root6
-
+     $ brew install bxcppdev/bxtap/root6
+  ..
+       
   Note: Here is a command to be used in order to properly setup ROOT 6.X.
   It can be added in the ``do_linuxbrew_setup`` function:
 
   .. code:: sh
 
-       $ . $(brew --prefix root6)/libexec/thisroot.sh
-
+     $ . $(brew --prefix root6)/libexec/thisroot.sh
+  ..
+       
 - **Protobuf**:
   The `Protocol Buffers <https://developers.google.com/protocol-buffers/>`__
   C++ and Java libraries. Installation of the 3.3.0 version:
 
   .. code:: sh
 
-       $ brew install bxcppdev/bxtap/protobuf [--with-java] [--with-brew-java]
-
+     $ brew install bxcppdev/bxtap/protobuf [--with-java] [--with-brew-java]
+  ..
+       
   Note: Linuxbrew provides its own  Protobuf formulas but they do not
   support Java.
 
@@ -439,7 +501,8 @@ BxCppDev software projects
   .. code:: sh
 
      $ brew install bxcppdev/bxtap/bxjsontools [--without-test]
-
+  ..
+     
 - **BxRabbitMQ**:
   The `BxRabbitMQ <https://github.com/BxCppDev/bxrabbitmq/>`__
   C++  library   for
@@ -449,7 +512,8 @@ BxCppDev software projects
   .. code:: sh
 
      $ brew install bxcppdev/bxtap/bxrabbitmq [--with-manager]
-
+  ..
+     
 - **BxProtobuftools**:
   The `BxProtobuftools <https://github.com/BxCppDev/bxprotobuftools/>`__
   C++ library for
@@ -459,7 +523,8 @@ BxCppDev software projects
   .. code:: sh
 
      $ brew install bxcppdev/bxtap/bxprotobuftools
-
+  ..
+     
 - **BxDecay0**:
   The `BxDecay0 <https://github.com/BxCppDev/bxdecay0/>`__
   C++ library for Monte Carlo generation of nuclear decays (C++ port of the Fortran GENBB/Decay0 program).
@@ -468,7 +533,7 @@ BxCppDev software projects
   .. code:: sh
 
      $ brew install bxcppdev/bxtap/bxdecay0
-
+  ..
 
 - **Bayeux** (last release):
   The `Bayeux <http://github.com/BxCppDev/Bayeux>`__ C++ library:
@@ -476,13 +541,14 @@ BxCppDev software projects
   .. code:: sh
 
      $ brew install bxcppdev/bxtap/bayeux [--without-geant4] 
-
+  ..
+     
   -  Installation of Bayeux-3.2.0 :
 
      .. code:: sh
 
 	$ brew install bxcppdev/bxtap/bayeux@3.2.0 [--without-geant4]
-
+     ..
 
 -  **Vire** :
    The `Vire <http://github.com/BxCppDev/Vire>`__ C++ library (not available yet).
@@ -508,7 +574,8 @@ Install the Bayeux last release step by step
 	    gnuplot5-doc \
 	    gnuplot-mode \
 	    gnuplot5-x11
-
+  ..
+	    
 * Install system dependencies (Ubuntu 18.04):
 
   .. code:: sh
@@ -525,16 +592,17 @@ Install the Bayeux last release step by step
 	    gnuplot-doc \
 	    gnuplot-mode \
 	    gnuplot-x11
-
+  ..
 
 * Brew some Linuxbrew modules from source, step by step:
+
+  .. $ brew install cmake
+  .. $ brew install readline
+  .. $ brew install icu4c
 
   .. code:: sh
 
      $ export HOMEBREW_BUILD_FROM_SOURCE=1
-     $ brew install cmake
-     $ brew install readline
-     $ brew install icu4c
      $ brew install bxcppdev/bxtap/gsl
      $ brew install bxcppdev/bxtap/doxygen
      $ brew install bxcppdev/bxtap/boost 
@@ -545,14 +613,14 @@ Install the Bayeux last release step by step
      $ brew install bxcppdev/bxtap/root6
      $ brew install bxcppdev/bxtap/geant4 
      $ brew install bxcppdev/bxtap/bayeux
-
+  ..
 
   or use explicitely the last Bayeux's tag:
 
   .. code:: sh
 
      $ brew install bxcppdev/bxtap/bayeux@3.1.2
-
+  ..
 
 * Installation with all dependencies  automatically resolved and built
   from source:
@@ -561,7 +629,7 @@ Install the Bayeux last release step by step
 
      $ export HOMEBREW_BUILD_FROM_SOURCE=1
      $ brew install bxcppdev/bxtap/bayeux
-
+  ..
 
 Install Vire
 ~~~~~~~~~~~~
@@ -572,14 +640,16 @@ Install Vire
 
       $ sudo apt-get install openjdk-8-jdk
       $ sudo apt-get install maven
-
+   ..
+   
 #. Install system dependencies (Ubuntu 18.04):
 
    .. code:: sh
 
       $ sudo apt-get install openjdk-11-jdk openjdk-11-jre openjdk-11-doc
       $ sudo apt-get install maven
-
+   ..
+   
 #. Install dependencies:
 
    .. code:: sh
@@ -588,13 +658,15 @@ Install Vire
       $ brew install bxcppdev/bxtap/bxprotobuftools
       $ brew install bxcppdev/bxtap/bxjsontools
       $ brew install bxcppdev/bxtap/bxrabbitmq 
-
+   ..
+   
 #. Install Bayeux (Geant4 module is not required):
 
    .. code:: sh
 
       $ brew install bxcppdev/bxtap/bayeux --without-geant4
-
+   ..
+   
 #. Install Vire: NOT AVAILABLE YET.
 
 
@@ -620,9 +692,10 @@ Miscellaneous
 
   A brew formula is provided for a minimal installation of Qt5 from brew: ``bxcppdev/bxtap/qt5-base`` (see above).
 
-  However, on Ubuntu 16.04, it is also possible to use the Qt5 system installation (version 5.5).
-  Should the ``qt5-base`` tap fail to build, please make a try with the system Qt5 and then rebuild Bayeux.
-  Typically, you should use:
+  However, on Ubuntu 16.04, it is  also possible to use the Qt5 system
+  installation  (version 5.5).   Should the  ``qt5-base`` tap  fail to
+  build,  please make  a  try with  the system  Qt5  and then  rebuild
+  Bayeux.  Typically, you should use:
 
   .. code:: sh
 
@@ -633,3 +706,5 @@ Miscellaneous
      $ sudo aptitude install libqt5widgets5
      $ sudo aptitude install qtbase5-dev
      $ sudo aptitude install qt5-default
+  ..
+
