@@ -123,6 +123,7 @@ Here we assume you use a Bash shell:
          fi
 	 # Define the Linuxbrew installation path:
          export LINUXBREW_INSTALL_DIR="${HOME}/Software/Linuxbrew/linuxbrew"
+	 # ... and other useful paths:
          export PATH="${LINUXBREW_INSTALL_DIR}/bin:${PATH}"
          export MANPATH="${LINUXBREW_INSTALL_DIR}/share/man:${MANPATH}"
          export INFOPATH="${LINUXBREW_INSTALL_DIR}/share/info:${INFOPATH}"
@@ -177,7 +178,7 @@ From a bare Bash shell, *activate* your Linuxbrew system:
 
 .. code:: sh
 
-    $ export PATH="${HOME}/linuxbrew/bin:${PATH}"
+    $ export PATH="${HOME}/Software/Linuxbrew/linuxbrew/bin:${PATH}"
 ..
 
 Then install a dummy package:
@@ -187,7 +188,7 @@ Then install a dummy package:
     $ brew install hello  # Brew basic installation of the package 'hello'
     ...
     $ which hello
-    /home/your-login/Linuxbrew/linuxbrew/bin/hello
+    /home/your-login/Software/Linuxbrew/linuxbrew/bin/hello
     $ hello
     Bonjour, le monde !
 ..
@@ -201,12 +202,14 @@ Linuxbrew uses  default locations to store  downloaded files (default:
 on  your  system  or  have   not  enough  storage  capacity.  You  can
 explicitely define dedicated  directories to be used  during the build
 process.  For  that, you  can  define  the two  following  environment
-variables:
+variables. Example:
 
 .. code:: sh
 
-    $ export HOMEBREW_TEMP=/some/directory/for/building/brew/driven/software/packages
-    $ export HOMEBREW_CACHE=/some/directory/for/caching/brew/downloads
+   $ mkdir -p /scratch/${USER}/Software/Linuxbrew/tmp.d
+   $ mkdir -p /scratch/${USER}/Software/Linuxbrew/cache.d
+   $ export HOMEBREW_TEMP=/scratch/${USER}/Software/Linuxbrew/tmp.d
+   $ export HOMEBREW_CACHE=/scratch/${USER}/Software/Linuxbrew/cache.d
 ..
 
 Such lines can  be added in the setup script shown above (in function
@@ -232,18 +235,20 @@ Number of jobs used in parallel build
 
 You can check the number of cores on your Linux system using:
 
-   .. code:: sh
-
-      $ cat /proc/cpuinfo | grep ^processor | wc -l
-      4
+.. code:: sh
+	  
+   $ cat /proc/cpuinfo | grep ^processor | wc -l
+   4
+..
 
 This allows to define an  optimal value for the ``HOMEBREW_MAKE_JOBS``
 variable that will be used within Linuxbrew to force the number of parallel
 jobs during the build of any package; example:
 
-   .. code:: sh
+.. code:: sh
 
-      $ export HOMEBREW_MAKE_JOBS=4
+   $ export HOMEBREW_MAKE_JOBS=4
+..
 
 You may also want to use less or more jobs than the available cores
 but take care not to overload your system.
@@ -263,7 +268,7 @@ or its alias:
 
 .. code:: sh
 
-    $ do_linuxbrew_setup
+    $ linuxbrew_setup
 ..
 
 Your ``PATH`` should then be updated to something like:
@@ -275,7 +280,7 @@ Your ``PATH`` should then be updated to something like:
 ..
 
 Thus  the Linuxbrew  binary path  has the  priority over  other paths,
-including the system path.
+including the system paths.
 
 The ``brew`` executable will be available from:
 
