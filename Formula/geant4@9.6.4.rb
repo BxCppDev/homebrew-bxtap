@@ -33,7 +33,7 @@ class Geant4AT964 < Formula
 
   option "with-notimeout", "Set notimeout in installing data"
 
-  depends_on "cmake" => :build
+  # depends_on "cmake" => :build
   depends_on "bxcppdev/bxtap/clhep" 
   depends_on "bxcppdev/bxtap/xerces-c" 
 

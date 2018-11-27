@@ -17,13 +17,13 @@ class Root5 < Formula
 
    needs :cxx11
 
-   depends_on "cmake" => :build
-   depends_on "openssl"
-   depends_on "bxcppdev/bxtap/gsl" => :recommended
-   option "with-brew-python", "Use brewed Python"
-   if build.with? "brew-python"
-     depends_on :python => :recommended
-   end
+   # depends_on "cmake" => :build
+   # depends_on "openssl"
+   # depends_on "bxcppdev/bxtap/gsl" => :recommended
+   # option "with-brew-python", "Use brewed Python"
+   # if build.with? "brew-python"
+   #   depends_on :python => :recommended
+   # end
 
    def install
      # When building the head, temp patch for ROOT-8032

@@ -7,7 +7,7 @@ class ClhepAT2410 < Formula
 
   needs :cxx11
 
-  depends_on "cmake" => :build
+  # depends_on "cmake" => :build
 
   def install
     ENV.cxx11

@@ -22,7 +22,7 @@ class Protobuf < Formula
   # if build.with? "brew-gcc5"
   #   depends_on "gcc5" => :build
   # end
-  depends_on "unzip" => :build
+  # depends_on "unzip" => :build
 
   # if build.with? "java"
   #   option "with-brew-java", "Use Linuxbrew Java jdk"

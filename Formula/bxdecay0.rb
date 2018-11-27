@@ -18,8 +18,8 @@ class Bxdecay0 < Formula
     version "1.1.0"
   end
 
-  depends_on "cmake" => :build
-  depends_on "gsl"
+  # depends_on "cmake" => :build
+  # depends_on "gsl"
 
   option "without-test", "Inhibit test programs"
 

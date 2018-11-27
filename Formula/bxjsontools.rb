@@ -20,7 +20,7 @@ class Bxjsontools < Formula
 
   needs :cxx11
 
-  depends_on "cmake" => :build
+  # depends_on "cmake" => :build
 
   option "without-test", "Inhibit test programs"
 

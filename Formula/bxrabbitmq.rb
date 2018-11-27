@@ -20,15 +20,15 @@ class Bxrabbitmq < Formula
 
   needs :cxx11
 
-  depends_on "cmake" => :build
-  depends_on "rabbitmq-c"
-  depends_on "pkg-config"
+  # depends_on "cmake" => :build
+  # depends_on "rabbitmq-c"
+  # depends_on "pkg-config"
 
   option "without-test", "Inhibit test programs"
   option "without-manager", "Do not built the RabbitMQ server management API"
   if build.with? "manager"
     depends_on "bxcppdev/bxtap/bxjsontools"
-    depends_on "curlpp"
+    # depends_on "curlpp"
   end
 
   def install

@@ -14,13 +14,13 @@ class BayeuxAT310 < Formula
   option "with-lahague",     "Build lahague module"
   option "with-qt-gui",      "Build with Qt GUI components"
 
-  depends_on "cmake" => :build
-  depends_on "doxygen" => :build
-  depends_on "gsl"
-  depends_on "readline"
+  # depends_on "cmake" => :build
+  # depends_on "doxygen" => :build
+  # depends_on "gsl"
+  # depends_on "readline"
 
   needs :cxx11
-  depends_on "icu4c" => "c++11"
+  # depends_on "icu4c" => "c++11"
   depends_on "bxcppdev/bxtap/boost" => ["c++11", "with-icu4c"]
   depends_on "bxcppdev/bxtap/camp" => "c++11"
   depends_on "bxcppdev/bxtap/clhep" => "c++11"

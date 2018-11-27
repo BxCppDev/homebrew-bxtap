@@ -11,7 +11,7 @@ class Hepmc3 < Formula
   option "with-examples", "Build examples"
   option "with-interfaces", "Installation of HepMC3 interfaces"
 
-  depends_on "cmake" => :build
+  # depends_on "cmake" => :build
   depends_on "bxcppdev/bxtap/root6" => ["with-root-io"]
 
   def install

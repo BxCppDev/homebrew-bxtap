@@ -13,15 +13,15 @@ class Fontconfig < Formula
 
   option "without-docs", "Skip building the fontconfig docs"
 
-  depends_on "pkg-config" => :build
-  depends_on "freetype"
+  # depends_on "pkg-config" => :build
+  # depends_on "freetype"
   unless OS.mac?
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "gperf"    => :build
-    depends_on "gettext"  => :build
-    depends_on "libtool"  => :build
-    depends_on "bzip2"
+    # depends_on "autoconf" => :build
+    # depends_on "automake" => :build
+    # depends_on "gperf"    => :build
+    # depends_on "gettext"  => :build
+    # depends_on "libtool"  => :build
+    # depends_on "bzip2"
     # Remove expat dependency and use system expat
     ### depends_on "expat"
     # Breaks at install step on Ubuntu 18.04 :
