@@ -1,4 +1,4 @@
-*# coding: utf-8
+# coding: utf-8
 class Clhep < Formula
   desc     "C++ Class Library for High Energy Physics"
   homepage "http://proj-clhep.web.cern.ch/proj-clhep/"
