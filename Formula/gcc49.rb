@@ -87,7 +87,7 @@ class Gcc49 < Formula
     depends_on "cctools" => :build
   end
 
-  fails_with :gcc_4_0
+  # fails_with :gcc_4_0
 
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip
