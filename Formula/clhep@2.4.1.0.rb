@@ -5,8 +5,6 @@ class ClhepAT2410 < Formula
   url      "http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/clhep-2.4.1.0.tgz"
   sha256   "d14736eb5c3d21f86ce831dc1afcf03d423825b35c84deb6f8fd16773528c54d"
 
-  needs :cxx11
-
   # depends_on "cmake" => :build
 
   def install

@@ -9,8 +9,6 @@ class ClhepAT2131 < Formula
   # Not working patch: Hunk #1 FAILED at 114.
   # patch :DATA
 
-  needs :cxx11
-
   # depends_on "cmake" => :build
 
   def install

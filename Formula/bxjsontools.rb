@@ -18,8 +18,6 @@ class Bxjsontools < Formula
     version "0.3.1"
   end
 
-  needs :cxx11
-
   # depends_on "cmake" => :build
 
   option "without-test", "Inhibit test programs"

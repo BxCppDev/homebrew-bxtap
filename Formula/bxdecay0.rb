@@ -6,8 +6,6 @@ class Bxdecay0 < Formula
   sha256   "dfd856f911e16bee35272001fcc2fa790a2b882054b943ad792d1112a48dafda"
   version  "1.0.0"
 
-  needs  :cxx11
-
   head do
     url     "https://github.com/BxCppDev/bxdecay0.git", :branch => "master"
     version "1.0.0"

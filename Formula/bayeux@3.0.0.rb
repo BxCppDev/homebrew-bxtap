@@ -20,7 +20,6 @@ class BayeuxAT300 < Formula
   # depends_on "gsl"
   # depends_on "readline"
 
-  needs :cxx11
   # depends_on "icu4c" => "c++11"
   depends_on "bxcppdev/bxtap/boost" => ["c++11", "with-icu4c"]
   depends_on "bxcppdev/bxtap/camp" => "c++11"

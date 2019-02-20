@@ -35,8 +35,6 @@ class Geant4 < Formula
     sha256  "702fb0f7a78d4bdf1e3f14508de26e4db5e2df6a21a8066a92b7e6ce21f4eb2d"
   end
 
-  needs :cxx11
-
   # option "with-opengl-x11", "Build OpenGL X11 driver" if OS.linux?
   option "with-notimeout", "Set notimeout in installing data"
 

@@ -18,8 +18,6 @@ class Bxrabbitmq < Formula
     version "0.4.3"
   end
 
-  needs :cxx11
-
   # depends_on "cmake" => :build
   # depends_on "rabbitmq-c"
   # depends_on "pkg-config"

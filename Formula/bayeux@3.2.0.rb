@@ -10,8 +10,6 @@ class BayeuxAT320 < Formula
     sha256  "00d7b4413d0fc1748e2116fd4f8cd7bcf3831f9113658a483e67af977f7b51ee"
   end
 
-  needs :cxx11
-
   option "without-devtools", "Do not build developers tools"
   option "without-test",     "Do not build test programs"
   option "without-geant4",   "Do not build Geant4 module"

@@ -6,8 +6,6 @@ class Camp < Formula
            :revision => "a07257adfde4fb8503bbb9675f83d727e3d65e22"
   version  "0.8.0"
 
-  needs  :cxx11
-
   # depends_on "cmake" => :build
   depends_on "bxcppdev/bxtap/boost"
 

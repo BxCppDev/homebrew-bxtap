@@ -19,8 +19,6 @@ class Root6 < Formula
 
   conflicts_with "root", :because => "Bayeux requires custom root build"
 
-  needs :cxx11
-
   def install
     # Work around "error: no member named 'signbit' in the global namespace"
     ENV.delete("SDKROOT") if DevelopmentTools.clang_build_version >= 900

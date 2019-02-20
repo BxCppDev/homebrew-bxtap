@@ -6,7 +6,6 @@ class Protobuf < Formula
   version  "3.3.0"
   sha256   "9a36bc1265fa83b8e818714c0d4f08b8cec97a1910de0754a321b11e66eb76de"
 
-  needs :cxx11
   #option "with-brew-gcc5", "Use Linuxbrew gcc5"
 
   option "with-java", "Build the Java Protocol Buffers runtime library"

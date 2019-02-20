@@ -5,8 +5,6 @@ class Hepmc3 < Formula
   url      "http://hepmc.web.cern.ch/hepmc/releases/hepmc3.0.0.tgz"
   sha256   "7ac3c939a857a5ad67bea1e77e3eb16e80d38cfdf825252ac57160634c26d9ec"
 
-  needs  :cxx11
-
   option "with-root-io", "Enable ROOT I/O"
   option "with-examples", "Build examples"
   option "with-interfaces", "Installation of HepMC3 interfaces"

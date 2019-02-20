@@ -22,8 +22,6 @@ class Bayeux < Formula
             :branch => "develop"
   end
 
-  needs :cxx11
-
   option "without-devtools", "Do not build developers tools"
   option "without-test",     "Do not build test programs"
   option "without-geant4",   "Do not build Geant4 module"

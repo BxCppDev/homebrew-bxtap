@@ -29,8 +29,6 @@ class Geant4AT964 < Formula
     end
   end
 
-  needs :cxx11
-
   option "with-notimeout", "Set notimeout in installing data"
 
   # depends_on "cmake" => :build
